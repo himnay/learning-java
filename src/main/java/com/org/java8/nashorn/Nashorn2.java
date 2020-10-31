@@ -1,12 +1,11 @@
 package com.org.java8.nashorn;
 
-import java.io.FileReader;
-import java.util.Arrays;
+import jdk.nashorn.api.scripting.ScriptObjectMirror;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
-
-import jdk.nashorn.api.scripting.ScriptObjectMirror;
+import java.io.FileReader;
+import java.util.Arrays;
 
 /**
  * Calling java methods from javascript with nashorn.

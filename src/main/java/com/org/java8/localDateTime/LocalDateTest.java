@@ -1,5 +1,7 @@
 package com.org.java8.localDateTime;
 
+import org.junit.Test;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
@@ -7,8 +9,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.Locale;
-
-import org.junit.Test;
 
 /**
  * @author Himansu Nayak

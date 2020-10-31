@@ -1,4 +1,5 @@
 package com.org.java8;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +10,20 @@ public class Student {
     private String gender;
     List<String> activities = new ArrayList<>();
 
+    public Student() {
+
+    }
+
     public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.gpa = gpa;
         this.gender = gender;
         this.activities = activities;
+    }
+
+    public Student(String name) {
+        this.name = name;
     }
 
     public String getGender() {
@@ -48,7 +57,6 @@ public class Student {
     public void setGpa(double gpa) {
         this.gpa = gpa;
     }
-
 
 
     public List<String> getActivities() {
