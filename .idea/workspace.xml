@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519cba45-0e15-4ed4-a2f8-2343cd951583" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/virtualExtensionMethod/Formula.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/virtualExtensionMethod/VirtualExtensionMethod.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,7 @@
       <recent name="com.org.java8.defaultInterface.diamond" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StreamExample">
+  <component name="RunManager" selected="Application.StreamFactory">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -273,20 +271,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FISupplier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.functionalInterface.FISupplier" />
-      <module name="java8-examples" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.org.java8.functionalInterface.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MethodReferenceBasic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.org.java8.methodReference.MethodReferenceBasic" />
       <module name="java8-examples" />
@@ -317,6 +301,20 @@
     </configuration>
     <configuration name="StreamExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.org.java8.stream.StreamExample" />
+      <module name="java8-examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.org.java8.stream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.stream.StreamFactory" />
       <module name="java8-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -406,19 +404,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FISupplier" />
       <item itemvalue="Application.MethodReferenceBasic" />
       <item itemvalue="Application.OptionalExample" />
       <item itemvalue="Application.DefaultInterfaceExample" />
       <item itemvalue="Application.StreamExample" />
+      <item itemvalue="Application.StreamFactory" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StreamFactory" />
         <item itemvalue="Application.StreamExample" />
         <item itemvalue="Application.DefaultInterfaceExample" />
         <item itemvalue="Application.OptionalExample" />
         <item itemvalue="Application.MethodReferenceBasic" />
-        <item itemvalue="Application.FISupplier" />
       </list>
     </recent_temporary>
   </component>
@@ -449,7 +447,7 @@
       <workItem from="1604123327430" duration="1203000" />
       <workItem from="1604125167392" duration="4899000" />
       <workItem from="1604203720469" duration="473000" />
-      <workItem from="1604204421465" duration="15048000" />
+      <workItem from="1604204421465" duration="16210000" />
     </task>
     <servers />
   </component>
@@ -473,22 +471,22 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217440253" />
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604227471325">
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604228779145">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471325" />
-    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604227471309">
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604228779145" />
+    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604228779137">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471309" />
-    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604227471303">
+    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604228779137" />
+    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604228779134">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471303" />
-    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604227471317">
+    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604228779134" />
+    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604228779141">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471317" />
+    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604228779141" />
     <state width="1660" height="479" key="GridCell.Tab.1.bottom" timestamp="1604214213630">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
@@ -517,10 +515,10 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state width="498" height="457" key="SwitcherDM/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217453195" />
-    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2" timestamp="1604217688202">
+    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2" timestamp="1604228487282">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217688202" />
+    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604228487282" />
     <state x="-1391" y="183" width="1061" height="592" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604212563739">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
