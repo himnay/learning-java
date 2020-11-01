@@ -5,57 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519cba45-0e15-4ed4-a2f8-2343cd951583" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIBiFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIBinaryOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FISupplier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIUnaryOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/LambdaRestriction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/methodReference/MethodReferenceBasic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint-state.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/DefaultInterfaceExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/diamond/Client123.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/diamond/Interface1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/diamond/Interface2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/optional/OptionalExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java8-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java8-examples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/FIBiConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/FIConsumerPredicate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/FIPredicate.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/StudentDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/StudentDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/FunctionalInterfaceLambda.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/Lambda4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/Lambda5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/MethodReferenceLambda.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/StringSortLambda.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/localDateTime/LocalDateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/localDateTime/LocalDateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Atomic1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Atomic1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/ConcurrentUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/ConcurrentUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Executors1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Executors1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Lock6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Semaphore1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Semaphore1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Semaphore2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/concurrent/Semaphore2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/org/java8/nashorn/Nashorn9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/LambdaRestriction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/LambdaRestriction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/SuperRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Optional1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Optional2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams12.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams13.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams9.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -63,6 +60,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -99,6 +97,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -117,9 +116,13 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.MethodReferenceBasic">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.org.java8.defaultInterface.diamond" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StreamExample">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -292,27 +295,13 @@
       <envs />
       <method />
     </configuration>
-    <configuration name="FIBiFunction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.functionalInterface.FIBiFunction" />
+    <configuration name="DefaultInterfaceExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.defaultInterface.DefaultInterfaceExample" />
       <module name="java8-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.org.java8.functionalInterface.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FIBinaryOperator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.functionalInterface.FIBinaryOperator" />
-      <module name="java8-examples" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.org.java8.functionalInterface.*" />
+          <option name="PATTERN" value="com.org.java8.defaultInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -334,20 +323,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FIUnaryOperator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.functionalInterface.FIUnaryOperator" />
-      <module name="java8-examples" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.org.java8.functionalInterface.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MethodReferenceBasic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.org.java8.methodReference.MethodReferenceBasic" />
       <module name="java8-examples" />
@@ -355,6 +330,34 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.org.java8.methodReference.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OptionalExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.optional.OptionalExample" />
+      <module name="java8-examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.org.java8.optional.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.stream.StreamExample" />
+      <module name="java8-examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.org.java8.stream.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -439,19 +442,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FIBiFunction" />
-      <item itemvalue="Application.FIUnaryOperator" />
-      <item itemvalue="Application.FIBinaryOperator" />
       <item itemvalue="Application.FISupplier" />
       <item itemvalue="Application.MethodReferenceBasic" />
+      <item itemvalue="Application.OptionalExample" />
+      <item itemvalue="Application.DefaultInterfaceExample" />
+      <item itemvalue="Application.StreamExample" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StreamExample" />
+        <item itemvalue="Application.DefaultInterfaceExample" />
+        <item itemvalue="Application.OptionalExample" />
         <item itemvalue="Application.MethodReferenceBasic" />
         <item itemvalue="Application.FISupplier" />
-        <item itemvalue="Application.FIBinaryOperator" />
-        <item itemvalue="Application.FIUnaryOperator" />
-        <item itemvalue="Application.FIBiFunction" />
       </list>
     </recent_temporary>
   </component>
@@ -481,6 +484,8 @@
       <workItem from="1475211509984" duration="783000" />
       <workItem from="1604123327430" duration="1203000" />
       <workItem from="1604125167392" duration="4899000" />
+      <workItem from="1604203720469" duration="473000" />
+      <workItem from="1604204421465" duration="11671000" />
     </task>
     <servers />
   </component>
@@ -500,22 +505,58 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state x="-1087" y="-7" key="#Auto_Import/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604125574513" />
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604129725263">
+    <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1604210283798">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604129725263" />
-    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604129725262">
+    <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604210283798" />
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604216955252">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604129725262" />
-    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604129725261">
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955252" />
+    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604216955244">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604129725261" />
-    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604129725263">
+    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955244" />
+    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604216955242">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604129725263" />
+    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955242" />
+    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604216955249">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955249" />
+    <state width="1660" height="479" key="GridCell.Tab.1.bottom" timestamp="1604214213630">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state width="1660" height="479" key="GridCell.Tab.1.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604214213630" />
+    <state width="1660" height="479" key="GridCell.Tab.1.center" timestamp="1604214213626">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state width="1660" height="479" key="GridCell.Tab.1.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604214213626" />
+    <state width="1660" height="479" key="GridCell.Tab.1.left" timestamp="1604214213625">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state width="1660" height="479" key="GridCell.Tab.1.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604214213625" />
+    <state width="1660" height="479" key="GridCell.Tab.1.right" timestamp="1604214213627">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state width="1660" height="479" key="GridCell.Tab.1.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604214213627" />
+    <state x="-1359" y="99" key="SettingsEditor" timestamp="1604213885046">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state x="-1359" y="99" key="SettingsEditor/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604213885046" />
+    <state x="-1139" y="199" width="540" height="524" key="StructurePopup" timestamp="1604215763789">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state x="-1139" y="199" width="540" height="524" key="StructurePopup/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604215763789" />
+    <state width="498" height="448" key="SwitcherDM" timestamp="1604217342784">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state width="498" height="448" key="SwitcherDM/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217342784" />
+    <state x="-1391" y="183" width="1061" height="592" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604212563739">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state x="-1391" y="183" width="1061" height="592" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604212563739" />
     <state x="-1154" y="158" width="587" height="592" key="find.popup" timestamp="1604124448757">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
@@ -524,6 +565,29 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state x="-1197" y="73" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604123968511" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/diamond/Interface1.java</url>
+          <line>4</line>
+          <properties class="com.org.java8.defaultInterface.diamond.Interface1" method="methodA">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

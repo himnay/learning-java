@@ -2,13 +2,17 @@ package com.org.java8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 public class Student {
     private String name;
     private int gradeLevel;
     private double gpa;
     private String gender;
-    List<String> activities = new ArrayList<>();
+    private int notebook = new Random().nextInt();
+    private Optional<Bike> bike = Optional.ofNullable(new Bike());
+    private List<String> activities = new ArrayList<>();
 
     public Student() {
 
@@ -46,6 +50,11 @@ public class Student {
         return gradeLevel;
     }
 
+
+    public int getNotebook() {
+        return notebook;
+    }
+
     public void setGradeLevel(int gradeLevel) {
         this.gradeLevel = gradeLevel;
     }
@@ -58,6 +67,9 @@ public class Student {
         this.gpa = gpa;
     }
 
+    public Optional<Bike> getBike() {
+        return bike;
+    }
 
     public List<String> getActivities() {
         return activities;
@@ -76,6 +88,14 @@ public class Student {
                 ", gender='" + gender + '\'' +
                 ", activities=" + activities +
                 '}';
+    }
+
+    public static class Bike {
+        private String name = "Suzuki";
+
+        public String getName() {
+            return name;
+        }
     }
 
 
