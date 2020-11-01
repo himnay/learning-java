@@ -74,5 +74,42 @@ public class StreamExample {
 //              .reduce(0, (a, b) -> a + b);   you can also try below approach
                 .reduce(0, Integer::sum);
         System.out.println(sumOfNotebooks);
+
+        // 8.
+        Optional<Integer> min = getAllStudents().stream()
+                .map(Student::getNotebook)
+                .reduce((n1, n2) -> n1 <= n2 ? n1 : n2);
+        System.out.println(min.get());
+
+        // 9. limit and skip
+        Optional<Integer> sumLimit = numbers.stream()
+                .limit(3)
+                .reduce((x, y) -> x + y);
+        System.out.println(sumLimit.get());
+
+        Optional<Integer> sumSkip = numbers.stream()
+                .skip(3)
+                .reduce((x, y) -> x + y);
+        System.out.println(sumSkip.get());
+
+        // 10. anymatch, allmatch and nonematch  returns a boolean
+        boolean allMatch = getAllStudents().stream()
+                .allMatch(i -> i.getGpa() >= 3.5);
+        boolean anyMatch = getAllStudents().stream()
+                .anyMatch(i -> i.getGpa() >= 4.0);
+        boolean noneMatch = getAllStudents().stream()
+                .noneMatch(i -> i.getGpa() >= 4.0);
+        System.out.println(allMatch + " " + anyMatch + " " + noneMatch);
+
+        // 11. findFirst and findAny returns element
+        Optional<Student> findFirstStudent = getAllStudents().stream()
+                .filter(i -> i.getGpa() >= 3.9)
+                .findFirst();
+
+        Optional<Student> findAnyStudent = getAllStudents().stream()
+                .filter(i -> i.getGpa() >= 3.9)
+                .findAny();
+        System.out.println(findFirstStudent.get() + " " + findAnyStudent);
+
     }
 }

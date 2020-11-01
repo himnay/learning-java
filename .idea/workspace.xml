@@ -5,46 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519cba45-0e15-4ed4-a2f8-2343cd951583" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint-state.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/DefaultInterfaceExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/diamond/Client123.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/diamond/Interface1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/defaultInterface/diamond/Interface2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/optional/OptionalExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/StudentDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/StudentDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/LambdaRestriction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/LambdaRestriction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn10.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn11.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Nashorn9.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/nashorn/SuperRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Optional1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Optional2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams10.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams11.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams12.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams13.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/Streams9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/virtualExtensionMethod/Formula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/virtualExtensionMethod/VirtualExtensionMethod.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -485,7 +449,7 @@
       <workItem from="1604123327430" duration="1203000" />
       <workItem from="1604125167392" duration="4899000" />
       <workItem from="1604203720469" duration="473000" />
-      <workItem from="1604204421465" duration="11671000" />
+      <workItem from="1604204421465" duration="15048000" />
     </task>
     <servers />
   </component>
@@ -505,26 +469,26 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state x="-1087" y="-7" key="#Auto_Import/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604125574513" />
-    <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1604210283798">
+    <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1604217440254">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604210283798" />
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604216955252">
+    <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217440253" />
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604227471325">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955252" />
-    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604216955244">
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471325" />
+    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604227471309">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955244" />
-    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604216955242">
+    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471309" />
+    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604227471303">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955242" />
-    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604216955249">
+    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471303" />
+    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604227471317">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604216955249" />
+    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604227471317" />
     <state width="1660" height="479" key="GridCell.Tab.1.bottom" timestamp="1604214213630">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
@@ -549,10 +513,14 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state x="-1139" y="199" width="540" height="524" key="StructurePopup/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604215763789" />
-    <state width="498" height="448" key="SwitcherDM" timestamp="1604217342784">
+    <state width="498" height="457" key="SwitcherDM" timestamp="1604217453195">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="498" height="448" key="SwitcherDM/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217342784" />
+    <state width="498" height="457" key="SwitcherDM/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217453195" />
+    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2" timestamp="1604217688202">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217688202" />
     <state x="-1391" y="183" width="1061" height="592" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604212563739">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
