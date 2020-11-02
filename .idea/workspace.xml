@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519cba45-0e15-4ed4-a2f8-2343cd951583" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamCollect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/dateTime/ConvertDateToLocalDateTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/dateTime/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/dateTime/ModifyLocalDateExamples.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/dateTime/ModifyLocalTimeExamples.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/dateTime/ParallelStreams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/Predicates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/PredicatesBi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIBiConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/ConsumerBi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIBiFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FunctionBi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIBiPredicate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIBinaryOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FunctionBinaryOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIPredicate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FISupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/Suppliers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FIUnaryOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/functionalInterface/FunctionUnaryOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/LambdaRestriction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/lambda/LambdaRestriction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/localDateTime/LocalDateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/localDateTime/LocalDateTime1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/localDateTime/LocalTime1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/methodReference/MethodReferenceBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/methodReference/MethodReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/java8/stream/StreamExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +97,14 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.org.java8.defaultInterface.diamond" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StreamCollect">
+  <component name="RunManager" selected="Application.Predicates">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -257,13 +277,13 @@
       <envs />
       <method />
     </configuration>
-    <configuration name="DefaultInterfaceExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.defaultInterface.DefaultInterfaceExample" />
+    <configuration name="LocalTimeExamples" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.dateTime.LocalTimeExamples" />
       <module name="java8-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.org.java8.defaultInterface.*" />
+          <option name="PATTERN" value="com.org.java8.dateTime.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -271,13 +291,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OptionalExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.optional.OptionalExample" />
+    <configuration name="ModifyLocalDateExamples" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.dateTime.ModifyLocalDateExamples" />
       <module name="java8-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.org.java8.optional.*" />
+          <option name="PATTERN" value="com.org.java8.dateTime.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -285,13 +305,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamCollect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.stream.StreamCollect" />
+    <configuration name="ModifyLocalDateTimeExamples" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.dateTime.ModifyLocalDateTimeExamples" />
       <module name="java8-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.org.java8.stream.*" />
+          <option name="PATTERN" value="com.org.java8.dateTime.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -299,13 +319,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.stream.StreamExample" />
+    <configuration name="ParallelStreams" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.dateTime.ParallelStreams" />
       <module name="java8-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.org.java8.stream.*" />
+          <option name="PATTERN" value="com.org.java8.dateTime.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -313,13 +333,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.org.java8.stream.StreamFactory" />
+    <configuration name="Predicates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.org.java8.functionalInterface.Predicates" />
       <module name="java8-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.org.java8.stream.*" />
+          <option name="PATTERN" value="com.org.java8.functionalInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -404,19 +424,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.OptionalExample" />
-      <item itemvalue="Application.DefaultInterfaceExample" />
-      <item itemvalue="Application.StreamExample" />
-      <item itemvalue="Application.StreamFactory" />
-      <item itemvalue="Application.StreamCollect" />
+      <item itemvalue="Application.LocalTimeExamples" />
+      <item itemvalue="Application.ModifyLocalDateExamples" />
+      <item itemvalue="Application.ModifyLocalDateTimeExamples" />
+      <item itemvalue="Application.ParallelStreams" />
+      <item itemvalue="Application.Predicates" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StreamCollect" />
-        <item itemvalue="Application.StreamFactory" />
-        <item itemvalue="Application.StreamExample" />
-        <item itemvalue="Application.DefaultInterfaceExample" />
-        <item itemvalue="Application.OptionalExample" />
+        <item itemvalue="Application.Predicates" />
+        <item itemvalue="Application.ParallelStreams" />
+        <item itemvalue="Application.ModifyLocalDateTimeExamples" />
+        <item itemvalue="Application.LocalTimeExamples" />
+        <item itemvalue="Application.ModifyLocalDateExamples" />
       </list>
     </recent_temporary>
   </component>
@@ -447,7 +467,7 @@
       <workItem from="1604123327430" duration="1203000" />
       <workItem from="1604125167392" duration="4899000" />
       <workItem from="1604203720469" duration="473000" />
-      <workItem from="1604204421465" duration="20658000" />
+      <workItem from="1604204421465" duration="31250000" />
     </task>
     <servers />
   </component>
@@ -471,22 +491,26 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state x="-1055" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217440253" />
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604243549331">
+    <state x="-3187" y="9" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604301094294">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604243549331" />
-    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604243549323">
+    <state x="-3187" y="9" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604301094294" />
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom" timestamp="1604299648161">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604243549323" />
-    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604243549317">
+    <state width="1660" height="390" key="GridCell.Tab.0.bottom/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604299648161" />
+    <state width="1660" height="390" key="GridCell.Tab.0.center" timestamp="1604299648154">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604243549317" />
-    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604243549327">
+    <state width="1660" height="390" key="GridCell.Tab.0.center/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604299648154" />
+    <state width="1660" height="390" key="GridCell.Tab.0.left" timestamp="1604299648151">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604243549327" />
+    <state width="1660" height="390" key="GridCell.Tab.0.left/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604299648151" />
+    <state width="1660" height="390" key="GridCell.Tab.0.right" timestamp="1604299648158">
+      <screen x="-3440" y="-246" width="3440" height="1400" />
+    </state>
+    <state width="1660" height="390" key="GridCell.Tab.0.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604299648158" />
     <state width="1660" height="479" key="GridCell.Tab.1.bottom" timestamp="1604214213630">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
@@ -503,22 +527,22 @@
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state width="1660" height="479" key="GridCell.Tab.1.right/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604214213627" />
-    <state x="-1359" y="99" key="SettingsEditor" timestamp="1604213885046">
+    <state x="-2912" y="149" key="SettingsEditor" timestamp="1604293931321">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state x="-1359" y="99" key="SettingsEditor/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604213885046" />
-    <state x="-1139" y="199" width="540" height="524" key="StructurePopup" timestamp="1604215763789">
+    <state x="-2912" y="149" key="SettingsEditor/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604293931321" />
+    <state x="-1139" y="199" width="540" height="524" key="StructurePopup" timestamp="1604301564903">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state x="-1139" y="199" width="540" height="524" key="StructurePopup/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604215763789" />
+    <state x="-1139" y="199" width="540" height="524" key="StructurePopup/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604301564903" />
     <state width="498" height="457" key="SwitcherDM" timestamp="1604217453195">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
     <state width="498" height="457" key="SwitcherDM/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604217453195" />
-    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2" timestamp="1604228906814">
+    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2" timestamp="1604244264315">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>
-    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604228906814" />
+    <state x="-1268" y="187" key="Vcs.Push.Dialog.v2/0.0.1280.680/-3440.-246.3440.1400@-3440.-246.3440.1400" timestamp="1604244264315" />
     <state x="-1391" y="183" width="1061" height="592" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604212563739">
       <screen x="-3440" y="-246" width="3440" height="1400" />
     </state>

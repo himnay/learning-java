@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class MethodReferenceBasic {
+public class MethodReference {
     public static void main(String[] args) {
         // 1.
         Function<String, String> function = String::toUpperCase;
@@ -18,11 +18,11 @@ public class MethodReferenceBasic {
         consumer.accept("Nayak");
 
         // 3.
-        Consumer<String> staticMethodConsumer = MethodReferenceBasic::write;
+        Consumer<String> staticMethodConsumer = MethodReference::write;
         staticMethodConsumer.accept("Hello World");
 
         // 4.
-        Predicate<Integer> predicate = MethodReferenceBasic::isSeniorCitizen;
+        Predicate<Integer> predicate = MethodReference::isSeniorCitizen;
         predicate.test(70);
 
         // constructor ref

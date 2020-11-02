@@ -9,7 +9,10 @@ import java.util.function.Function;
 
 import static com.org.java8.StudentDataBase.getAllStudents;
 
-public class FIFunction {
+/**
+ * take 1 argument type of different datatype are return type are different
+ */
+public class Functions {
     public static void main(String[] args) {
         // 1.
         Function<String, String> function = (name) -> name.toUpperCase();

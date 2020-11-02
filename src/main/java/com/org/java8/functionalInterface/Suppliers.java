@@ -6,7 +6,10 @@ import java.util.function.Supplier;
 
 import static java.util.Arrays.asList;
 
-public class FISupplier {
+/**
+ * no argument but only return type
+ */
+public class Suppliers {
     public static void main(String[] args) {
         Supplier<Student> studentSupplier = () -> new Student("Himansu", 2, 3.2, "Male", asList("Swimming", "basketball"));
         System.out.println(studentSupplier.get());

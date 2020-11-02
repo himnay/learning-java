@@ -15,14 +15,14 @@ public class StreamExample {
     private static Predicate<Student> gpaPredicate = (student) -> student.getGpa() >= 3.9;
 
     public static void main(String[] args) {
-        // 1. Stream Pipeline, Immutable, Cannot be used ofr add or modify original list
+        // 1. Stream Pipeline, Immutable, Cannot be used for add or modify original list
         List<Student> list = getAllStudents().stream()                         // Intermediate Operation
                 .filter(gpaPredicate)                                          // Intermediate Operation
                 .filter(gradePredicate)                                        // Intermediate Operation
                 .collect(Collectors.toList());                                 // Terminal Operation. Also starts the pipeline
         System.out.println(list);
 
-        // 2. debug
+        // 2. lambda debug using peek()
         Map<String, String> debugMap = getAllStudents().stream()
                 .peek(System.out::println)                                      // can list the intermediate stage of the pipeline
                 .filter(gpaPredicate)
@@ -45,7 +45,6 @@ public class StreamExample {
                 .flatMap(List::stream)                                              // List<List<String>> -> List<Stream>
                 .peek(System.out::println)
                 .distinct()
-                .sorted()
                 .count();                                                       // Terminal Operation. Also starts the pipeline
         System.out.println(noOfStudents);
 
@@ -56,7 +55,7 @@ public class StreamExample {
                 .collect(Collectors.toList());
         System.out.println(sortedStudent);
 
-        // 6. reduce
+        // 6. reduce. maintains a state in the memory during calculation
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         BinaryOperator<Integer> binaryOperator = (a, b) -> a * b;
         long sum = numbers.stream()
