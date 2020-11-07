@@ -1,0 +1,12 @@
+
+D
+java:S1481".Remove this unused "consumer2" local variable.(Ì”‹”
+S
+java:S1854"=Remove this useless assignment to local variable "consumer2".(Ì”‹”
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ì”‹”
+E
+java:S1611"/Remove the parentheses around the "j" parameter(Ì”‹”
+W	java:S125	"<This block of commented-out lines of code should be removed.(ˆŽÛ.8¤æ´Ø.
+g
+java:S4276"QRefactor this code to use the more specialised Functional Interface 'IntConsumer'(Ì”‹”
+]	java:S125"<This block of commented-out lines of code should be removed.(€û¥™þÿÿÿÿ8’„µØ.

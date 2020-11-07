@@ -23,3 +23,17 @@ p
 0src/main/java/com/org/java8/StudentDataBase.java,1\5\15d803d080cc56ecb3f3756c47d39725b9740297
 r
 Bsrc/main/java/com/org/java8/functionalInterface/FIBiPredicate.java,d\3\d3ff0ec3cc229693fb4ddd1b73ec754934aa85fd
+i
+9src/main/java/com/org/java8/optional/OptionalExample.java,b\a\ba3dda7271c7513a449a1dc24355ac6777cb2f01
+y
+Isrc/main/java/com/org/java8/defaultInterface/DefaultInterfaceExample.java,2\1\21c8cebfdea219bac5e1b82b123b280ba620e8c5
+t
+Dsrc/main/java/com/org/java8/defaultInterface/diamond/Interface2.java,5\5\55b7f4bf68f55ee258ed0bd59df6df8bef74ec37
+s
+Csrc/main/java/com/org/java8/defaultInterface/diamond/Client123.java,3\4\346433a16b3ba8d6084de768449165d1506a46dc
+t
+Dsrc/main/java/com/org/java8/defaultInterface/diamond/Interface1.java,4\4\440d391c4d20b695188bd95da1303b3f2ba03e65
+i
+9src/main/java/com/org/java8/lambda/LambdaRestriction.java,0\7\07ff65bfba91bfc58b4867ac69fb412999391065
+e
+5src/main/java/com/org/java8/stream/StreamExample.java,9\a\9a91b4c5705a557333c42c3343f36d226ce7e8ed

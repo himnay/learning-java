@@ -1,0 +1,30 @@
+
+W
+java:S1481 "5Remove this unused "optionalStudent2" local variable.(°ÇÊ­øÿÿÿÿ8âöéØ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÕÖ¾Øıÿÿÿÿ8‰×²Ø.
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(„•˜ûÿÿÿÿ8ÚğíØ.
+f
+java:S1854 "DRemove this useless assignment to local variable "optionalStudent2".(°ÇÊ­øÿÿÿÿ8âöéØ.
+f
+java:S18542"DRemove this useless assignment to local variable "optionalStudent5".(åáÕüÿÿÿÿ8—É›‘Ø.
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(¨›Ş8’ŞÿØ.
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(Úğˆ8‘†¡‘Ø.
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(ù•±ö8À¹ïØ.
+R
+java:S1191"5Use classes from the Java API instead of Sun classes.(Ÿ óá8¶¥ß‘Ø.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(«‹Îõ8®ÈíØ.
+]	java:S125"<This block of commented-out lines of code should be removed.(¬ÿ×Ãúÿÿÿÿ8ÛùÏØ.
+U
+java:S3655"3Call "name.isPresent()" before accessing the value.(ÕÖ¾Øıÿÿÿÿ8‰×²Ø.
+s
+java:S1128"VRemove this unused import 'com.sun.corba.se.impl.naming.cosnaming.InternalBindingKey'.(Ÿ óá8¶¥ß‘Ø.
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(òšÌà8ª¤’‘Ø.
+U
+java:S36559"3Call "bike.isPresent()" before accessing the value.(çÎã¼ùÿÿÿÿ8èĞÕ‘Ø.
+`
+java:S1854%"DRemove this useless assignment to local variable "optionalStudent3".(óÕğ8ÃÊïØ.
+Q
+java:S1481%"5Remove this unused "optionalStudent3" local variable.(óÕğ8ÃÊïØ.
+W
+java:S14812"5Remove this unused "optionalStudent5" local variable.(åáÕüÿÿÿÿ8—É›‘Ø.
+Z	java:S1069"9Replace this use of System.out or System.err by a logger.(çÎã¼ùÿÿÿÿ8èĞÕ‘Ø.
