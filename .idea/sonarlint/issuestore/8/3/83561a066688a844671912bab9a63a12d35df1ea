@@ -1,14 +1,0 @@
-
-N	java:S106"9Replace this use of System.out or System.err by a logger.(÷”…–
-S	java:S106"9Replace this use of System.out or System.err by a logger.(®›úÿÿÿÿ
-N	java:S106&"9Replace this use of System.out or System.err by a logger.(ˆÌ»
-S	java:S106)"9Replace this use of System.out or System.err by a logger.(›Óğ°şÿÿÿÿ
-S	java:S1060"9Replace this use of System.out or System.err by a logger.(›êŞÂúÿÿÿÿ
-N	java:S1062"9Replace this use of System.out or System.err by a logger.(æßÃÕ
-S	java:S1065"9Replace this use of System.out or System.err by a logger.(›Óğ°şÿÿÿÿ
-N	java:S106<"9Replace this use of System.out or System.err by a logger.(àÓ¨¨
-g
-java:S3457F"Q%n should be used in place of \n to produce the platform-specific line separator.(“Õ“
-N	java:S106F"9Replace this use of System.out or System.err by a logger.(“Õ“
-N	java:S106J"9Replace this use of System.out or System.err by a logger.(Ô¶¡å
-V	java:S125H"<This block of commented-out lines of code should be removed.(«¥Íıÿÿÿÿ

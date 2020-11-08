@@ -1,17 +1,0 @@
-
-J
-java:S1611"/Remove the parentheses around the "s" parameter(ÛÎØëÿÿÿÿÿ
-h
-java:S4276"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(¢’İ®
-D
-java:S1611"/Remove the parentheses around the "a" parameter(ÈŞu
-M	java:S106"9Replace this use of System.out or System.err by a logger.(Ø«Î&
-N	java:S106 "9Replace this use of System.out or System.err by a logger.(„íí
-N	java:S106"9Replace this use of System.out or System.err by a logger.(õÒ“½
-S	java:S106"9Replace this use of System.out or System.err by a logger.(şÇıäıÿÿÿÿ
-i
-java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(¢’İ®
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ñûúúÿÿÿÿ
-E
-java:S1611"/Remove the parentheses around the "a" parameter(¢’İ®
-S	java:S106"9Replace this use of System.out or System.err by a logger.(‹ÅÒ©øÿÿÿÿ

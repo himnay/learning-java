@@ -1,10 +1,0 @@
-
-l
-java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(œâÓÇùÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(œâÓÇùÿÿÿÿ
-l
-java:S3457,"Q%n should be used in place of \n to produce the platform-specific line separator.(óØÓ°ıÿÿÿÿ
-S	java:S106,"9Replace this use of System.out or System.err by a logger.(óØÓ°ıÿÿÿÿ
-g
-java:S3457;"Q%n should be used in place of \n to produce the platform-specific line separator.(ùä¾°
-N	java:S106;"9Replace this use of System.out or System.err by a logger.(ùä¾°
