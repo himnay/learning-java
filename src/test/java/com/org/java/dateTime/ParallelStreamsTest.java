@@ -1,0 +1,55 @@
+package com.org.java.dateTime;
+
+import com.org.java.Student;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.LongStream;
+
+import static com.org.java.StudentDataBase.getAllStudents;
+import static org.junit.jupiter.api.Assertions.*;
+
+class ParallelStreamsTest {
+
+    @Test
+    void parallelSum_producesCorrectResult() {
+        long expected = (long) 100_000 * 100_001 / 2; // Gauss formula
+        // IntStream.sum() returns int and overflows for n=100_000; use LongStream
+        long actual = LongStream.rangeClosed(1, 100_000).parallel().sum();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void parallelStream_distinctSortedActivities() {
+        List<String> activities = getAllStudents().parallelStream()
+                .map(Student::getActivities)
+                .flatMap(List::stream)
+                .distinct()
+                .sorted()
+                .collect(Collectors.toList());
+        assertFalse(activities.isEmpty());
+        assertTrue(activities.contains("swimming"));
+        // verify sorted order
+        for (int i = 1; i < activities.size(); i++) {
+            assertTrue(activities.get(i - 1).compareTo(activities.get(i)) <= 0);
+        }
+    }
+
+    @Test
+    void parallelStream_sameResultAsSequential() {
+        List<String> sequential = getAllStudents().stream()
+                .map(Student::getActivities)
+                .flatMap(List::stream)
+                .distinct().sorted()
+                .collect(Collectors.toList());
+
+        List<String> parallel = getAllStudents().parallelStream()
+                .map(Student::getActivities)
+                .flatMap(List::stream)
+                .distinct().sorted()
+                .collect(Collectors.toList());
+
+        assertEquals(sequential, parallel);
+    }
+}
