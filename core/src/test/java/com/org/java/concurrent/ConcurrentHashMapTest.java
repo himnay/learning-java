@@ -1,5 +1,6 @@
 package com.org.java.concurrent;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -19,6 +20,7 @@ class ConcurrentHashMapTest {
     }
 
     @Test
+    @DisplayName("forEach() visits every entry in the map exactly once")
     void forEach_iteratesAllEntries() {
         ConcurrentHashMap<String, String> map = buildMap();
         AtomicInteger count = new AtomicInteger();
@@ -27,12 +29,14 @@ class ConcurrentHashMapTest {
     }
 
     @Test
+    @DisplayName("mappingCount() returns the number of entries in the map")
     void mappingCount_returnsSize() {
         ConcurrentHashMap<String, String> map = buildMap();
         assertEquals(4, map.mappingCount());
     }
 
     @Test
+    @DisplayName("search() returns a transformed value for the first entry matching the predicate")
     void search_findsMatchingEntry() {
         ConcurrentHashMap<String, String> map = buildMap();
         String result = map.search(1, (k, v) ->
@@ -41,6 +45,7 @@ class ConcurrentHashMapTest {
     }
 
     @Test
+    @DisplayName("searchValues() returns the first value satisfying the given condition")
     void searchValues_findsLongValue() {
         ConcurrentHashMap<String, String> map = buildMap();
         // "solo" has length 4 > 3
@@ -49,6 +54,7 @@ class ConcurrentHashMapTest {
     }
 
     @Test
+    @DisplayName("reduce() combines all entries into a single aggregated string")
     void reduce_combinesAllEntries() {
         ConcurrentHashMap<String, String> map = buildMap();
         String reduced = map.reduce(1,
@@ -60,6 +66,7 @@ class ConcurrentHashMapTest {
     }
 
     @Test
+    @DisplayName("putIfAbsent() keeps the existing value when the key is already present")
     void putIfAbsent_doesNotOverwriteExisting() {
         ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
         map.put("key", "original");

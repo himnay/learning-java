@@ -1,5 +1,6 @@
 package com.org.java.misc;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -23,6 +24,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Files.newBufferedReader() reads back each written line in order")
     void newBufferedReader_readsLines() throws IOException {
         Path file = writeFile("sample.txt", "hello", "world");
         try (BufferedReader reader = Files.newBufferedReader(file)) {
@@ -32,6 +34,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Files.newBufferedWriter() writes content that can be read back as the exact same string")
     void newBufferedWriter_writesContent() throws IOException {
         Path file = tempDir.resolve("output.txt");
         try (BufferedWriter writer = Files.newBufferedWriter(file)) {
@@ -41,6 +44,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Files.lines() streams the correct number of lines from a file")
     void filesLines_streamsEachLine() throws IOException {
         Path file = writeFile("lines.txt", "alpha", "beta", "gamma");
         try (Stream<String> lines = Files.lines(file)) {
@@ -50,6 +54,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Files.lines() combined with a content filter only keeps matching lines")
     void filesLines_filtersByContent() throws IOException {
         Path file = writeFile("script.txt", "print('a')", "var x = 1", "print('b')");
         try (Stream<String> lines = Files.lines(file)) {
@@ -61,6 +66,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("BufferedReader.lines() combined with a filter counts only the matching lines")
     void readerLines_countsPrintOccurrences() throws IOException {
         Path file = writeFile("nashorn.js", "print('a');", "var x = 1;", "print('b');");
         try (BufferedReader reader = Files.newBufferedReader(file)) {
@@ -70,6 +76,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Reading all lines, appending one, and rewriting produces the expected augmented file")
     void readAllLinesAndWrite_appendsLine() throws IOException {
         Path src = writeFile("original.txt", "line1", "line2");
         List<String> lines = Files.readAllLines(src);
@@ -81,6 +88,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Files.walk() with a depth limit finds files in both the root and a subdirectory")
     void filesWalk_findsFilesUpToDepth() throws IOException {
         Files.createDirectories(tempDir.resolve("sub"));
         writeFile("a.js", "print('a')");
@@ -95,6 +103,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Files.find() with a matcher only returns files satisfying the given predicate")
     void filesFind_findsMatchingFiles() throws IOException {
         writeFile("match.txt", "content");
         writeFile("other.log", "content");
@@ -106,6 +115,7 @@ class FilesTest {
     }
 
     @Test
+    @DisplayName("Files.list() lists exactly the direct entries of a directory")
     void filesList_listsDirectoryEntries() throws IOException {
         writeFile("x.txt", "x");
         writeFile("y.txt", "y");

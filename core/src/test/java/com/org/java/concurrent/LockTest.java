@@ -1,5 +1,6 @@
 package com.org.java.concurrent;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -15,6 +16,7 @@ class LockTest {
     private static final int NUM_INCREMENTS = 10_000;
 
     @Test
+    @DisplayName("ReentrantLock serializes concurrent increments to produce the exact expected count")
     void reentrantLock_guaranteesCorrectCount() {
         ReentrantLock lock = new ReentrantLock();
         int[] count = {0};
@@ -29,6 +31,7 @@ class LockTest {
     }
 
     @Test
+    @DisplayName("tryLock() returns false when another thread is already holding the lock")
     void tryLock_returnsFalseWhenLockHeld() throws InterruptedException {
         ReentrantLock lock = new ReentrantLock();
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -50,6 +53,7 @@ class LockTest {
     }
 
     @Test
+    @DisplayName("ReentrantReadWriteLock lets a reader observe the value written under the write lock")
     void readWriteLock_allowsConcurrentReads_blocksWrite() {
         ReadWriteLock lock = new ReentrantReadWriteLock();
         Map<String, String> map = new HashMap<>();
@@ -70,6 +74,7 @@ class LockTest {
     }
 
     @Test
+    @DisplayName("StampedLock allows a write followed by a read to see the written value")
     void stampedLock_write_thenRead() {
         StampedLock lock = new StampedLock();
         Map<String, String> map = new HashMap<>();
@@ -90,6 +95,7 @@ class LockTest {
     }
 
     @Test
+    @DisplayName("StampedLock tryConvertToWriteLock() upgrades a read stamp so the value can be updated")
     void stampedLock_tryConvertToWrite_updatesValue() {
         StampedLock lock = new StampedLock();
         int[] count = {0};

@@ -1,5 +1,6 @@
 package com.org.java.concurrent;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ThreadsTest {
 
     @Test
+    @DisplayName("A new Thread executes its Runnable on a thread distinct from the calling thread")
     void thread_executesRunnableOnSeparateThread() throws InterruptedException {
         List<String> threadNames = new ArrayList<>();
         CountDownLatch latch = new CountDownLatch(1);
@@ -29,6 +31,7 @@ class ThreadsTest {
     }
 
     @Test
+    @DisplayName("Calling run() directly on a Runnable executes it on the current thread, not a new one")
     void runnable_runOnCurrentThread_usesMainThreadName() {
         List<String> names = new ArrayList<>();
         Runnable r = () -> names.add(Thread.currentThread().getName());
@@ -38,6 +41,7 @@ class ThreadsTest {
     }
 
     @Test
+    @DisplayName("A sleeping thread still counts down the latch once it wakes up and completes")
     void thread_sleepDoesNotPreventCompletion() throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
         Thread t = new Thread(() -> {

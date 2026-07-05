@@ -1,5 +1,6 @@
 package com.org.java.methodReference;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ class StaticMethodReferenceTest {
     }
 
     @Test
+    @DisplayName("isPrime() correctly distinguishes prime numbers from non-prime numbers")
     void isPrime_identifiesPrimes() {
         assertTrue(isPrime(2));
         assertTrue(isPrime(3));
@@ -37,6 +39,7 @@ class StaticMethodReferenceTest {
     }
 
     @Test
+    @DisplayName("findPrimeNumbers() filters a list down to just its prime values")
     void findPrimeNumbers_returnsOnlyPrimes() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16);
         List<Integer> primes = findPrimeNumbers(numbers,
@@ -45,6 +48,7 @@ class StaticMethodReferenceTest {
     }
 
     @Test
+    @DisplayName("findPrimeNumbers() returns an empty list when given an empty input list")
     void findPrimeNumbers_emptyInputReturnsEmptyList() {
         List<Integer> primes = findPrimeNumbers(List.of(),
                 (Predicate<Integer>) n -> isPrime(n));

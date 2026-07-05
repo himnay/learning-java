@@ -1,5 +1,6 @@
 package com.org.java.concurrent;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -14,6 +15,7 @@ class SynchronizedTest {
     private static final int NUM_INCREMENTS = 10_000;
 
     @Test
+    @DisplayName("A synchronized block on an instance lock guarantees the exact expected increment count")
     void synchronizedMethod_guaranteesCorrectCount() {
         AtomicInteger count = new AtomicInteger(0);
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -30,6 +32,7 @@ class SynchronizedTest {
     }
 
     @Test
+    @DisplayName("A synchronized block on the class object guarantees the exact expected increment count")
     void synchronizedBlock_onClassObject_guaranteesCorrectCount() {
         int[] count = {0};
         ExecutorService executor = Executors.newFixedThreadPool(2);

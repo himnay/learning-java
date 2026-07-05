@@ -1,5 +1,6 @@
 package com.org.java.concurrent;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -14,6 +15,7 @@ class AtomicTest {
     private static final int NUM_INCREMENTS = 1000;
 
     @Test
+    @DisplayName("AtomicInteger increments correctly under concurrent access from multiple threads")
     void incrementAndGet_isThreadSafe() {
         AtomicInteger atomicInt = new AtomicInteger(0);
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -23,6 +25,7 @@ class AtomicTest {
     }
 
     @Test
+    @DisplayName("accumulateAndGet sums all concurrently submitted values using Integer::sum")
     void accumulateAndGet_sumsAllSubmittedValues() {
         AtomicInteger atomicInt = new AtomicInteger(0);
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -35,6 +38,7 @@ class AtomicTest {
     }
 
     @Test
+    @DisplayName("updateAndGet applies the update function consistently across concurrent calls")
     void updateAndGet_addsConstantPerUpdate() {
         AtomicInteger atomicInt = new AtomicInteger(0);
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -45,6 +49,7 @@ class AtomicTest {
     }
 
     @Test
+    @DisplayName("compareAndSet succeeds and updates the value when the expected value matches")
     void compareAndSet_succeedsWhenExpectedMatches() {
         AtomicInteger ai = new AtomicInteger(0);
         assertTrue(ai.compareAndSet(0, 10));
@@ -52,6 +57,7 @@ class AtomicTest {
     }
 
     @Test
+    @DisplayName("compareAndSet fails and leaves the value unchanged when the expected value does not match")
     void compareAndSet_failsWhenExpectedDoesNotMatch() {
         AtomicInteger ai = new AtomicInteger(5);
         assertFalse(ai.compareAndSet(0, 10));

@@ -1,5 +1,6 @@
 package com.org.java.misc;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.lang.annotation.*;
@@ -24,6 +25,7 @@ class AnnotationsTest {
     static class Person {}
 
     @Test
+    @DisplayName("getAnnotation() for a repeatable annotation type returns null when it appears more than once")
     void getAnnotation_returnsNullForRepeatable() {
         // Direct @Hint is not accessible when repeated; container @Hints wraps them
         Hint hint = Person.class.getAnnotation(Hint.class);
@@ -31,6 +33,7 @@ class AnnotationsTest {
     }
 
     @Test
+    @DisplayName("The generated container annotation holds all repeated @Hint values in declaration order")
     void getAnnotation_containerHoldsAllHints() {
         Hints hints = Person.class.getAnnotation(Hints.class);
         assertNotNull(hints);
@@ -40,6 +43,7 @@ class AnnotationsTest {
     }
 
     @Test
+    @DisplayName("getAnnotationsByType() returns every repeated @Hint annotation directly")
     void getAnnotationsByType_returnsAllRepeatableAnnotations() {
         Hint[] hints = Person.class.getAnnotationsByType(Hint.class);
         assertEquals(2, hints.length);
@@ -48,6 +52,7 @@ class AnnotationsTest {
     }
 
     @Test
+    @DisplayName("The number of repeated annotations returned matches the number of declarations")
     void repeatableAnnotation_countMatchesDeclarations() {
         int count = Person.class.getAnnotationsByType(Hint.class).length;
         assertEquals(2, count);

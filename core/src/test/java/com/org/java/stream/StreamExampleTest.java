@@ -1,6 +1,7 @@
 package com.org.java.stream;
 
 import com.org.java.Student;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -16,6 +17,7 @@ class StreamExampleTest {
     private static final Predicate<Student> gpaPredicate  = s -> s.getGpa() >= 3.9;
 
     @Test
+    @DisplayName("Chaining two filter() calls returns only students satisfying both predicates")
     void filterChain_returnsStudentsMatchingBothPredicates() {
         List<Student> result = getAllStudents().stream()
                 .filter(gpaPredicate)
@@ -27,6 +29,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("map() to uppercase followed by toSet() deduplicates student names that occur more than once")
     void mapToSet_deduplicatesUppercasedNames() {
         Set<String> names = getAllStudents().stream()
                 .map(Student::getName)
@@ -38,6 +41,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("flatMap() combined with distinct() counts the unique activities among filtered students")
     void flatMapDistinct_countsUniqueActivities() {
         List<Student> filtered = getAllStudents().stream()
                 .filter(gpaPredicate).filter(gradePredicate)
@@ -52,6 +56,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("sorted() by name produces students in alphabetical order")
     void sortedByName_producesAlphabeticalOrder() {
         List<Student> sorted = getAllStudents().stream()
                 .filter(gpaPredicate).filter(gradePredicate)
@@ -64,6 +69,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("reduce() with a multiplication accumulator computes the product of a list of integers")
     void reduce_computesProductOfList() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         long product = numbers.stream().reduce(1, (a, b) -> a * b);
@@ -71,6 +77,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("reduce() without an identity finds the student with the highest GPA")
     void reduce_findsStudentWithHighestGpa() {
         Optional<Student> top = getAllStudents().stream()
                 .reduce((s1, s2) -> s1.getGpa() > s2.getGpa() ? s1 : s2);
@@ -80,6 +87,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("limit() restricts the stream to only the first three elements before summing")
     void limit_sumsOnlyFirstThreeElements() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         int sum = numbers.stream().limit(3).reduce(0, Integer::sum);
@@ -87,6 +95,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("skip() excludes the first three elements before summing the remainder")
     void skip_sumsAfterSkippingFirstThree() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         int sum = numbers.stream().skip(3).reduce(0, Integer::sum);
@@ -94,23 +103,27 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("allMatch() confirms whether every student's GPA meets a given threshold")
     void allMatch_trueWhenAllStudentsHaveGpaAboveThreshold() {
         assertTrue(getAllStudents().stream().allMatch(s -> s.getGpa() >= 3.5));
         assertFalse(getAllStudents().stream().allMatch(s -> s.getGpa() >= 4.0));
     }
 
     @Test
+    @DisplayName("anyMatch() confirms at least one student has a perfect 4.0 GPA")
     void anyMatch_trueWhenAtLeastOneStudentHasPerfectGpa() {
         assertTrue(getAllStudents().stream().anyMatch(s -> s.getGpa() >= 4.0));
     }
 
     @Test
+    @DisplayName("noneMatch() is false when some students match, but true for a stricter threshold no one exceeds")
     void noneMatch_falseWhenSomeStudentsHaveHighGpa() {
         assertFalse(getAllStudents().stream().noneMatch(s -> s.getGpa() >= 4.0));
         assertTrue(getAllStudents().stream().noneMatch(s -> s.getGpa() > 4.0));
     }
 
     @Test
+    @DisplayName("findFirst() returns the first student in the stream whose GPA meets the threshold")
     void findFirst_returnsFirstHighGpaStudent() {
         Optional<Student> first = getAllStudents().stream()
                 .filter(s -> s.getGpa() >= 3.9)
@@ -120,6 +133,7 @@ class StreamExampleTest {
     }
 
     @Test
+    @DisplayName("Collectors.toMap() builds a name-to-gender map for the filtered students")
     void collectToMap_mapsNameToGender() {
         Map<String, String> nameGender = getAllStudents().stream()
                 .filter(gpaPredicate).filter(gradePredicate)

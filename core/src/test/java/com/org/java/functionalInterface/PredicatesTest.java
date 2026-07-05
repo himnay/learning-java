@@ -1,6 +1,7 @@
 package com.org.java.functionalInterface;
 
 import com.org.java.Student;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -16,12 +17,14 @@ class PredicatesTest {
     private final Predicate<Integer> isDivBy5  = a -> a % 5 == 0;
 
     @Test
+    @DisplayName("A Predicate correctly identifies even and odd numbers")
     void test_evenNumber() {
         assertTrue(isEven.test(2));
         assertFalse(isEven.test(3));
     }
 
     @Test
+    @DisplayName("and() requires both the even and divisible-by-5 predicates to pass")
     void and_bothPredicatesMustBeTrue() {
         assertTrue(isEven.and(isDivBy5).test(20));  // 20: even ✓ and div5 ✓
         assertTrue(isEven.and(isDivBy5).test(10));  // 10: even ✓ and div5 ✓
@@ -30,6 +33,7 @@ class PredicatesTest {
     }
 
     @Test
+    @DisplayName("or() passes when either the even or divisible-by-5 predicate is satisfied")
     void or_eitherPredicateSuffices() {
         assertTrue(isEven.or(isDivBy5).test(5));   // divisible by 5
         assertTrue(isEven.or(isDivBy5).test(4));   // even
@@ -37,6 +41,7 @@ class PredicatesTest {
     }
 
     @Test
+    @DisplayName("negate() inverts the result of a predicate, including a combined and() predicate")
     void negate_invertsResult() {
         assertFalse(isEven.negate().test(2));
         assertTrue(isEven.negate().test(3));
@@ -44,6 +49,7 @@ class PredicatesTest {
     }
 
     @Test
+    @DisplayName("A student Predicate filters the stream down to only students with grade level 3 or higher")
     void studentPredicate_filtersHighGradeStudents() {
         Predicate<Student> gradeAtLeast3 = s -> s.getGradeLevel() >= 3;
         List<Student> result = getAllStudents().stream()

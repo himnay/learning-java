@@ -1,5 +1,6 @@
 package com.org.java.concurrent;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.*;
@@ -13,6 +14,7 @@ class SemaphoreTest {
     private static final int NUM_INCREMENTS = 1_000;
 
     @Test
+    @DisplayName("A semaphore with a single permit guarantees mutually exclusive access to the counter")
     void semaphore1_guaranteesExclusiveAccess() {
         Semaphore semaphore = new Semaphore(1);
         AtomicInteger count = new AtomicInteger(0);
@@ -34,6 +36,7 @@ class SemaphoreTest {
     }
 
     @Test
+    @DisplayName("A semaphore with five permits never lets more than five threads hold a permit concurrently")
     void semaphore5_allowsUpToFiveConcurrentPermits() {
         Semaphore semaphore = new Semaphore(5);
         AtomicInteger maxConcurrent = new AtomicInteger(0);
@@ -60,6 +63,7 @@ class SemaphoreTest {
     }
 
     @Test
+    @DisplayName("acquire() and release() adjust the number of available permits as expected")
     void acquire_release_basicBehavior() throws InterruptedException {
         Semaphore sem = new Semaphore(2);
         sem.acquire();
