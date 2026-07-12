@@ -4,11 +4,11 @@
 
 ## Table of contents
 
-1. [Project Structure](#project-structure)
-2. [Build & Run](#build--run)
-3. [Feature Coverage](#feature-coverage)
-4. [Java Version Quick Reference](#java-version-quick-reference)
-5. [Design Decisions](#design-decisions)
+1. 🏗️ [Project Structure](#project-structure)
+2. 🔨 [Build & Run](#build--run)
+3. 🧪 [Feature Coverage](#feature-coverage)
+4. 📚 [Java Version Quick Reference](#java-version-quick-reference)
+5. 🏗️ [Design Decisions](#design-decisions)
 
 A comprehensive, test-driven learning repository covering every major Java language and API feature from **Java 8 (2014)** through **Java 26 (2026)**. Each concept is expressed as a JUnit 5 test with meaningful assertions — no bare `System.out.println`.
 
