@@ -118,10 +118,14 @@ mvn compile
 | `java9/Java9OptionalAndInterfaceTest` | `Optional.ifPresentOrElse`, `Optional.or`, `Optional.stream`; private interface methods, private static interface methods |
 
 **Key concepts:**
+<ul>
+
 - Collection factory methods create compact, immutable collections; duplicates or nulls throw immediately
 - `takeWhile`/`dropWhile` are lazy and ordered — they short-circuit on the first non-matching element
 - `Optional.stream()` enables flat-mapping collections of optionals
 - Private interface methods enable code sharing between default/static methods without exposing implementation
+
+</ul>
 
 ---
 
@@ -133,9 +137,13 @@ mvn compile
 | `java10/Java10CollectionsTest` | `List/Set/Map.copyOf`, `Collectors.toUnmodifiableList/Set/Map`, `Optional.orElseThrow()` (no-arg) |
 
 **Key concepts:**
+<ul>
+
 - `var` infers the **static type** at compile time — it is not dynamic typing; the compiler still enforces type safety
 - `var` only works for local variables (not fields, method params, or return types)
 - `copyOf` methods create a snapshot — mutations to the original are not reflected in the copy
+
+</ul>
 
 ---
 
@@ -147,10 +155,14 @@ mvn compile
 | `java11/Java11ApiTest`    | `Files.readString`, `Files.writeString`, `Path.of`, `Predicate.not`, `Optional.isEmpty`, `Collection.toArray(IntFunction)` |
 
 **Key concepts:**
+<ul>
+
 - `strip` handles Unicode whitespace (e.g., ` `) while `trim` only handles ASCII ≤ ` `
 - `lines()` returns a `Stream<String>` — lazy and efficient for large files
 - `Predicate.not(String::isBlank)` is a cleaner alternative to `s -> !s.isBlank()`
 - `Files.readString`/`writeString` eliminate boilerplate for simple file operations
+
+</ul>
 
 ---
 
@@ -161,9 +173,13 @@ mvn compile
 | `java12/Java12FeaturesTest` | `String.indent(n)`, `String.transform(fn)`, `Collectors.teeing`, `Files.mismatch`, switch expression preview |
 
 **Key concepts:**
+<ul>
+
 - `Collectors.teeing` processes a stream in two collectors simultaneously then merges results — ideal for computing two aggregates in one pass
 - `String.transform` enables fluent pipeline chaining on strings
 - `String.indent(n)` always ensures a trailing newline
+
+</ul>
 
 ---
 
@@ -176,8 +192,12 @@ mvn compile
 | `java14/StringFormattedTest`           | `String.formatted(args)` as instance alternative to `String.format`           |
 
 **Key concepts:**
+<ul>
+
 - Switch expressions eliminate fall-through bugs; arrow branches are exhaustive and use `yield` for multi-statement results
 - Pattern variables from `instanceof` are scoped to the branch where they are matched
+
+</ul>
 
 ---
 
@@ -188,8 +208,12 @@ mvn compile
 | `java15/TextBlocksTest` | `"""..."""` multiline strings, incidental whitespace stripping, `\` line continuation, `\s` trailing space marker, `stripIndent()`, `translateEscapes()` |
 
 **Key concepts:**
+<ul>
+
 - The compiler determines the common indentation of all non-empty lines and strips it — the closing `"""` position sets the minimum indentation
 - `\` at end of line joins lines without a newline in the result; `\s` forces a trailing space to be preserved
+
+</ul>
 
 ---
 
@@ -201,9 +225,13 @@ mvn compile
 | `java16/StreamEnhancementsTest` | `Stream.toList()` (unmodifiable), `Stream.mapMulti()`                                                                                              |
 
 **Key concepts:**
+<ul>
+
 - Records are **transparent carriers** for immutable data; they cannot extend classes (only implement interfaces)
 - The compact constructor validates but does not need to assign — assignment is done implicitly
 - `Stream.toList()` is slightly more efficient than `collect(Collectors.toList())` and always returns an unmodifiable list
+
+</ul>
 
 ---
 
@@ -215,8 +243,12 @@ mvn compile
 | `java17/RandomGeneratorTest` | `RandomGenerator` interface, `RandomGeneratorFactory`, `nextInt(bound)`, `nextDouble`, `ints()/longs()/doubles()` streams |
 
 **Key concepts:**
+<ul>
+
 - Sealed types restrict which classes can implement/extend a type — the compiler can verify exhaustiveness in switch expressions
 - `RandomGenerator` is an interface; use `RandomGeneratorFactory.of("Xoshiro256PlusPlus")` to select algorithm; legacy `Random`/`ThreadLocalRandom`/`SecureRandom` implement it
+
+</ul>
 
 ---
 
@@ -230,9 +262,13 @@ mvn compile
 | `java21/PatternMatchingSwitchTest` | Type patterns in switch, guarded patterns (`when`), `null` in switch, exhaustiveness with sealed types                            |
 
 **Key concepts:**
+<ul>
+
 - Virtual threads are **lightweight JVM-managed threads** (not OS threads); you can create millions; blocking I/O automatically unmounts without pinning a platform thread
 - Sequenced collections add a stable notion of first/last element to `List`, `Deque`, `LinkedHashSet`, `LinkedHashMap` etc.
 - Record patterns allow destructuring in one step: `if (obj instanceof Point(int x, int y))` extracts both components
+
+</ul>
 
 ---
 
@@ -243,7 +279,11 @@ mvn compile
 | `java22/UnnamedVariablesTest` | `_` in catch, enhanced-for, try-with-resources, lambda, pattern matching |
 
 **Key concepts:**
+<ul>
+
 - `_` signals intentional non-use of a variable — the compiler enforces it cannot be read; improves clarity and eliminates "unused variable" warnings
+
+</ul>
 
 ---
 
@@ -255,8 +295,12 @@ mvn compile
 | `java23/StructuredConcurrencyTest` | `StructuredTaskScope.ShutdownOnFailure`, `fork`, `join`, `throwIfFailed`, `ShutdownOnSuccess`               |
 
 **Key concepts:**
+<ul>
+
 - `ScopedValue` is the modern, safe replacement for `ThreadLocal`: values are bound for a specific scope and are automatically unbound; child threads inherit values; no memory leak risk
 - `StructuredTaskScope` ensures all forked subtasks complete (or are cancelled) before the scope closes — structured concurrency makes concurrent code read like sequential code
+
+</ul>
 
 ---
 
@@ -267,8 +311,12 @@ mvn compile
 | `java24/StreamGatherersTest` | `Stream.gather()`, built-in `Gatherers.windowFixed`, `windowSliding`, `scan`, `fold`, `mapConcurrent`; custom `Gatherer` |
 
 **Key concepts:**
+<ul>
+
 - Stream gatherers are a flexible intermediate operation beyond what `filter`/`map`/`flatMap` support: sliding windows, running totals, stateful transformations
 - `Gatherer` has four parts: initializer (state), integrator (process element), combiner (parallel merge), finisher (emit remaining)
+
+</ul>
 
 ---
 
@@ -279,8 +327,12 @@ mvn compile
 | `java25/Java25FeaturesTest` | Primitive types in patterns (`instanceof int i`, `switch` on primitive wrappers with type pattern), finalized structured concurrency and scoped values |
 
 **Key concepts:**
+<ul>
+
 - Primitive type patterns allow matching and binding on unboxed primitives — no NullPointerException risk since primitives cannot be null
 - Java 25 is an LTS release: virtual threads, records, sealed classes, pattern matching, text blocks, structured concurrency, scoped values are all production-stable
+
+</ul>
 
 ---
 
@@ -291,8 +343,12 @@ mvn compile
 | `java26/Java26FeaturesTest` | Module import declarations (`import module java.base`), flexible constructor bodies, latest refinements |
 
 **Key concepts:**
+<ul>
+
 - Module imports (`import module M`) bulk-import all exported packages of a module — useful for learning/scripting scenarios
 - Flexible constructor bodies allow statements before `super()`/`this()` calls as long as they don't reference the instance being initialized
+
+</ul>
 
 ---
 
@@ -326,8 +382,12 @@ mvn compile
 <a id="design-decisions"></a>
 ## 5. 🏗️ Design Decisions
 
+<ul>
+
 - **Tests as documentation**: every concept lives in a `@Test` method with a `@DisplayName` explaining the rule being demonstrated
 - **Assertions over println**: every test asserts a concrete outcome — the test suite is the specification
 - **Nested types**: Records, sealed classes, and helper interfaces are defined as `static` nested types inside test classes to keep related code co-located
 - **No mocks**: tests use real JDK APIs; for I/O tests, JUnit 5's `@TempDir` provides isolated temporary directories
 - **Preview features**: the project compiles with `--enable-preview` to cover features in their preview phase alongside finalized ones
+
+</ul>
