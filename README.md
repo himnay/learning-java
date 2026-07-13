@@ -118,6 +118,7 @@ mvn compile
 | `java9/Java9OptionalAndInterfaceTest` | `Optional.ifPresentOrElse`, `Optional.or`, `Optional.stream`; private interface methods, private static interface methods |
 
 **Key concepts:**
+
 <ul>
 
 - Collection factory methods create compact, immutable collections; duplicates or nulls throw immediately
@@ -137,6 +138,7 @@ mvn compile
 | `java10/Java10CollectionsTest` | `List/Set/Map.copyOf`, `Collectors.toUnmodifiableList/Set/Map`, `Optional.orElseThrow()` (no-arg) |
 
 **Key concepts:**
+
 <ul>
 
 - `var` infers the **static type** at compile time — it is not dynamic typing; the compiler still enforces type safety
@@ -155,6 +157,7 @@ mvn compile
 | `java11/Java11ApiTest`    | `Files.readString`, `Files.writeString`, `Path.of`, `Predicate.not`, `Optional.isEmpty`, `Collection.toArray(IntFunction)` |
 
 **Key concepts:**
+
 <ul>
 
 - `strip` handles Unicode whitespace (e.g., ` `) while `trim` only handles ASCII ≤ ` `
@@ -173,6 +176,7 @@ mvn compile
 | `java12/Java12FeaturesTest` | `String.indent(n)`, `String.transform(fn)`, `Collectors.teeing`, `Files.mismatch`, switch expression preview |
 
 **Key concepts:**
+
 <ul>
 
 - `Collectors.teeing` processes a stream in two collectors simultaneously then merges results — ideal for computing two aggregates in one pass
@@ -192,6 +196,7 @@ mvn compile
 | `java14/StringFormattedTest`           | `String.formatted(args)` as instance alternative to `String.format`           |
 
 **Key concepts:**
+
 <ul>
 
 - Switch expressions eliminate fall-through bugs; arrow branches are exhaustive and use `yield` for multi-statement results
@@ -208,6 +213,7 @@ mvn compile
 | `java15/TextBlocksTest` | `"""..."""` multiline strings, incidental whitespace stripping, `\` line continuation, `\s` trailing space marker, `stripIndent()`, `translateEscapes()` |
 
 **Key concepts:**
+
 <ul>
 
 - The compiler determines the common indentation of all non-empty lines and strips it — the closing `"""` position sets the minimum indentation
@@ -225,6 +231,7 @@ mvn compile
 | `java16/StreamEnhancementsTest` | `Stream.toList()` (unmodifiable), `Stream.mapMulti()`                                                                                              |
 
 **Key concepts:**
+
 <ul>
 
 - Records are **transparent carriers** for immutable data; they cannot extend classes (only implement interfaces)
@@ -243,6 +250,7 @@ mvn compile
 | `java17/RandomGeneratorTest` | `RandomGenerator` interface, `RandomGeneratorFactory`, `nextInt(bound)`, `nextDouble`, `ints()/longs()/doubles()` streams |
 
 **Key concepts:**
+
 <ul>
 
 - Sealed types restrict which classes can implement/extend a type — the compiler can verify exhaustiveness in switch expressions
@@ -262,6 +270,7 @@ mvn compile
 | `java21/PatternMatchingSwitchTest` | Type patterns in switch, guarded patterns (`when`), `null` in switch, exhaustiveness with sealed types                            |
 
 **Key concepts:**
+
 <ul>
 
 - Virtual threads are **lightweight JVM-managed threads** (not OS threads); you can create millions; blocking I/O automatically unmounts without pinning a platform thread
@@ -279,6 +288,7 @@ mvn compile
 | `java22/UnnamedVariablesTest` | `_` in catch, enhanced-for, try-with-resources, lambda, pattern matching |
 
 **Key concepts:**
+
 <ul>
 
 - `_` signals intentional non-use of a variable — the compiler enforces it cannot be read; improves clarity and eliminates "unused variable" warnings
@@ -295,6 +305,7 @@ mvn compile
 | `java23/StructuredConcurrencyTest` | `StructuredTaskScope.ShutdownOnFailure`, `fork`, `join`, `throwIfFailed`, `ShutdownOnSuccess`               |
 
 **Key concepts:**
+
 <ul>
 
 - `ScopedValue` is the modern, safe replacement for `ThreadLocal`: values are bound for a specific scope and are automatically unbound; child threads inherit values; no memory leak risk
@@ -311,6 +322,7 @@ mvn compile
 | `java24/StreamGatherersTest` | `Stream.gather()`, built-in `Gatherers.windowFixed`, `windowSliding`, `scan`, `fold`, `mapConcurrent`; custom `Gatherer` |
 
 **Key concepts:**
+
 <ul>
 
 - Stream gatherers are a flexible intermediate operation beyond what `filter`/`map`/`flatMap` support: sliding windows, running totals, stateful transformations
@@ -327,6 +339,7 @@ mvn compile
 | `java25/Java25FeaturesTest` | Primitive types in patterns (`instanceof int i`, `switch` on primitive wrappers with type pattern), finalized structured concurrency and scoped values |
 
 **Key concepts:**
+
 <ul>
 
 - Primitive type patterns allow matching and binding on unboxed primitives — no NullPointerException risk since primitives cannot be null
@@ -343,6 +356,7 @@ mvn compile
 | `java26/Java26FeaturesTest` | Module import declarations (`import module java.base`), flexible constructor bodies, latest refinements |
 
 **Key concepts:**
+
 <ul>
 
 - Module imports (`import module M`) bulk-import all exported packages of a module — useful for learning/scripting scenarios
