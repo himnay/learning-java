@@ -14,7 +14,8 @@ A comprehensive, test-driven learning repository covering every major Java langu
 
 ---
 
-## Project Structure
+<a id="project-structure"></a>
+## 1. 🏗️ Project Structure
 
 ```
 learning-java/
@@ -39,7 +40,8 @@ learning-java/
         └── java26/                 ← Java 26 features
 ```
 
-## Build & Run
+<a id="build--run"></a>
+## 2. 🔨 Build & Run
 
 ```bash
 # Run all tests
@@ -56,7 +58,8 @@ mvn compile
 
 ---
 
-## Feature Coverage
+<a id="feature-coverage"></a>
+## 3. 🧪 Feature Coverage
 
 ---
 
@@ -293,7 +296,8 @@ mvn compile
 
 ---
 
-## Java Version Quick Reference
+<a id="java-version-quick-reference"></a>
+## 4. 📚 Java Version Quick Reference
 
 | Version     | Release  | Type    | Key Features                                                                                                         |
 |-------------|----------|---------|----------------------------------------------------------------------------------------------------------------------|
@@ -319,7 +323,8 @@ mvn compile
 
 ---
 
-## Design Decisions
+<a id="design-decisions"></a>
+## 5. 🏗️ Design Decisions
 
 - **Tests as documentation**: every concept lives in a `@Test` method with a `@DisplayName` explaining the rule being demonstrated
 - **Assertions over println**: every test asserts a concrete outcome — the test suite is the specification
