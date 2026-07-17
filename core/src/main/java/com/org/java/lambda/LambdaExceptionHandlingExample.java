@@ -1,6 +1,6 @@
 package com.org.java.lambda;
 
-import com.learnJava.data.Student;
+import com.org.java.data.Student;
 
 import java.util.ArrayList;
 import java.util.List;

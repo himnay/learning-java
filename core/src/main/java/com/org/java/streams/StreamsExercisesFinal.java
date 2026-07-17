@@ -1,8 +1,8 @@
 package com.org.java.streams;
 
-import com.learnJava.data.Student;
-import com.learnJava.data.StudentDataBase;
-import com.learnJava.data.Bike;
+import com.org.java.data.Student;
+import com.org.java.data.StudentDataBase;
+import com.org.java.data.Bike;
 
 import java.util.List;
 import java.util.Set;

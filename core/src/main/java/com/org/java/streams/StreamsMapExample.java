@@ -1,7 +1,7 @@
 package com.org.java.streams;
 
-import com.learnJava.data.Student;
-import com.learnJava.data.StudentDataBase;
+import com.org.java.data.Student;
+import com.org.java.data.StudentDataBase;
 
 import java.util.ArrayList;
 import java.util.List;

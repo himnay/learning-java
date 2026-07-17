@@ -1,6 +1,6 @@
 package com.org.java.constructorreference;
 
-import com.learnJava.data.Student;
+import com.org.java.data.Student;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
