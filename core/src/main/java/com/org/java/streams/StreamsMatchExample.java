@@ -5,6 +5,7 @@ import com.org.java.data.StudentDataBase;
 public class StreamsMatchExample {
 
 
+    /** Returns the all match. */
     public static boolean allMatch(){
 
         boolean result = StudentDataBase.getAllStudents().stream()
@@ -13,6 +14,7 @@ public class StreamsMatchExample {
         return result;
     }
 
+    /** Returns the any match. */
     public static boolean anyMatch(){
 
         boolean result = StudentDataBase.getAllStudents().stream()
@@ -21,6 +23,7 @@ public class StreamsMatchExample {
         return result;
     }
 
+    /** Returns the none match. */
     public static boolean noneMatch(){
 
         boolean result = StudentDataBase.getAllStudents().stream()
@@ -29,6 +32,7 @@ public class StreamsMatchExample {
         return result;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println("Result of allMatch : " + allMatch());

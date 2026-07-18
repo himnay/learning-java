@@ -9,6 +9,7 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamsOfGenerateIterateExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Stream<String> stringStream = Stream.of("adam","dan","jenny","dave");

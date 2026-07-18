@@ -4,6 +4,7 @@ package com.org.interview.ch05;
 // If the number cannot be represented accurately in binary, print "ERROR".
 public class Q5_2_BinaryToString {
 
+    /** Prints binary. */
     public static String printBinary(String val) {
         int dotPos = val.indexOf('.');
         int intPart = 0;
@@ -47,6 +48,7 @@ public class Q5_2_BinaryToString {
         return intStr.toString() + "." + decStr.toString();
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         System.out.println(printBinary("19.25")); // 10011.01
         System.out.println(printBinary("3.72"));  // ERROR

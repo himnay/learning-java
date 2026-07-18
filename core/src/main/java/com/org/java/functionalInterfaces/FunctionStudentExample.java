@@ -24,6 +24,7 @@ public class FunctionStudentExample {
 
     });
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(function.apply(StudentDataBase.getAllStudents()));

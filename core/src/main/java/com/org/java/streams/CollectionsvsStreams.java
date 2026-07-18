@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 public class CollectionsvsStreams {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         ArrayList<String> names = new ArrayList<>();

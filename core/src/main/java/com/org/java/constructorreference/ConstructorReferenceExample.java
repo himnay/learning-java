@@ -13,6 +13,7 @@ public class ConstructorReferenceExample {
 
     //Student student = Student::new;
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(studentSupplier.get());

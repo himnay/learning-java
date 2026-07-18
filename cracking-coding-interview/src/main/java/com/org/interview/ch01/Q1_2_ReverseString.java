@@ -3,6 +3,7 @@ package com.org.interview.ch01;
 // Q1.2 Write code to reverse a C-Style String.
 public class Q1_2_ReverseString {
 
+    /** Reverses. */
     public static String reverse(String s) {
         if (s == null || s.isEmpty()) return s;
         char[] chars = s.toCharArray();
@@ -17,6 +18,7 @@ public class Q1_2_ReverseString {
         return new String(chars);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         String s = "1234567890asdfghjkl";
         System.out.println(reverse(s));

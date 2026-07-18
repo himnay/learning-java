@@ -6,6 +6,7 @@ public class Q8_5_Parentheses {
 
     private static char[] buffer;
 
+    /** Prints parentheses. */
     public static void printParentheses(int left, int right, int cnt) {
         if (left < 0 || right < left) return;
         if (left == 0 && right == 0) {
@@ -22,6 +23,7 @@ public class Q8_5_Parentheses {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int n = 3;
         buffer = new char[n * 2];

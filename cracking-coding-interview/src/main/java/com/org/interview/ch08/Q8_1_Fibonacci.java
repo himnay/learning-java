@@ -4,6 +4,7 @@ package com.org.interview.ch08;
 public class Q8_1_Fibonacci {
 
     // Recursive - O(2^n) time
+    /** Returns the fib recursive. */
     public static long fibRecursive(long n) {
         if (n < 1) return -1;
         if (n == 1 || n == 2) return 1;
@@ -11,6 +12,7 @@ public class Q8_1_Fibonacci {
     }
 
     // Iterative - O(n) time, O(1) space
+    /** Returns the fib iterative. */
     public static long fibIterative(long n) {
         if (n < 1) return -1;
         if (n == 1 || n == 2) return 1;
@@ -35,6 +37,7 @@ public class Q8_1_Fibonacci {
         c[1][0] = t10; c[1][1] = t11;
     }
 
+    /** Returns the fib matrix. */
     public static long fibMatrix(long n) {
         if (n < 1) return -1;
         if (n == 1 || n == 2) return 1;
@@ -55,6 +58,7 @@ public class Q8_1_Fibonacci {
         dst[1][0] = src[1][0]; dst[1][1] = src[1][1];
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         System.out.print("Recursive: ");
         for (int i = 1; i <= 15; i++) System.out.print(fibRecursive(i) + " ");

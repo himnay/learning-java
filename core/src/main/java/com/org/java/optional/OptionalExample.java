@@ -29,6 +29,7 @@ public class OptionalExample {
         return Optional.empty();
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

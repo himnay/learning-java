@@ -25,6 +25,7 @@ public class Q9_2_AnagramSort {
     }
 
     // Sort using insertion sort with anagram comparator
+    /** Sorts by anagram. */
     public static void sortByAnagram(String[] arr) {
         for (int i = 1; i < arr.length; i++) {
             String key = arr[i];
@@ -37,6 +38,7 @@ public class Q9_2_AnagramSort {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         String[] s = {"axyz", "zyxa", "evil", "live", "god", "dog"};
         sortByAnagram(s);

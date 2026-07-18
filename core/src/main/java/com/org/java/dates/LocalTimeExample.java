@@ -6,6 +6,7 @@ import java.time.temporal.ChronoUnit;
 
 public class LocalTimeExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         LocalTime localTime = LocalTime.now();

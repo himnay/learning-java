@@ -6,6 +6,7 @@ import java.util.List;
 
 public class DefaultMethodsExample1 {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

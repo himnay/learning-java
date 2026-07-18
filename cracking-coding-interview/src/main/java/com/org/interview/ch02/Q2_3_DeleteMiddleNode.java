@@ -22,6 +22,7 @@ public class Q2_3_DeleteMiddleNode {
     }
 
     // Copy next node's data and skip it - O(1). Returns false if node is the last.
+    /** Deletes node. */
     public static boolean deleteNode(Node c) {
         if (c == null || c.next == null) return false;
         Node next = c.next;
@@ -38,6 +39,7 @@ public class Q2_3_DeleteMiddleNode {
         System.out.println();
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         Node head = buildList(9, 2, 3, 1, 5, 6, 1, 2, 3, 6);
         // get 3rd node

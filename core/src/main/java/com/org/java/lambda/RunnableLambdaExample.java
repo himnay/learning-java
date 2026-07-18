@@ -2,6 +2,7 @@ package com.org.java.lambda;
 
 public class RunnableLambdaExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         /**

@@ -6,6 +6,7 @@ import java.util.stream.IntStream;
 
 public class ParallelStreamsBoxedExample {
 
+    /** Returns the sequential sum. */
     public static int sequentialSum(List<Integer> integerList ){
 
         long start = System.currentTimeMillis();
@@ -19,6 +20,7 @@ public class ParallelStreamsBoxedExample {
 
     }
 
+    /** Returns the parallel sum. */
     public static int parallelSum(List<Integer> integerList ){
 
         long start = System.currentTimeMillis();
@@ -32,6 +34,7 @@ public class ParallelStreamsBoxedExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<Integer> integerList = IntStream.rangeClosed(1,1000)

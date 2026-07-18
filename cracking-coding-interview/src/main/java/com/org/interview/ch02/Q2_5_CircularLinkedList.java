@@ -23,6 +23,7 @@ public class Q2_5_CircularLinkedList {
     }
 
     // Floyd's cycle detection - O(n) time, O(1) space (no library functions)
+    /** Finds loop start. */
     public static Node findLoopStart(Node head) {
         if (head == null) return null;
         Node fast = head, slow = head;
@@ -40,6 +41,7 @@ public class Q2_5_CircularLinkedList {
         return fast;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a = {3, 2, 1, 4, 5, 6, 7, 8, 9, 1};
         Node head = buildCircularList(a, 9);

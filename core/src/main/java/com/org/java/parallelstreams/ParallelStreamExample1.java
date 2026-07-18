@@ -9,6 +9,7 @@ import static java.util.stream.Collectors.toList;
 
 public class ParallelStreamExample1 {
 
+   /** Returns the sequential stream. */
    public static List<String> sequentialStream(){
 
        long start = System.currentTimeMillis();
@@ -24,6 +25,7 @@ public class ParallelStreamExample1 {
         return studentActivities;
     }
 
+    /** Returns the parallel stream. */
     public static List<String> parallelStream(){
 
         long start = System.currentTimeMillis();
@@ -42,6 +44,7 @@ public class ParallelStreamExample1 {
 
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

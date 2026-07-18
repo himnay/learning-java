@@ -21,6 +21,7 @@ public class Q5_7_MissingNumber {
 
     // O(n) approach: for each bit position, count how many numbers have that bit set.
     // Compare with expected count to narrow down the missing number bit by bit.
+    /** Finds missing. */
     public static int findMissing(int[] a) {
         return findMissingHelper(a, 0, a.length - 1, 0);
     }
@@ -45,6 +46,7 @@ public class Q5_7_MissingNumber {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         // Array contains 0-10, missing 7
         int[] a = {0, 1, 2, 3, 4, 5, 6, 8, 9, 10};

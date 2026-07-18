@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class StreamsExercisesFinal {
 
     // Exercise 1: List of student names with GPA appended (e.g., "Jenny - 3.8")
+    /** Returns the names with gpa. */
     public static List<String> namesWithGpa(List<Student> students) {
         return students.stream()
                 .map(student -> student.getName() + " - " + student.getGpa())
@@ -19,6 +20,7 @@ public class StreamsExercisesFinal {
     }
 
     // Exercise 2: Set of all unique student activities
+    /** Returns the unique activities. */
     public static Set<String> uniqueActivities(List<Student> students) {
         return students.stream()
                 .flatMap(student -> student.getActivities().stream())
@@ -26,6 +28,7 @@ public class StreamsExercisesFinal {
     }
 
     // Exercise 3: Map of student name to number of activities
+    /** Returns the name to activity count. */
     public static Map<String, Integer> nameToActivityCount(List<Student> students) {
         return students.stream()
                 .collect(Collectors.toMap(
@@ -35,6 +38,7 @@ public class StreamsExercisesFinal {
     }
 
     // Exercise 4: List of names of students with more than 2 notebooks
+    /** Returns the names with more than two notebooks. */
     public static List<String> namesWithMoreThanTwoNotebooks(List<Student> students) {
         return students.stream()
                 .filter(student -> student.getNoteBooks() > 2)
@@ -43,6 +47,7 @@ public class StreamsExercisesFinal {
     }
 
     // Exercise 5: Map of student name to bike model (or "No Bike" if absent)
+    /** Returns the name to bike model. */
     public static Map<String, String> nameToBikeModel(List<Student> students) {
         return students.stream()
                 .collect(Collectors.toMap(
@@ -55,6 +60,7 @@ public class StreamsExercisesFinal {
     }
 
     // Exercise 6: List of student names whose GPA is above 3.5
+    /** Returns the names with high gpa. */
     public static List<String> namesWithHighGpa(List<Student> students) {
         return students.stream()
                 .filter(student -> student.getGpa() > 3.5)
@@ -62,6 +68,7 @@ public class StreamsExercisesFinal {
                 .collect(Collectors.toList());
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         List<Student> students = StudentDataBase.getAllStudents();
         System.out.println("Names with GPA: " + namesWithGpa(students));

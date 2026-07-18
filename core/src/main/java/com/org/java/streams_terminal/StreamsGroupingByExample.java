@@ -11,6 +11,7 @@ import static java.util.stream.Collectors.*;
 
 public class StreamsGroupingByExample {
 
+    /** Handles grouping by gender. */
     public static void groupingByGender(){
 
         Map<String,List<Student>> studentMap =  StudentDataBase.getAllStudents()
@@ -20,6 +21,7 @@ public class StreamsGroupingByExample {
         Stream.of(studentMap).forEach(System.out::println);
     }
 
+    /** Handles customized grouping by. */
     public  static void customizedGroupingBy(){
 
         Map<String,List<Student>> studentMap =  StudentDataBase.getAllStudents()
@@ -67,6 +69,7 @@ public class StreamsGroupingByExample {
     }
 
 
+    /** Handles three argument grouping by. */
     public static void threeArgumentGroupingBy(){
 
         LinkedHashMap<String,Set<Student>> studentMap = StudentDataBase.getAllStudents().stream()
@@ -77,6 +80,7 @@ public class StreamsGroupingByExample {
     }
 
 
+    /** Handles calculte top gpa studentin each grade. */
     public  static void calculteTopGpaStudentinEachGrade(){
 
         Map<Integer, Optional<Student>> studentMapOptional =  StudentDataBase.getAllStudents().stream()
@@ -95,6 +99,7 @@ public class StreamsGroupingByExample {
         Stream.of(studentMap).forEach(System.out::println);
     }
 
+    /** Handles calculteleast gpa studentin each grade. */
     public  static void calculteleastGpaStudentinEachGrade(){
 
         Map<Integer, Optional<Student>> studentMapOptional =  StudentDataBase.getAllStudents().stream()
@@ -113,6 +118,7 @@ public class StreamsGroupingByExample {
         Stream.of(studentMap).forEach(System.out::println);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         //groupingByGender();

@@ -7,6 +7,7 @@ public class Q8_4_Permutations {
     private static int resultLen;
 
     // Insert character at every position in each existing permutation
+    /** Returns the permute. */
     public static String[] permute(String s) {
         if (s.isEmpty()) return new String[]{""};
         char first = s.charAt(0);
@@ -27,6 +28,7 @@ public class Q8_4_Permutations {
     }
 
     // Pick each character as prefix and recurse on the remainder
+    /** Returns the permute2. */
     public static String[] permute2(String s) {
         if (s.isEmpty()) return new String[]{""};
         int count = factorial(s.length());
@@ -47,6 +49,7 @@ public class Q8_4_Permutations {
         return f;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         String s = "abc";
         String[] perms = permute2(s);

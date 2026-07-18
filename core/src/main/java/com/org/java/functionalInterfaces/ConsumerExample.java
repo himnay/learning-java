@@ -15,6 +15,7 @@ public class ConsumerExample {
     static Consumer<Student>  c3= p -> System.out.println(p.getActivities());
 
 
+    /** Prints name. */
     public static void printName(){
 
         List<Student> personList = StudentDataBase.getAllStudents();
@@ -23,12 +24,14 @@ public class ConsumerExample {
 
     }
 
+    /** Prints name and activities. */
     public static void printNameAndActivities(){
         System.out.println("printNameAndActivities : ");
         List<Student> personList = StudentDataBase.getAllStudents();
         personList.forEach(c2.andThen(c3));
     }
 
+    /** Prints name and activities using condition. */
     public static void printNameAndActivitiesUsingCondition(){
         System.out.println("printNameAndActivitiesUsingCondition : ");
         List<Student> personList = StudentDataBase.getAllStudents();
@@ -39,6 +42,7 @@ public class ConsumerExample {
         });
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Consumer<String> c1 = (s) -> System.out.println(s.toUpperCase());

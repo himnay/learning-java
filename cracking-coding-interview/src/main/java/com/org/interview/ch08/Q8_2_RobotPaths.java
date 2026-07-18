@@ -6,6 +6,7 @@ package com.org.interview.ch08;
 public class Q8_2_RobotPaths {
 
     // Count all paths - O(m*n) with memoization
+    /** Counts paths. */
     public static long countPaths(int m, int n) {
         if (m == 1 || n == 1) return 1;
         return countPaths(m - 1, n) + countPaths(m, n - 1);
@@ -17,6 +18,7 @@ public class Q8_2_RobotPaths {
     private static int[][] path;
     private static int pathLen;
 
+    /** Finds path. */
     public static boolean findPath(int m, int n, int[][] route, int len) {
         if (m <= 0 || n <= 0 || !grid[m - 1][n - 1]) return false;
         if (m == 1 && n == 1) {
@@ -31,6 +33,7 @@ public class Q8_2_RobotPaths {
         return false;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         System.out.println("Count paths 3x3: " + countPaths(3, 3)); // 6
         System.out.println("Count paths 4x4: " + countPaths(4, 4)); // 20

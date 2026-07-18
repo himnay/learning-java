@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 public class LambdaVariable1 {
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         int i=0; //Repeated varibale name not allowed

@@ -5,6 +5,7 @@ package com.org.interview.ch08;
 public class Q8_7_CoinChange {
 
     // Recursive with denominations array - avoids redundant counting via ordering
+    /** Makes change. */
     public static int makeChange(int n, int denomIdx) {
         int[] denoms = {25, 10, 5, 1};
         if (denomIdx == denoms.length - 1) return 1; // only pennies left
@@ -17,6 +18,7 @@ public class Q8_7_CoinChange {
     }
 
     // Dynamic programming - O(n * coins) time, O(n) space
+    /** Makes change dp. */
     public static int makeChangeDP(int n) {
         int[] denoms = {1, 5, 10, 25};
         int[] dp = new int[n + 1];
@@ -29,6 +31,7 @@ public class Q8_7_CoinChange {
         return dp[n];
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int n = 10;
         System.out.println("Ways to make " + n + "c (recursive): " + makeChange(n, 0));

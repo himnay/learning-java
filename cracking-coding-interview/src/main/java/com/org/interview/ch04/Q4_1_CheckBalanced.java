@@ -40,6 +40,7 @@ public class Q4_1_CheckBalanced {
     }
 
     // Better O(n) approach: returns -1 on unbalanced, else height
+    /** Checks height. */
     public static int checkHeight(Node node) {
         if (node == null) return 0;
         int leftH = checkHeight(node.left);
@@ -50,6 +51,7 @@ public class Q4_1_CheckBalanced {
         return Math.max(leftH, rightH) + 1;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a = {5, 3, 8, 1, 4, 7, 10, 2, 6, 9, 11, 12};
         Node root = null;

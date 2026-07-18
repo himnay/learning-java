@@ -22,6 +22,7 @@ public class Q3_4_TowersOfHanoi {
         boolean isEmpty(){ return top == -1; }
     }
 
+    /** Handles hanoi iterative. */
     public static void hanoiIterative(int n, char src, char bri, char dst) {
         OpStack stack = new OpStack(n * 2 + 10);
         stack.push(new Op(1, n, src, bri, dst));
@@ -37,6 +38,7 @@ public class Q3_4_TowersOfHanoi {
         }
     }
 
+    /** Handles hanoi recursive. */
     public static void hanoiRecursive(int n, char src, char bri, char dst) {
         if (n == 0) return;
         hanoiRecursive(n - 1, src, dst, bri);
@@ -44,6 +46,7 @@ public class Q3_4_TowersOfHanoi {
         hanoiRecursive(n - 1, bri, src, dst);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int n = 3;
         System.out.println("=== Iterative ===");

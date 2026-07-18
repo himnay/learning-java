@@ -13,6 +13,7 @@ public class Q1_8_StringRotation {
         return isSubstring(s1 + s1, s2);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         System.out.println(isRotation("apple", "pleap"));       // true
         System.out.println(isRotation("waterbottle", "erbottlewat")); // true

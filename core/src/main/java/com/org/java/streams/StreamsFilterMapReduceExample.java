@@ -26,6 +26,7 @@ public class StreamsFilterMapReduceExample {
         return  totalNoOfnoteBooks;
 
     }
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println("Total No of NoteBooks are : " + noOfNoteBooks());

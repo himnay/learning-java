@@ -26,6 +26,7 @@ public class Q9_7_CircusTower {
     }
 
     // Longest Increasing Subsequence on weights (patience sort / binary search) - O(n log n)
+    /** Returns the longest increasing tower. */
     public static int longestIncreasingTower(Person[] p) {
         sortPeople(p);
         int n = p.length;
@@ -46,6 +47,7 @@ public class Q9_7_CircusTower {
         return len;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         Person[] people = {
             new Person(65, 100), new Person(70, 150), new Person(56, 90),

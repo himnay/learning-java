@@ -56,6 +56,7 @@ public class Q3_1_ThreeStacks {
         boolean isEmpty(int stackNum) { return top[stackNum] == -1; }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         ThreeStacksFlexible mystack = new ThreeStacksFlexible(900);
         for (int i = 0; i < 10; i++) mystack.push(0, i);

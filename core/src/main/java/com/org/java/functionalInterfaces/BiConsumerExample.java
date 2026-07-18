@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 
 public class BiConsumerExample {
 
+    /** Handles name and activities. */
     public static void nameAndActivities(){
 
         BiConsumer<String, List<String>> studentBiConsumer = (name, activities) -> System.out.println(name + " : " + activities);
@@ -20,6 +21,7 @@ public class BiConsumerExample {
         students.forEach((s) -> studentBiConsumer.accept(s.getName(),s.getActivities()));
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

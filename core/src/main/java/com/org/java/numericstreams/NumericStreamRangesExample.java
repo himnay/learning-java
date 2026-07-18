@@ -5,6 +5,7 @@ import java.util.stream.LongStream;
 
 public class NumericStreamRangesExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         IntStream intStream = IntStream.range(1,50);

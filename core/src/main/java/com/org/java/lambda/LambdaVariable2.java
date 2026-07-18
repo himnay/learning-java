@@ -6,6 +6,7 @@ public class LambdaVariable2 {
 
     static int value =4;
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

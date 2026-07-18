@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class DatetoLocalDateExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         /**

@@ -9,6 +9,7 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamsFilterExample {
 
+    /** Filters students. */
     public static List<Student> filterStudents(){
 
         List<Student> filteredStudentList = StudentDataBase.getAllStudents()
@@ -20,6 +21,7 @@ public class StreamsFilterExample {
         return filteredStudentList;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println("Filtered Students : " + filterStudents());

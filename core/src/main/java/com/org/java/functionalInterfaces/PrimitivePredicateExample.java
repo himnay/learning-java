@@ -9,6 +9,7 @@ public class PrimitivePredicateExample {
     static DoublePredicate doublePredicate = (a) -> a%4.0==0;
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

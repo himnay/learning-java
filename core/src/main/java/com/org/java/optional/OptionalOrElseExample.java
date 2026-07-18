@@ -7,6 +7,7 @@ import java.util.Optional;
 public class OptionalOrElseExample {
 
 
+    /** Returns the optional or else. */
     public static String optionalOrElse(){
 
         //Optional<Student> getOptionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
@@ -18,6 +19,7 @@ public class OptionalOrElseExample {
 
     }
 
+    /** Returns the optional or else get. */
     public static String optionalOrElseGet(){
 
         //Optional<Student> getOptionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
@@ -29,6 +31,7 @@ public class OptionalOrElseExample {
 
     }
 
+    /** Returns the optional or else throw. */
     public static String optionalOrElseThrow(){
 
         //Optional<Student> getOptionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
@@ -40,6 +43,7 @@ public class OptionalOrElseExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

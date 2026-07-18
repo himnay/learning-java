@@ -21,6 +21,7 @@ public class Q2_1_RemoveDuplicates {
     }
 
     // With boolean array (assuming values 0..MAX_VAL) - O(n) time, O(1) space
+    /** Removes duplicates. */
     public static void removeDuplicates(Node head) {
         if (head == null) return;
         boolean[] seen = new boolean[1000]; // covers typical int values
@@ -38,6 +39,7 @@ public class Q2_1_RemoveDuplicates {
     }
 
     // Without buffer - O(n^2) time, O(1) space
+    /** Removes duplicates no buffer. */
     public static void removeDuplicatesNoBuffer(Node head) {
         Node curr = head;
         while (curr != null) {
@@ -61,6 +63,7 @@ public class Q2_1_RemoveDuplicates {
         System.out.println();
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         Node head1 = buildList(3, 2, 1, 3, 5, 6, 2, 6, 3, 1);
         print(head1);

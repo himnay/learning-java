@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ConcurrentUtils {
 
+    /** Stops. */
     public static void stop(ExecutorService executor) {
         try {
             executor.shutdown();
@@ -22,6 +23,7 @@ public class ConcurrentUtils {
         }
     }
 
+    /** Handles sleep. */
     public static void sleep(int seconds) {
         try {
             TimeUnit.SECONDS.sleep(seconds);

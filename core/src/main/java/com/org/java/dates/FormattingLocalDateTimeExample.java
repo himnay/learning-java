@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class FormattingLocalDateTimeExample {
 
 
+    /** Parses local date time. */
     public static void parseLocalDateTime(){
 
         String dateTime = "2018-04-18T14:33:33";
@@ -26,6 +27,7 @@ public class FormattingLocalDateTimeExample {
 
     }
 
+    /** Formats local date time. */
     public static void formatLocalDateTime(){
 
         DateTimeFormatter dateTimeFormatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd'abc'HH|mm|ss");
@@ -35,6 +37,7 @@ public class FormattingLocalDateTimeExample {
     }
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
         parseLocalDateTime();
         formatLocalDateTime();

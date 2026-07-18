@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class StreamsJoiningExample {
 
+    /** Returns the joining. */
     public static String joining(){
 
         return StudentDataBase.getAllStudents().stream()
@@ -14,6 +15,7 @@ public class StreamsJoiningExample {
                 .collect(Collectors.joining()); // appends all the strings to produce the output,
     }
 
+    /** Returns the joining with delimiter. */
     public static String joiningWithDelimiter(){
 
         return StudentDataBase.getAllStudents().stream()
@@ -21,6 +23,7 @@ public class StreamsJoiningExample {
                 .collect(Collectors.joining("-"));
     }
 
+    /** Returns the joining with delimiter with prefix. */
     public static String joiningWithDelimiterWithPrefix(){
 
         return StudentDataBase.getAllStudents().stream()
@@ -28,6 +31,7 @@ public class StreamsJoiningExample {
                 .collect(Collectors.joining("-","[","]"));
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println("Names : "+ joining());

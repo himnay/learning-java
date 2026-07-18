@@ -43,6 +43,7 @@ public class Q1_4_Anagram {
         return true;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         System.out.println(isAnagram("aaabbb", "ababab"));  // true
         System.out.println(isAnagram1("aaabbb", "ababab")); // true

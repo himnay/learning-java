@@ -5,6 +5,7 @@ package com.org.interview.ch09;
 // Example: find "ball" in ["at","","","","ball","","","car","","","dad","",""] -> 4
 public class Q9_5_SparseSearch {
 
+    /** Searches. */
     public static int search(String[] s, int low, int high, String x) {
         if (x == null || x.isEmpty()) return -1;
         while (low <= high) {
@@ -20,6 +21,7 @@ public class Q9_5_SparseSearch {
         return -1;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         String[] s = {"at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""};
         System.out.println("'ball' at index: " + search(s, 0, s.length - 1, "ball")); // 4

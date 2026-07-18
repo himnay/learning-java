@@ -13,6 +13,7 @@ public class FunctionExample {
 
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println("Result is : " + upperCase.apply("java8"));

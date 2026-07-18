@@ -25,6 +25,7 @@ public class RefactorMethodReferenceExample {
         return student.getGradeLevel() >grade;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(predicateUsingLambda.test(StudentDataBase.studentSupplier.get()));

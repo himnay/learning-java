@@ -10,6 +10,7 @@ import static java.util.stream.Collectors.*;
 
 public class StreamsMappingExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
        Set<String> namesSet = StudentDataBase.getAllStudents()

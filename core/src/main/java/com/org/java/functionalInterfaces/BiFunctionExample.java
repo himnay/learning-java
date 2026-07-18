@@ -35,6 +35,7 @@ public class BiFunctionExample {
 
     static BiFunction<String,String,String> getLoginLocs = (sLocator,elementType) -> loginPageLocs.get(sLocator);
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(biFunction.apply(StudentDataBase.getAllStudents(),PredicateStudentExample.p2));

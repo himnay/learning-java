@@ -10,6 +10,7 @@ package com.org.interview.ch01;
 public class Q1_6_RotateMatrix {
 
     // Transpose then reverse rows - in-place O(n^2)
+    /** Handles rotate. */
     public static void rotate(int[][] a, int n) {
         // transpose
         for (int i = 0; i < n; i++) {
@@ -38,6 +39,7 @@ public class Q1_6_RotateMatrix {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[][] a = {
             {1, 2, 3, 4},

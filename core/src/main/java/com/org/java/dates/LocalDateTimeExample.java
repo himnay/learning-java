@@ -8,6 +8,7 @@ import java.time.temporal.TemporalAdjusters;
 
 public class LocalDateTimeExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         LocalDateTime localDateTime = LocalDateTime.now();

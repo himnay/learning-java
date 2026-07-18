@@ -4,6 +4,7 @@ import java.util.stream.IntStream;
 
 public class SumClient {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Sum sum=new Sum();

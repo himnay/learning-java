@@ -4,6 +4,7 @@ package com.org.interview.ch01;
 public class Q1_5_ReplaceSpaces {
 
     // Using StringBuilder - O(n)
+    /** Returns the replace1. */
     public static String replace1(String s) {
         if (s == null || s.isEmpty()) return s;
         StringBuilder sb = new StringBuilder();
@@ -15,6 +16,7 @@ public class Q1_5_ReplaceSpaces {
     }
 
     // In-place with pre-allocated char array (C-style approach) - O(n)
+    /** Returns the replace2. */
     public static String replace2(String s) {
         if (s == null || s.isEmpty()) return s;
         int spaces = 0;
@@ -35,6 +37,7 @@ public class Q1_5_ReplaceSpaces {
         return new String(chars);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         String s = "Mr John Smith";
         System.out.println(replace1(s));

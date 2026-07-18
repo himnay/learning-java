@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public class StreamsFindAnyFirstExample {
 
+    /** Finds any. */
     public static Optional<Student> findAny(){
 
         return StudentDataBase.getAllStudents().stream()
@@ -14,6 +15,7 @@ public class StreamsFindAnyFirstExample {
                 .findAny();
     }
 
+    /** Finds first. */
     public static Optional<Student> findFirst(){
 
         return StudentDataBase.getAllStudents().stream()
@@ -21,6 +23,7 @@ public class StreamsFindAnyFirstExample {
                 .findFirst();
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Optional<Student> findAnyStudent = findAny();

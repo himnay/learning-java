@@ -11,6 +11,7 @@ import static java.util.stream.Collectors.joining;
 
 public class StreamReduceExample {
 
+    /** Returns the perform multiplication. */
     public static int performMultiplication(List<Integer> integerList){
 
         return integerList.stream()
@@ -18,12 +19,14 @@ public class StreamReduceExample {
 
     }
 
+    /** Returns the perform multiplication with no initial value. */
     public static Optional<Integer> performMultiplicationWithNoInitialValue(List<Integer> integerList){
 
         return integerList.stream()
                 .reduce( (a,b) -> a*b); // performs multiplication for each element in the stream and returns a new result fo.
     }
 
+    /** Returns the combine student names. */
     public static String combineStudentNames(){
 
         return StudentDataBase.getAllStudents().stream()
@@ -42,6 +45,7 @@ public class StreamReduceExample {
 
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<Integer> integerList = Arrays.asList(1,3,5,7);

@@ -10,6 +10,7 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamsComparatorExample {
 
+    /** Sorts students by name. */
     public static List<Student> sortStudentsByName(){
 
        return  StudentDataBase.getAllStudents().stream()
@@ -17,6 +18,7 @@ public class StreamsComparatorExample {
                 .collect(toList());
     }
 
+    /** Sorts students by gpa. */
     public static List<Student> sortStudentsByGpa(){
 
         return  StudentDataBase.getAllStudents().stream()
@@ -24,6 +26,7 @@ public class StreamsComparatorExample {
                 .collect(toList());
     }
 
+    /** Sorts students by gpa reversed. */
     public static List<Student> sortStudentsByGpaReversed(){
 
         return  StudentDataBase.getAllStudents().stream()
@@ -31,6 +34,7 @@ public class StreamsComparatorExample {
                 .collect(toList());
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         System.out.println("Students sorted by NAME");
         sortStudentsByName().forEach(System.out::println);

@@ -46,6 +46,7 @@ public class Q4_4_ListOfDepths {
         return node;
     }
 
+    /** Finds level lists. */
     public static ListHead[] findLevelLists(Node root, int maxDepth) {
         ListHead[] result = new ListHead[maxDepth];
         for (int i = 0; i < maxDepth; i++) result[i] = new ListHead();
@@ -65,6 +66,7 @@ public class Q4_4_ListOfDepths {
         return result;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a = {0, 1, 2, 3, 4, 5, 6};
         Node root = createMinimalTree(a, 0, a.length - 1);

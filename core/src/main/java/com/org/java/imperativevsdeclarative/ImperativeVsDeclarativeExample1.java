@@ -4,6 +4,7 @@ import java.util.stream.IntStream;
 
 public class ImperativeVsDeclarativeExample1 {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         // sum of integers for the range from 0 to 100

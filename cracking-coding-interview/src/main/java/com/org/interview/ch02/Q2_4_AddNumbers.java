@@ -22,6 +22,7 @@ public class Q2_4_AddNumbers {
         return head;
     }
 
+    /** Adds lists. */
     public static Node addLists(Node p, Node q) {
         if (p == null) return q;
         if (q == null) return p;
@@ -47,6 +48,7 @@ public class Q2_4_AddNumbers {
         System.out.println();
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         Node p = buildList(1, 2, 9, 3); // 3921
         Node q = buildList(8, 8, 4);    // 488

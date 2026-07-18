@@ -8,6 +8,7 @@ import java.util.Optional;
 
 public class OptionalMapFlatMapExample {
 
+    /** Handles optional flat map. */
     public static void optionalFlatMap(){
       Optional<Student> studentOptional =  StudentDataBase.getOptionalStudent();
       if(studentOptional.isPresent()){
@@ -17,6 +18,7 @@ public class OptionalMapFlatMapExample {
       }
     }
 
+    /** Handles optional map. */
     public static void optionalMap(){
         Optional<Student> studentOptional =  StudentDataBase.getOptionalStudent();
 
@@ -27,6 +29,7 @@ public class OptionalMapFlatMapExample {
         }
     }
 
+    /** Handles optional filter. */
     public static void optionalFilter(){
 
         Optional<Student> studentOptional = StudentDataBase.getOptionalStudent()
@@ -36,6 +39,7 @@ public class OptionalMapFlatMapExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         optionalFlatMap();
         optionalMap();

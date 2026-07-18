@@ -9,6 +9,7 @@ import static java.util.stream.Collectors.toList;
 public class NumericStreamMapExample {
 
 
+    /** Maps to obj. */
     public static List<Integer> mapToObj(){
 
         List<Integer> integerList = IntStream.rangeClosed(1,5)
@@ -21,6 +22,7 @@ public class NumericStreamMapExample {
 
     }
 
+    /** Maps to double. */
     public static double mapToDouble(){
 
       return   IntStream.rangeClosed(1,5)
@@ -29,6 +31,7 @@ public class NumericStreamMapExample {
 
     }
 
+    /** Maps to long. */
     public static long mapToLong(){
 
         return   IntStream.rangeClosed(1,5)
@@ -37,6 +40,7 @@ public class NumericStreamMapExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println("mapToObj : " + mapToObj());

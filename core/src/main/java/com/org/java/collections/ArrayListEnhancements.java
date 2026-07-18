@@ -36,6 +36,7 @@ public class ArrayListEnhancements {
     }
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

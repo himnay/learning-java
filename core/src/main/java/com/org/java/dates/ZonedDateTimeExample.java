@@ -4,6 +4,7 @@ import java.time.*;
 
 public class ZonedDateTimeExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         ZonedDateTime zonedDateTime = ZonedDateTime.now(); //gets you this machines TimeZone

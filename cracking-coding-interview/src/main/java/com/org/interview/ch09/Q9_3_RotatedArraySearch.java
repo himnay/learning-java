@@ -4,6 +4,7 @@ package com.org.interview.ch09;
 // Example: find 5 in [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14] -> index 8
 public class Q9_3_RotatedArraySearch {
 
+    /** Searches. */
     public static int search(int[] a, int low, int high, int k) {
         while (low <= high) {
             int mid = low + (high - low) / 2;
@@ -21,6 +22,7 @@ public class Q9_3_RotatedArraySearch {
         return -1;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
         System.out.println("Index of 5:  " + search(a, 0, a.length - 1, 5));  // 8

@@ -28,6 +28,7 @@ public class LambdaExceptionHandlingExample {
         };
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<Student> studentList= new ArrayList<>();

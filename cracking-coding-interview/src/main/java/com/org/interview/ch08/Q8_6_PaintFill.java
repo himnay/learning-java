@@ -6,6 +6,7 @@ public class Q8_6_PaintFill {
 
     enum Color { RED, YELLOW, BLUE, GREEN }
 
+    /** Returns the paint fill. */
     public static boolean paintFill(Color[][] screen, int m, int n, int x, int y, Color newColor, Color oldColor) {
         if (x < 0 || x >= m || y < 0 || y >= n) return false;
         if (screen[x][y] != oldColor) return false;
@@ -17,6 +18,7 @@ public class Q8_6_PaintFill {
         return true;
     }
 
+    /** Returns the paint fill. */
     public static boolean paintFill(Color[][] screen, int m, int n, int x, int y, Color newColor) {
         if (screen[x][y] == newColor) return false;
         return paintFill(screen, m, n, x, y, newColor, screen[x][y]);
@@ -29,6 +31,7 @@ public class Q8_6_PaintFill {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int m = 5, n = 5;
         Color[][] screen = {

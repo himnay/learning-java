@@ -5,6 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 public class ComparingTimesDurationExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         LocalTime localTime = LocalTime.of(7,20);

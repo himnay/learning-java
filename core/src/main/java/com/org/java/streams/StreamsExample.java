@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class StreamsExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Predicate<Student> gradePredicate = student -> student.getGradeLevel()>=3;

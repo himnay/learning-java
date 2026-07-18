@@ -47,6 +47,7 @@ public class Q3_5_QueueWithStacks {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         MyQueue q = new MyQueue(20);
         for (int i = 0; i < 10; i++) q.push(i);

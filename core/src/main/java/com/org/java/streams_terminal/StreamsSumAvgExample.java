@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class StreamsSumAvgExample {
 
+    /** Returns the sum. */
     public static int sum(){
 
         int totalNoOfNotebooks = StudentDataBase.getAllStudents()
@@ -16,6 +17,7 @@ public class StreamsSumAvgExample {
         return totalNoOfNotebooks;
     }
 
+    /** Returns the average. */
     public static double average(){
 
         double totalNoOfNotebooks = StudentDataBase.getAllStudents()
@@ -26,6 +28,7 @@ public class StreamsSumAvgExample {
     }
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

@@ -20,6 +20,7 @@ public class Q2_2_NthToLast {
     }
 
     // Two-pointer approach - O(n)
+    /** Finds nth to last. */
     public static Node findNthToLast(Node head, int n) {
         if (head == null || n < 1) return null;
         Node fast = head, slow = head;
@@ -38,6 +39,7 @@ public class Q2_2_NthToLast {
     private static int[] counter = {0};
     private static Node result = null;
 
+    /** Finds nth to last recursive. */
     public static void findNthToLastRecursive(Node head, int n) {
         if (head == null) return;
         findNthToLastRecursive(head.next, n);
@@ -45,6 +47,7 @@ public class Q2_2_NthToLast {
         if (counter[0] == n) result = head;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         Node head = buildList(9, 2, 1, 6, 5, 4, 5, 7, 2, 1);
         Node p = findNthToLast(head, 6);

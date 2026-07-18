@@ -15,6 +15,7 @@ public class DefaultMethodExample2 {
     static Comparator<Student> gradeComparator = Comparator.comparing(Student::getGradeLevel);
     static Consumer<Student> studentConsumer = student -> System.out.println("student : " + student);
 
+    /** Sorts by name. */
     public static void sortByName(List<Student> studentList){
 
         studentList.sort(Comparator.comparing(Student::getName)); // inline
@@ -23,6 +24,7 @@ public class DefaultMethodExample2 {
         studentList.forEach(studentConsumer);
     }
 
+    /** Sorts by gpa. */
     public static void sortByGPA(List<Student> studentList){
 
         studentList.sort(gpaComparator);
@@ -30,6 +32,7 @@ public class DefaultMethodExample2 {
         studentList.forEach(studentConsumer);
     }
 
+    /** Sorts by gender. */
     public static void sortByGender(){
 
         List<Student> studentList = StudentDataBase.getAllStudents();
@@ -41,6 +44,7 @@ public class DefaultMethodExample2 {
     }
 
 
+    /** Handles comparator chaining. */
     public static void comparatorChaining(){
 
         List<Student> studentList = StudentDataBase.getAllStudents();
@@ -49,6 +53,7 @@ public class DefaultMethodExample2 {
         studentList.forEach(studentConsumer);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         List<Student> studentList = StudentDataBase.getAllStudents();
         System.out.println("Original List");

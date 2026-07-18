@@ -14,6 +14,7 @@ import static java.util.stream.Collectors.toSet;
 
 public class StreamsPartitioningExample {
 
+    /** Handles partitioning by_1. */
     public static void partitioningBy_1(){
 
         Predicate<Student> gpaPredicate = (student) -> student.getGpa()>=3.8;
@@ -26,6 +27,7 @@ public class StreamsPartitioningExample {
 
     }
 
+    /** Handles partitioning by_2. */
     public static void partitioningBy_2(){
 
         Predicate<Student> gpaPredicate = (student) -> student.getGpa()>=3.8;
@@ -39,6 +41,7 @@ public class StreamsPartitioningExample {
     }
 
 
+    /** Handles partitioning by_3. */
     public static void partitioningBy_3(){
 
         Predicate<Student> gpaPredicate = (student) -> student.getGpa()>=3.8;
@@ -51,6 +54,7 @@ public class StreamsPartitioningExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         partitioningBy_1();
         partitioningBy_2();

@@ -48,6 +48,7 @@ public class Q3_3_SetOfStacks {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         SetOfStacks ss = new SetOfStacks(100, 10);
         for (int i = 0; i < 301; i++) ss.push(i);

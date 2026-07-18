@@ -18,6 +18,7 @@ public class PredicateStudentExample {
     static Function<Double,Predicate<Double>>  gpaPredicate = (toCompare) -> (number) -> number > toCompare;
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<Student> studentList = StudentDataBase.getAllStudents();

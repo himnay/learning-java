@@ -2,10 +2,12 @@ package com.org.java.defaults;
 
 public class Client123 implements Interface1,Interface2,Interface3 {
 
+    /** Handles method a. */
     public void methodA(){ //overriding the default method in the implementation class.
         System.out.println("Inside method A "+ Client123.class);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Client123 client123 = new Client123();

@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class StudentsQuestion2 {
 
+    /** Application entry point. */
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
 

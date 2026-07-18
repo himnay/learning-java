@@ -96,6 +96,7 @@ public class Student {
         this.activities = activities;
     }
 
+    /** Prints list of activities. */
     public void printListOfActivities(){
 
         System.out.println("List of Activities are : " + this.activities);

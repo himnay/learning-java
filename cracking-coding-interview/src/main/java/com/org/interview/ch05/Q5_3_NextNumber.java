@@ -4,6 +4,7 @@ package com.org.interview.ch05;
 // the same number of 1 bits in their binary representation.
 public class Q5_3_NextNumber {
 
+    /** Counts ones. */
     public static int countOnes(int x) {
         x = (x & 0x55555555) + ((x >> 1) & 0x55555555);
         x = (x & 0x33333333) + ((x >> 2) & 0x33333333);
@@ -45,6 +46,7 @@ public class Q5_3_NextNumber {
         return n;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int a = 948;
         System.out.println("Original:  " + Integer.toBinaryString(a) + " (" + a + ")");

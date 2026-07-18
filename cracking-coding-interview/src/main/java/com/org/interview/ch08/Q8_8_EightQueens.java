@@ -38,6 +38,7 @@ public class Q8_8_EightQueens {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         search(0);
         System.out.println("Total solutions: " + count); // 92

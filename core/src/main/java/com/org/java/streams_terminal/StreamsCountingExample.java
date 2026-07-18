@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class StreamsCountingExample {
 
+    /** Counts. */
     public static long count(){
        return  StudentDataBase.getAllStudents()
                 .stream()
@@ -13,6 +14,7 @@ public class StreamsCountingExample {
                 .collect(Collectors.counting());
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(count());

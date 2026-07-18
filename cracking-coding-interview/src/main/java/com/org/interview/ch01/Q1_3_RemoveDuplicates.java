@@ -5,6 +5,7 @@ package com.org.interview.ch01;
 public class Q1_3_RemoveDuplicates {
 
     // Using bit vector (works for lowercase a-z only) - O(n)
+    /** Removes duplicate1. */
     public static String removeDuplicate1(String s) {
         if (s.length() < 2) return s;
         int check = 0;
@@ -20,6 +21,7 @@ public class Q1_3_RemoveDuplicates {
     }
 
     // Using boolean array - O(n), works for full ASCII
+    /** Removes duplicate2. */
     public static String removeDuplicate2(String s) {
         if (s.length() < 2) return s;
         boolean[] seen = new boolean[256];
@@ -35,6 +37,7 @@ public class Q1_3_RemoveDuplicates {
     }
 
     // In-place O(n^2) - no extra data structure beyond two indices
+    /** Removes duplicate3. */
     public static String removeDuplicate3(String s) {
         if (s.length() < 2) return s;
         char[] chars = s.toCharArray();
@@ -50,6 +53,7 @@ public class Q1_3_RemoveDuplicates {
         return new String(chars, 0, p);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         String[] tests = {"abcde", "aaabbb", "", "abababc", "ccccc"};
         for (String t : tests) {

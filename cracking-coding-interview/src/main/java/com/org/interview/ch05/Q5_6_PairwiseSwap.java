@@ -6,10 +6,12 @@ public class Q5_6_PairwiseSwap {
 
     // 0x55555555 = 01010101...01 (even bit positions)
     // 0xAAAAAAAA = 10101010...10 (odd bit positions)
+    /** Returns the swap bits. */
     public static int swapBits(int x) {
         return ((x & 0x55555555) << 1) | ((x >>> 1) & 0x55555555);
     }
 
+    /** Converts this object to binary string32. */
     public static String toBinaryString32(int n) {
         char[] bits = new char[32];
         for (int i = 31; i >= 0; i--) {
@@ -18,6 +20,7 @@ public class Q5_6_PairwiseSwap {
         return new String(bits);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int x = 0b10110010; // 178
         System.out.println("Original: " + toBinaryString32(x));

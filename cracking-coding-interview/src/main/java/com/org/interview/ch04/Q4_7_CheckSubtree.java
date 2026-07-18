@@ -32,11 +32,13 @@ public class Q4_7_CheckSubtree {
         return subtree(r1.left, r2) || subtree(r1.right, r2);
     }
 
+    /** Returns the contains tree. */
     public static boolean containsTree(Node r1, Node r2) {
         if (r2 == null) return true;
         return subtree(r1, r2);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a1 = {0, 1, 2, 3, 4, 5, 6};
         int[] a2 = {0, 1, 2};

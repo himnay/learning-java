@@ -24,6 +24,7 @@ public class Q4_8_PathsWithSum {
     }
 
     // For each node, check all paths going upward (toward root) starting from that node
+    /** Finds sum paths. */
     public static void findSumPaths(Node node, int target) {
         if (node == null) return;
         findPathsFromNode(node, target, new ArrayList<>());
@@ -39,6 +40,7 @@ public class Q4_8_PathsWithSum {
         findPathsFromNode(node.right, remaining - node.key, new ArrayList<>(path));
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a = {4, 3, 8, 5, 2, 1, 6};
         Node root = createTree(a, 0, a.length - 1);

@@ -15,6 +15,7 @@ public class SupplierExample {
 
     public static  Supplier<List<Student>> studentsSupplier = () -> StudentDataBase.getAllStudents();
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Student student = studentSupplier.get();

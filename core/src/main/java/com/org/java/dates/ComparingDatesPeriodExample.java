@@ -5,6 +5,7 @@ import java.time.Period;
 
 public class ComparingDatesPeriodExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         LocalDate  localDate = LocalDate.of(2018,01,01);

@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class FormattingLocalTimeExample {
 
+    /** Parses time. */
     public static void parseTime(){
 
         /**
@@ -33,6 +34,7 @@ public class FormattingLocalTimeExample {
 
     }
 
+    /** Formats time. */
     public static void formatTime(){
 
         LocalTime localTime = LocalTime.of(19,30);
@@ -48,6 +50,7 @@ public class FormattingLocalTimeExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         parseTime();
         formatTime();

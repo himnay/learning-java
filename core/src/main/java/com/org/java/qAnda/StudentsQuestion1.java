@@ -7,6 +7,7 @@ import static java.util.stream.Collectors.*;
 
 public class StudentsQuestion1 {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<String> words = Arrays.asList("Zohne", "Redy", "Zohne", "Redy", "Stome","Redy");

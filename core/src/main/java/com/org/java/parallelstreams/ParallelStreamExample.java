@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 
 public class ParallelStreamExample {
 
+    /** Checks performance result. */
     public static long checkPerformanceResult(Supplier<Integer> sum , int numberOfTimes){
 
         long start = System.currentTimeMillis();
@@ -16,6 +17,7 @@ public class ParallelStreamExample {
         return end-start;
     }
 
+    /** Returns the sum_sequential_stream. */
     public static int sum_sequential_stream(){
 
         int total = IntStream.rangeClosed(1,1000000)
@@ -24,6 +26,7 @@ public class ParallelStreamExample {
 
     }
 
+    /** Returns the sum_parallel_stream. */
     public static int sum_parallel_stream(){
 
         int total = IntStream.rangeClosed(1,1000000)
@@ -32,6 +35,7 @@ public class ParallelStreamExample {
         return total;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(Runtime.getRuntime().availableProcessors());

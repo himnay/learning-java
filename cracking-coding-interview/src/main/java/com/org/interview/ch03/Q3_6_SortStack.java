@@ -15,6 +15,7 @@ public class Q3_6_SortStack {
     }
 
     // Insertion-sort using auxiliary stack - O(n^2) time, O(n) space
+    /** Sorts stack. */
     public static IntStack sortStack(IntStack s, int cap) {
         IntStack tmp = new IntStack(cap);
         while (!s.isEmpty()) {
@@ -27,6 +28,7 @@ public class Q3_6_SortStack {
         return tmp;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         IntStack s = new IntStack(20);
         int[] vals = {5, 1, 9, 3, 7, 2, 8, 4, 6, 0};

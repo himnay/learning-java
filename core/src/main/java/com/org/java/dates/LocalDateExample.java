@@ -7,6 +7,7 @@ public class LocalDateExample {
 
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         LocalDate localDate = LocalDate.now();

@@ -8,6 +8,7 @@ public class FormattingLocalDateExample {
 
 
 
+    /** Parses local date. */
     public static void parseLocalDate(){
         /**
          * Using system defined format
@@ -36,6 +37,7 @@ public class FormattingLocalDateExample {
         System.out.println("localDate2 : " + localDate2);
     }
 
+    /** Formats local date. */
     public static void formatLocalDate(){
          //DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd|MM|yyyy");
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("YYYY|MM|dd");
@@ -45,6 +47,7 @@ public class FormattingLocalDateExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         parseLocalDate();
         formatLocalDate();

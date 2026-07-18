@@ -35,6 +35,7 @@ public class Q4_6_FirstCommonAncestor {
         return d;
     }
 
+    /** Returns the first ancestor. */
     public static Node firstAncestor(Node n1, Node n2) {
         int d1 = depth(n1), d2 = depth(n2);
         while (d1 > d2) { n1 = n1.parent; d1--; }
@@ -50,6 +51,7 @@ public class Q4_6_FirstCommonAncestor {
         return covers(root.left, target) || covers(root.right, target);
     }
 
+    /** Returns the first ancestor no buffer. */
     public static Node firstAncestorNoBuffer(Node root, Node n1, Node n2) {
         if (root == null || root == n1 || root == n2) return root;
         boolean n1Left = covers(root.left, n1);
@@ -59,6 +61,7 @@ public class Q4_6_FirstCommonAncestor {
         return firstAncestorNoBuffer(child, n1, n2);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a = {0, 1, 2, 3, 4, 5, 6};
         Node root = createMinimalTree(a, null, 0, a.length - 1);

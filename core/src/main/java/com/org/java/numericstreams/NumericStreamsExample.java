@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 public class NumericStreamsExample {
 
 
+    /** Returns the sum of numbers. */
     public static int sumOfNumbers(List<Integer> integerList){
 
        return  integerList.stream() // Stream<Integer>
@@ -14,6 +15,7 @@ public class NumericStreamsExample {
 
     }
 
+    /** Returns the sum of numbers int stream. */
     public static int sumOfNumbersIntStream(){
 
         return IntStream.rangeClosed(1,6)
@@ -21,6 +23,7 @@ public class NumericStreamsExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<Integer> integerList = Arrays.asList(1,2,3,4,5,6);

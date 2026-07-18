@@ -8,6 +8,7 @@ public class SupplierMethodReferenceExample {
 
     Supplier<Student> studentSupplier = Student::new;
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println();

@@ -9,6 +9,7 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamFlatMapExample {
 
+    /** Prints student activities. */
     public static List<String> printStudentActivities() {
 
         List<String> studentActivities = StudentDataBase.getAllStudents()
@@ -21,6 +22,7 @@ public class StreamFlatMapExample {
 
     }
 
+    /** Prints unique student activities. */
     public static List<String> printUniqueStudentActivities() {
 
         List<String> studentActivities = StudentDataBase.getAllStudents()
@@ -48,6 +50,7 @@ public class StreamFlatMapExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

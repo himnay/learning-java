@@ -4,6 +4,7 @@ import java.util.Optional;
 
 public class OptionalPresentExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Optional<String> stringOptional = Optional.ofNullable("Hello Optional");

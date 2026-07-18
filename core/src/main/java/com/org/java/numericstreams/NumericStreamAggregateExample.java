@@ -8,6 +8,7 @@ import java.util.stream.LongStream;
 
 public class NumericStreamAggregateExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
 

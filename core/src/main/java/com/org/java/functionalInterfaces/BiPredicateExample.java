@@ -17,6 +17,7 @@ public class BiPredicateExample {
             }
     };
 
+    /** Filters students. */
     public static  void filterStudents(){
 
         List<Student> studentList = StudentDataBase.getAllStudents();
@@ -24,6 +25,7 @@ public class BiPredicateExample {
         studentList.forEach(consumer);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         filterStudents();
     }

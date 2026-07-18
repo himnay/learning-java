@@ -26,6 +26,7 @@ public class Q4_5_InorderSuccessor {
 
     // If node has right child: successor = leftmost of right subtree.
     // Otherwise: go up until we're coming from a left child.
+    /** Returns the inorder successor. */
     public static Node inorderSuccessor(Node node) {
         if (node == null) return null;
         if (node.right != null) return leftmost(node.right);
@@ -38,6 +39,7 @@ public class Q4_5_InorderSuccessor {
         return parent;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[] a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         Node root = createMinimalTree(a, null, 0, a.length - 1);

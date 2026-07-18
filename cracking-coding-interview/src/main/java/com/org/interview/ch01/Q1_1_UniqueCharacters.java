@@ -27,6 +27,7 @@ public class Q1_1_UniqueCharacters {
         return true;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         String s1 = "Hello World!";
         String s2 = "asdfghjkl";

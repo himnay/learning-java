@@ -11,6 +11,7 @@ public class FunctionMethodReferenceExample {
 
     static Function<String,String> toUpperCaseMethodRefernce = String::toUpperCase;
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(toUpperCaseLambda.apply("java8"));

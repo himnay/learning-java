@@ -5,6 +5,7 @@ package com.org.interview.ch05;
 // (M becomes a substring of N located at i and starting at j).
 public class Q5_1_Insertion {
 
+    /** Updates bits. */
     public static int updateBits(int n, int m, int i, int j) {
         int allOnes = ~0;
         int left = allOnes << (j + 1);          // 1s before position j+1
@@ -13,6 +14,7 @@ public class Q5_1_Insertion {
         return (n & mask) | (m << i);
     }
 
+    /** Converts this object to binary string. */
     public static String toBinaryString(int n) {
         if (n == 0) return "0";
         char[] bits = new char[32];
@@ -27,6 +29,7 @@ public class Q5_1_Insertion {
         return new String(bits, start, 32 - start);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int n = 1 << 10; // 10000000000
         int m = 21;      // 10101

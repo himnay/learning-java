@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public class StreamsLimitSkipExample {
 
+    /** Returns the limit. */
     public static Optional<Integer> limit(List<Integer> integers){
         return  integers.stream()
                 .limit(2)
@@ -13,6 +14,7 @@ public class StreamsLimitSkipExample {
 
     }
 
+    /** Returns the skip. */
     public static Optional<Integer> skip(List<Integer> integers){
         return  integers.stream()
                 .skip(3)
@@ -20,6 +22,7 @@ public class StreamsLimitSkipExample {
     }
     
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<Integer> integers = Arrays.asList(6,7,8,9,10);

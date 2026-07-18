@@ -4,6 +4,7 @@ import java.time.*;
 
 public class InstantExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Instant instant = Instant.now(); // Represents the date and time in unix timestamp in a machine readable format.

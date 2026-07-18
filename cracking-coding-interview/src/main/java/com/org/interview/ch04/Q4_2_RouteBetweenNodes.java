@@ -13,6 +13,7 @@ public class Q4_2_RouteBetweenNodes {
         boolean isEmpty() { return size == 0; }
     }
 
+    /** Returns whether route. */
     public static boolean hasRoute(boolean[][] graph, int n, int src, int dst) {
         boolean[] visited = new boolean[n];
         IntQueue queue = new IntQueue(n);
@@ -31,6 +32,7 @@ public class Q4_2_RouteBetweenNodes {
         return false;
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int n = 7;
         boolean[][] g = new boolean[n][n];

@@ -30,12 +30,14 @@ public class PredicateAndConsumerExample {
         }
     });
 
+    /** Prints nameand activities. */
     public void printNameandActivities(List<Student> studentList){
 
         studentList.forEach(studentConsumer);
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         List<Student> studentList = StudentDataBase.getAllStudents();

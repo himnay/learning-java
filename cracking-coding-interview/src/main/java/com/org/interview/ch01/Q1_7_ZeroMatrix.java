@@ -4,6 +4,7 @@ package com.org.interview.ch01;
 // its entire row and column is set to 0.
 public class Q1_7_ZeroMatrix {
 
+    /** Handles zero. */
     public static void zero(int[][] a, int m, int n) {
         boolean[] row = new boolean[m];
         boolean[] col = new boolean[n];
@@ -31,6 +32,7 @@ public class Q1_7_ZeroMatrix {
         }
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[][] a = {
             {1, 2, 3, 4},

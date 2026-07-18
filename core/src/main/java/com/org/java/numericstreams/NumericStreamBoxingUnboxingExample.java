@@ -6,6 +6,7 @@ import java.util.stream.IntStream;
 
 public class NumericStreamBoxingUnboxingExample {
 
+    /** Returns the boxing. */
     public static List<Integer> boxing() {
 
         return IntStream.rangeClosed(1,25)
@@ -15,6 +16,7 @@ public class NumericStreamBoxingUnboxingExample {
 
     }
 
+    /** Returns the un boxing. */
     public static int unBoxing(List<Integer> integerList) {
 
        int sum =  integerList.stream()
@@ -23,6 +25,7 @@ public class NumericStreamBoxingUnboxingExample {
 
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println("Converting PrimitiveStream to List : "+ boxing());

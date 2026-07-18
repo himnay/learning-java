@@ -5,6 +5,7 @@ import java.util.List;
 
 public class MultiplierClient {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         Multiplier multiplier = new MultiplierImpl();

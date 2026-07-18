@@ -6,6 +6,7 @@ import java.time.LocalTime;
 
 public class NewDateTimeExample {
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         LocalDate localDate = LocalDate.now();

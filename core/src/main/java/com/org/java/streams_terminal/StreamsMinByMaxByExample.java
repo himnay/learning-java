@@ -11,6 +11,7 @@ import static java.util.stream.Collectors.toList;
 public class StreamsMinByMaxByExample {
 
 
+    /** Returns the min by. */
     public static Optional<Student> minBy() {
 
         Optional<Student> studentOptional = StudentDataBase.getAllStudents().stream()
@@ -19,6 +20,7 @@ public class StreamsMinByMaxByExample {
         return studentOptional;
     }
 
+    /** Returns the max by. */
     public static Optional<Student> maxBy() {
 
         Optional<Student> studentOptional = StudentDataBase.getAllStudents().stream()
@@ -27,6 +29,7 @@ public class StreamsMinByMaxByExample {
         return studentOptional;
     }
 
+    /** Returns the max by multiple students. */
     public static List<Student> maxByMultipleStudents() {
 
         List<Student> maxStudents = new ArrayList<>();
@@ -47,6 +50,7 @@ public class StreamsMinByMaxByExample {
     }
 
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         System.out.println(minBy());

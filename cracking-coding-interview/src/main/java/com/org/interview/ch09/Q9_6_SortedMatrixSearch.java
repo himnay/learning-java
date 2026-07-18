@@ -4,6 +4,7 @@ package com.org.interview.ch09;
 // Start from top-right corner: eliminate a row or column at each step - O(m+n).
 public class Q9_6_SortedMatrixSearch {
 
+    /** Searches. */
     public static int[] search(int[][] d, int m, int n, int x) {
         int r = 0, c = n - 1;
         while (r < m && c >= 0) {
@@ -14,6 +15,7 @@ public class Q9_6_SortedMatrixSearch {
         return new int[]{-1, -1};
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
         int[][] d = {
             { 1,  5,  7, 10},

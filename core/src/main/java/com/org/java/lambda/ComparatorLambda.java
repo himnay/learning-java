@@ -4,11 +4,13 @@ import java.util.Comparator;
 
 public class ComparatorLambda {
 
+    /** Compares two integers. */
     public static int compareTwoIntegers(Comparator<Integer> comparator, int a, int b){
 
         return comparator.compare(a,b);
     }
 
+    /** Application entry point. */
     public static void main(String[] args) {
 
         /**
