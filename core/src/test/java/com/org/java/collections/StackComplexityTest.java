@@ -88,7 +88,7 @@ class StackComplexityTest {
             int[] result = new int[3];
             int i = 0;
             while (!aux.isEmpty()) result[i++] = aux.pop();
-            assertArrayEquals(new int[]{3, 2, 1}, result);
+            assertArrayEquals(new int[]{1, 2, 3}, result); // aux top=1 (per trace above), so pop order is 1,2,3
         }
     }
 

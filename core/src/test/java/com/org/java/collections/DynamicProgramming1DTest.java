@@ -87,7 +87,7 @@ class DynamicProgramming1DTest {
         @DisplayName("Maximum subarray (Kadane's algorithm)  →  O(n)")
         void maxSubarray() {
             assertEquals(6, maxSubarray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
-            assertEquals(1, maxSubarray(new int[]{-1}));
+            assertEquals(-1, maxSubarray(new int[]{-1})); // single-element array: only possible subarray sum is -1
         }
 
         private int maxSubarray(int[] nums) {
@@ -145,7 +145,7 @@ class DynamicProgramming1DTest {
         @Test
         @DisplayName("Coin change — minimum coins  →  O(amount * n) where n=coin types")
         void coinChange() {
-            assertEquals(3, coinChange(new int[]{1, 5, 6, 9}, 11));
+            assertEquals(2, coinChange(new int[]{1, 5, 6, 9}, 11)); // 5+6=11 in 2 coins, beats 1+1+9 or any 3-coin combo
             assertEquals(-1, coinChange(new int[]{2}, 3));
         }
 
