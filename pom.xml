@@ -14,6 +14,8 @@
 
     <modules>
         <module>core</module>
+        <module>collections</module>
+        <module>cracking-coding-interview</module>
     </modules>
 
     <properties>
