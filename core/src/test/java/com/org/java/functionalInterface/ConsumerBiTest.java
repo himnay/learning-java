@@ -1,6 +1,5 @@
 package com.org.java.functionalInterface;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ConsumerBiTest {
 
     @Test
-    @DisplayName("A BiConsumer accepts and combines two arguments into one captured value")
     void biConsumer_acceptsTwoArguments() {
         List<String> captured = new ArrayList<>();
         BiConsumer<String, Integer> biConsumer = (a, b) -> captured.add(a + " " + b);
@@ -22,7 +20,6 @@ class ConsumerBiTest {
     }
 
     @Test
-    @DisplayName("andThen() runs a multiplication BiConsumer followed by a division BiConsumer in order")
     void andThen_chainsMultiplication_thenDivision() {
         List<Integer> results = new ArrayList<>();
         BiConsumer<Integer, Integer> mult = (a, b) -> results.add(a * b);
@@ -33,7 +30,6 @@ class ConsumerBiTest {
     }
 
     @Test
-    @DisplayName("A BiConsumer applied to each student logs the name and activity count for every student")
     void biConsumerWithList_iteratesStudentActivities() {
         List<String> seen = new ArrayList<>();
         BiConsumer<String, List<String>> logActivities =

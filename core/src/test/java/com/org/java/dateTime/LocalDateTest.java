@@ -1,6 +1,5 @@
 package com.org.java.dateTime;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -13,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class LocalDateTest {
 
     @Test
-    @DisplayName("LocalDate.now() returns a date with valid day-of-month and day-of-year fields")
     void now_hasValidFields() {
         LocalDate today = LocalDate.now();
         assertTrue(today.getDayOfMonth() >= 1 && today.getDayOfMonth() <= 31);
@@ -22,7 +20,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("LocalDate.of() creates a date with the specified year, month, and day")
     void of_createsSpecificDate() {
         LocalDate date = LocalDate.of(2020, 11, 2);
         assertEquals(2020, date.getYear());
@@ -31,7 +28,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("LocalDate.ofYearDay() creates a date from a year and day-of-year offset")
     void ofYearDay_createsDateFromDayOfYear() {
         LocalDate date = LocalDate.ofYearDay(2020, 300);
         assertEquals(2020, date.getYear());
@@ -39,7 +35,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("plusDays() returns a new date advanced by the given number of days without mutating the original")
     void plusDays_returnsNewDateWithoutMutating() {
         LocalDate today = LocalDate.now();
         LocalDate future = today.plusDays(10);
@@ -48,21 +43,18 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("plusMonths() advances the date by the given number of months")
     void plusMonths_advancesByMonths() {
         LocalDate date = LocalDate.of(2020, 1, 15);
         assertEquals(LocalDate.of(2020, 3, 15), date.plusMonths(2));
     }
 
     @Test
-    @DisplayName("plusWeeks() advances the date by the given number of weeks")
     void plusWeeks_advancesByWeeks() {
         LocalDate date = LocalDate.of(2020, 1, 1);
         assertEquals(LocalDate.of(2020, 1, 15), date.plusWeeks(2));
     }
 
     @Test
-    @DisplayName("minusDays() moves the date backward by the given number of days")
     void minusDays_goesBackInTime() {
         LocalDate today = LocalDate.now();
         LocalDate past = today.minusDays(10);
@@ -70,7 +62,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("withYear() changes only the year while leaving month and day unchanged")
     void withYear_changesYearOnly() {
         LocalDate date = LocalDate.of(2020, 6, 15);
         assertEquals(2030, date.withYear(2030).getYear());
@@ -78,7 +69,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("with(ChronoField.YEAR, ...) updates the year field on the date")
     void withChronoField_changesYear() {
         LocalDate date = LocalDate.of(2020, 6, 15);
         LocalDate updated = date.with(ChronoField.YEAR, 2030);
@@ -86,7 +76,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("TemporalAdjusters.firstDayOfMonth() adjusts the date to the first day of its month")
     void firstDayOfMonth_adjuster() {
         LocalDate date = LocalDate.of(2020, 6, 15);
         LocalDate first = date.with(TemporalAdjusters.firstDayOfMonth());
@@ -95,7 +84,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("isLeapYear() correctly identifies leap years, including century exceptions")
     void isLeapYear_returnsCorrectResult() {
         assertTrue(LocalDate.ofYearDay(2020, 1).isLeapYear());   // 2020 is leap
         assertFalse(LocalDate.ofYearDay(2019, 1).isLeapYear());  // 2019 is not
@@ -104,7 +92,6 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("isAfter()/isBefore()/equals() correctly compare two LocalDate instances")
     void comparison_isAfterIsBefore() {
         LocalDate today = LocalDate.now();
         LocalDate yesterday = today.minusDays(1);
@@ -114,14 +101,12 @@ class LocalDateTest {
     }
 
     @Test
-    @DisplayName("isSupported() reports that DAYS is supported but MINUTES is not for LocalDate")
     void isSupported_minutesNotSupported() {
         assertFalse(LocalDate.now().isSupported(ChronoUnit.MINUTES));
         assertTrue(LocalDate.now().isSupported(ChronoUnit.DAYS));
     }
 
     @Test
-    @DisplayName("get(ChronoField.DAY_OF_MONTH) returns the day-of-month component of the date")
     void chronoField_get() {
         LocalDate date = LocalDate.of(2020, 6, 15);
         assertEquals(15, date.get(ChronoField.DAY_OF_MONTH));

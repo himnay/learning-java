@@ -1,6 +1,5 @@
 package com.org.java.misc;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -20,7 +19,6 @@ class ConcurrencyTest {
     }
 
     @Test
-    @DisplayName("forEachValue() visits every value stored in the map")
     void forEachValue_iteratesAllValues() {
         ConcurrentHashMap<Integer, UUID> map = buildMap();
         AtomicInteger count = new AtomicInteger(0);
@@ -29,7 +27,6 @@ class ConcurrencyTest {
     }
 
     @Test
-    @DisplayName("forEach() with a conditional body only counts entries whose key is a multiple of 10")
     void forEach_withCondition_processesMatchingEntries() {
         ConcurrentHashMap<Integer, UUID> map = buildMap();
         int[] count = {0};
@@ -40,7 +37,6 @@ class ConcurrencyTest {
     }
 
     @Test
-    @DisplayName("search() returns the matching value when an entry satisfies the search function")
     void search_returnsFirstMatchOrNull() {
         ConcurrentHashMap<Integer, UUID> map = new ConcurrentHashMap<>();
         map.put(1, UUID.fromString("00000000-0000-0000-0000-000000000001"));
@@ -53,7 +49,6 @@ class ConcurrencyTest {
     }
 
     @Test
-    @DisplayName("search() returns null when no entry satisfies the search function")
     void search_returnsNullWhenNoMatch() {
         ConcurrentHashMap<Integer, UUID> map = buildMap();
         UUID result = map.search(1, (id, uuid) -> null);

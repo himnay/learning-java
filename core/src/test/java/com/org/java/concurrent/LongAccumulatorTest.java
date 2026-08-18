@@ -1,6 +1,5 @@
 package com.org.java.concurrent;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -13,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class LongAccumulatorTest {
 
     @Test
-    @DisplayName("LongAccumulator with a sum operator totals all values accumulated concurrently")
     void accumulate_withSumOperator_sumsAllValues() {
         LongAccumulator adder = new LongAccumulator(Long::sum, 0L);
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -24,7 +22,6 @@ class LongAccumulatorTest {
     }
 
     @Test
-    @DisplayName("getThenReset() returns the accumulated value and resets it back to the identity")
     void getThenReset_resetsToIdentity() {
         LongAccumulator acc = new LongAccumulator(Long::sum, 0L);
         acc.accumulate(10);
@@ -33,7 +30,6 @@ class LongAccumulatorTest {
     }
 
     @Test
-    @DisplayName("LongAccumulator with a max operator retains the largest accumulated value")
     void accumulate_withMaxOperator_returnsMaxValue() {
         LongAccumulator max = new LongAccumulator(Long::max, Long.MIN_VALUE);
         max.accumulate(5);

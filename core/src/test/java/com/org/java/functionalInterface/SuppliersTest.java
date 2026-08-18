@@ -1,7 +1,6 @@
 package com.org.java.functionalInterface;
 
 import com.org.java.Student;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.function.Supplier;
@@ -12,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class SuppliersTest {
 
     @Test
-    @DisplayName("A Supplier produces a new Student instance populated with the expected fields")
     void get_returnsNewStudentInstance() {
         Supplier<Student> supplier = () ->
                 new Student("Himansu", 2, 3.2, "Male", asList("Swimming", "basketball"));
@@ -23,7 +21,6 @@ class SuppliersTest {
     }
 
     @Test
-    @DisplayName("Calling get() twice on a Supplier yields distinct instances with equal data")
     void get_returnsDifferentInstancesEachCall() {
         Supplier<Student> supplier = () -> new Student("Clone", 1, 2.0, "male", asList());
         Student s1 = supplier.get();

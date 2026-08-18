@@ -1,6 +1,5 @@
 package com.org.java.concurrent;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -12,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ExecutorsTest {
 
     @Test
-    @DisplayName("A single-thread executor runs a submitted task to completion")
     void singleThreadExecutor_runsTaskToCompletion() throws Exception {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<String> future = executor.submit(() -> "done");
@@ -21,7 +19,6 @@ class ExecutorsTest {
     }
 
     @Test
-    @DisplayName("Future.get() blocks until the submitted task completes and returns its result")
     void futureGet_returnsResultAfterCompletion() throws Exception {
         ExecutorService executor = Executors.newFixedThreadPool(1);
         Future<Integer> future = executor.submit(() -> {
@@ -35,7 +32,6 @@ class ExecutorsTest {
     }
 
     @Test
-    @DisplayName("Future.get() with a timeout throws TimeoutException when the task takes too long")
     void futureGet_throwsTimeoutExceptionWhenTooSlow() {
         ExecutorService executor = Executors.newFixedThreadPool(1);
         Future<Integer> future = executor.submit(() -> {
@@ -49,7 +45,6 @@ class ExecutorsTest {
     }
 
     @Test
-    @DisplayName("invokeAll() runs every submitted task and returns a completed future for each")
     void invokeAll_returnsAllResults() throws Exception {
         ExecutorService executor = Executors.newWorkStealingPool();
         List<Callable<String>> tasks = Arrays.asList(
@@ -63,7 +58,6 @@ class ExecutorsTest {
     }
 
     @Test
-    @DisplayName("invokeAny() returns the result of whichever submitted task finishes first")
     void invokeAny_returnsFirstCompletedResult() throws Exception {
         ExecutorService executor = Executors.newWorkStealingPool();
         List<Callable<String>> tasks = Arrays.asList(
@@ -75,7 +69,6 @@ class ExecutorsTest {
     }
 
     @Test
-    @DisplayName("A scheduled executor runs a task after the configured delay")
     void scheduledExecutor_schedulesTaskWithDelay() throws Exception {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
         CountDownLatch latch = new CountDownLatch(1);

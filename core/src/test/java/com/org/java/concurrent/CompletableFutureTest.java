@@ -1,6 +1,5 @@
 package com.org.java.concurrent;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CompletableFuture;
@@ -11,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class CompletableFutureTest {
 
     @Test
-    @DisplayName("complete() sets the future's value and makes it retrievable via get()")
     void complete_setsValueAndMakesItRetrievable() throws ExecutionException, InterruptedException {
         CompletableFuture<String> future = new CompletableFuture<>();
         future.complete("42");
@@ -20,7 +18,6 @@ class CompletableFutureTest {
     }
 
     @Test
-    @DisplayName("thenAccept() consumes the result once the future completes")
     void thenAccept_consumesResultWhenDone() throws ExecutionException, InterruptedException {
         StringBuilder sb = new StringBuilder();
         CompletableFuture<String> future = new CompletableFuture<>();
@@ -31,14 +28,12 @@ class CompletableFutureTest {
     }
 
     @Test
-    @DisplayName("supplyAsync() computes and returns the result asynchronously")
     void supplyAsync_computesResultAsynchronously() throws ExecutionException, InterruptedException {
         CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 21 * 2);
         assertEquals(42, future.get());
     }
 
     @Test
-    @DisplayName("thenApply() transforms the completed result into a new value")
     void thenApply_transformsResult() throws ExecutionException, InterruptedException {
         CompletableFuture<String> future = CompletableFuture
                 .supplyAsync(() -> "hello")
@@ -47,7 +42,6 @@ class CompletableFutureTest {
     }
 
     @Test
-    @DisplayName("thenCombine() merges the results of two independent futures")
     void thenCombine_combinesTwoFutures() throws ExecutionException, InterruptedException {
         CompletableFuture<Integer> f1 = CompletableFuture.supplyAsync(() -> 10);
         CompletableFuture<Integer> f2 = CompletableFuture.supplyAsync(() -> 20);
@@ -56,7 +50,6 @@ class CompletableFutureTest {
     }
 
     @Test
-    @DisplayName("exceptionally() recovers from a failed future with a fallback value")
     void exceptionally_handlesFutureFailure() throws ExecutionException, InterruptedException {
         CompletableFuture<String> future = CompletableFuture
                 .<String>supplyAsync(() -> { throw new RuntimeException("oops"); })

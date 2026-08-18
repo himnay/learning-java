@@ -1,7 +1,6 @@
 package com.org.java.functionalInterface;
 
 import com.org.java.Student;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -28,7 +27,6 @@ class FunctionBiTest {
             };
 
     @Test
-    @DisplayName("A BiFunction filters students by grade level and GPA using a BiPredicate")
     void apply_returnsOnlyStudentsMeetingBiPredicate() {
         // biPredicate: gradeLevel >= 3 AND gpa >= 3.9
         Map<String, Double> result = filteredGpaMap.apply(getAllStudents(), biPredicate);
@@ -40,7 +38,6 @@ class FunctionBiTest {
     }
 
     @Test
-    @DisplayName("A relaxed BiPredicate on GPA alone admits more students into the filtered map")
     void apply_withRelaxedPredicate_returnsMoreStudents() {
         BiPredicate<Integer, Double> relaxed = (grade, gpa) -> gpa >= 3.5;
         Map<String, Double> result = filteredGpaMap.apply(getAllStudents(), relaxed);

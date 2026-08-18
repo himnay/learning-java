@@ -1,6 +1,5 @@
 package com.org.java.concurrent;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -15,7 +14,6 @@ class LongAdderTest {
     private static final int NUM_INCREMENTS = 10_000;
 
     @Test
-    @DisplayName("LongAdder accumulates the exact count under concurrent increments")
     void increment_isThreadSafe() {
         LongAdder adder = new LongAdder();
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -25,7 +23,6 @@ class LongAdderTest {
     }
 
     @Test
-    @DisplayName("LongAdder.add() sums fixed amounts added concurrently from multiple threads")
     void add_sumsFixedAmounts() {
         LongAdder adder = new LongAdder();
         ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -35,7 +32,6 @@ class LongAdderTest {
     }
 
     @Test
-    @DisplayName("sumThenReset() returns the current sum and resets the adder back to zero")
     void sumThenReset_resetsToZero() {
         LongAdder adder = new LongAdder();
         adder.add(42);

@@ -1,6 +1,5 @@
 package com.org.java.stream;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class StreamFactoryTest {
 
     @Test
-    @DisplayName("Stream.of() creates a stream containing exactly the provided elements in order")
     void streamOf_containsAllProvidedElements() {
         List<String> result = Stream.of("Alpha", "Beta", "Gamma", "Theta")
                 .collect(Collectors.toList());
@@ -22,7 +20,6 @@ class StreamFactoryTest {
     }
 
     @Test
-    @DisplayName("Stream.iterate() generates a doubling sequence starting from the seed value")
     void streamIterate_producesDoublingSequence() {
         List<Integer> result = Stream.iterate(1, x -> x * 2)
                 .limit(10)
@@ -35,7 +32,6 @@ class StreamFactoryTest {
     }
 
     @Test
-    @DisplayName("Stream.generate() produces the requested number of elements from the supplier")
     void streamGenerate_producesRequestedNumberOfElements() {
         List<Integer> result = Stream.generate(() -> 42)
                 .limit(5)

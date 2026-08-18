@@ -1,7 +1,6 @@
 package com.org.java.functionalInterface;
 
 import com.org.java.Student;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -14,14 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class FunctionsTest {
 
     @Test
-    @DisplayName("A Function based on String::toUpperCase uppercases the input string")
     void apply_uppercasesString() {
         Function<String, String> upper = String::toUpperCase;
         assertEquals("HIMANSU", upper.apply("himansu"));
     }
 
     @Test
-    @DisplayName("andThen() uppercases the string first, then concatenates the surname")
     void andThen_appliesFirstThenSecond() {
         Function<String, String> upper  = String::toUpperCase;
         Function<String, String> concat = name -> name.concat("Nayak");
@@ -30,7 +27,6 @@ class FunctionsTest {
     }
 
     @Test
-    @DisplayName("compose() concatenates the surname first, then uppercases the combined string")
     void compose_appliesSecondThenFirst() {
         Function<String, String> upper  = String::toUpperCase;
         Function<String, String> concat = name -> name.concat("Nayak");
@@ -39,7 +35,6 @@ class FunctionsTest {
     }
 
     @Test
-    @DisplayName("A Function built from a student list produces a name-to-GPA map")
     void functionWithStudents_buildsNameGpaMap() {
         Function<java.util.List<Student>, Map<String, Double>> toGpaMap = students -> {
             Map<String, Double> map = new HashMap<>();

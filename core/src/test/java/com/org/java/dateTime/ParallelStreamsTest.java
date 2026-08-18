@@ -1,7 +1,6 @@
 package com.org.java.dateTime;
 
 import com.org.java.Student;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -14,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ParallelStreamsTest {
 
     @Test
-    @DisplayName("A parallel LongStream sum matches the Gauss-formula expected total")
     void parallelSum_producesCorrectResult() {
         long expected = (long) 100_000 * 100_001 / 2; // Gauss formula
         // IntStream.sum() returns int and overflows for n=100_000; use LongStream
@@ -23,7 +21,6 @@ class ParallelStreamsTest {
     }
 
     @Test
-    @DisplayName("A parallel stream collects distinct, sorted student activities")
     void parallelStream_distinctSortedActivities() {
         List<String> activities = getAllStudents().parallelStream()
                 .map(Student::getActivities)
@@ -40,7 +37,6 @@ class ParallelStreamsTest {
     }
 
     @Test
-    @DisplayName("A parallel stream pipeline produces the same result as the equivalent sequential pipeline")
     void parallelStream_sameResultAsSequential() {
         List<String> sequential = getAllStudents().stream()
                 .map(Student::getActivities)

@@ -1,7 +1,6 @@
 package com.org.java.methodReference;
 
 import com.org.java.Student;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -24,14 +23,12 @@ class MethodReferenceTest {
     }
 
     @Test
-    @DisplayName("An unbound instance method reference on a type uppercases the given string")
     void instanceMethodReference_onType() {
         Function<String, String> upper = String::toUpperCase;
         assertEquals("HIMANSU", upper.apply("himansu"));
     }
 
     @Test
-    @DisplayName("A bound instance method reference adds elements to a specific list instance")
     void instanceMethodReference_onInstance() {
         List<String> collected = new ArrayList<>();
         Consumer<String> add = collected::add;
@@ -41,7 +38,6 @@ class MethodReferenceTest {
     }
 
     @Test
-    @DisplayName("A static method reference correctly classifies ages as senior or not")
     void staticMethodReference() {
         Predicate<Integer> isSenior = MethodReferenceTest::isSeniorCitizen;
         assertTrue(isSenior.test(65));
@@ -49,7 +45,6 @@ class MethodReferenceTest {
     }
 
     @Test
-    @DisplayName("A no-arg constructor reference supplies a new Student with default field values")
     void constructorReference_noArgSupplier() {
         Supplier<Student> supplier = Student::new;
         Student s = supplier.get();
@@ -58,7 +53,6 @@ class MethodReferenceTest {
     }
 
     @Test
-    @DisplayName("A single-arg constructor reference builds a Student using the given name")
     void constructorReference_withArg() {
         Function<String, Student> factory = Student::new; // uses Student(String name)
         Student s = factory.apply("TestStudent");
