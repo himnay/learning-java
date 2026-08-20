@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.org.learning</groupId>
+        <artifactId>jpms</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jpms-app</artifactId>
+    <packaging>jar</packaging>
+
+    <name>JPMS - App module</name>
+    <description>Consumer module. Only requires the api module and discovers Greeter
+        implementations at runtime via ServiceLoader (uses/provides), never depending on
+        jpms-service directly.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.org.learning</groupId>
+            <artifactId>jpms-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Not a compile dependency: the service module is only needed on the module
+             path at runtime so ServiceLoader can find its providers. -->
+        <dependency>
+            <groupId>com.org.learning</groupId>
+            <artifactId>jpms-service</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.org.jpms.app.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

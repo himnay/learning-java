@@ -16,6 +16,7 @@
         <module>core</module>
         <module>collections</module>
         <module>cracking-coding-interview</module>
+        <module>jpms</module>
     </modules>
 
     <properties>
