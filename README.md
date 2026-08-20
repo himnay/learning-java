@@ -1,8 +1,8 @@
-# Learning Java — Java 8 to Java 26
+# <span style="color:hsl(224,80%,58%)">Learning Java — Java 8 to Java 26</span>
 
 <img src="image/openjdk-logo.png" alt="OpenJDK" width="90"/>
 
-## Table of contents
+## <span style="color:hsl(2,80%,58%)">Table of contents</span>
 
 1. 🏗️ [Project Structure](#project-structure)
 2. 🔨 [Build & Run](#build--run)
@@ -15,7 +15,7 @@ A comprehensive, test-driven learning repository covering every major Java langu
 ---
 
 <a id="project-structure"></a>
-## 1. 🏗️ Project Structure
+## <span style="color:hsl(139,80%,58%)">1. 🏗️ Project Structure</span>
 
 ```
 learning-java/
@@ -41,7 +41,7 @@ learning-java/
 ```
 
 <a id="build--run"></a>
-## 2. 🔨 Build & Run
+## <span style="color:hsl(277,80%,58%)">2. 🔨 Build & Run</span>
 
 ```bash
 # Run all tests
@@ -59,7 +59,7 @@ mvn compile
 ---
 
 <a id="feature-coverage"></a>
-## 3. 🧪 Feature Coverage
+## <span style="color:hsl(54,80%,50%)">3. 🧪 Feature Coverage</span>
 
 ---
 
@@ -367,7 +367,7 @@ mvn compile
 ---
 
 <a id="java-version-quick-reference"></a>
-## 4. 📚 Java Version Quick Reference
+## <span style="color:hsl(192,80%,58%)">4. 📚 Java Version Quick Reference</span>
 
 | Version     | Release  | Type    | Key Features                                                                                                         |
 |-------------|----------|---------|----------------------------------------------------------------------------------------------------------------------|
@@ -394,7 +394,7 @@ mvn compile
 ---
 
 <a id="design-decisions"></a>
-## 5. 🏗️ Design Decisions
+## <span style="color:hsl(329,80%,58%)">5. 🏗️ Design Decisions</span>
 
 <ul>
 
