@@ -19,42 +19,36 @@ A comprehensive, test-driven learning repository covering every major Java langu
 
 ```
 learning-java/
-├── pom.xml                         ← Single-module Maven project (Java 26, --enable-preview)
-└── src/
-    ├── main/java/com/org/java8/    ← Shared model classes (Student, StudentDataBase, etc.)
-    └── test/java/com/org/
-        ├── java8/                  ← Java 8 features
-        ├── java9/                  ← Java 9 features
-        ├── java10/                 ← Java 10 features
-        ├── java11/                 ← Java 11 features
-        ├── java12/                 ← Java 12 features
-        ├── java14/                 ← Java 14 features
-        ├── java15/                 ← Java 15 features
-        ├── java16/                 ← Java 16 features
-        ├── java17/                 ← Java 17 features
-        ├── java21/                 ← Java 21 (LTS) features
-        ├── java22/                 ← Java 22 features
-        ├── java23/                 ← Java 23 features
-        ├── java24/                 ← Java 24 features
-        ├── java25/                 ← Java 25 (LTS) features
-        └── java26/                 ← Java 26 features
+├── pom.xml                         ← Aggregator: Java 26, --enable-preview, JUnit 6 (as of 2026)
+├── core/                           ← Java 8 → 26 feature tests
+│   ├── src/main/java/com/org/java/ ← Shared model classes (Student, StudentDataBase, etc.)
+│   └── src/test/java/com/org/
+│       ├── java/                   ← Java 8 features
+│       ├── java9/ … java17/        ← one package per release (9–12, 14–17)
+│       ├── java21/                 ← Java 21 (LTS) features
+│       ├── java22/ … java24/
+│       ├── java25/                 ← Java 25 (LTS) features
+│       └── java26/                 ← Java 26 features
+├── cracking-coding-interview/      ← 47 standalone solutions (Q1…Q47, each with a main) + known-answer tests
+└── jpms/                           ← JPMS multi-module example (api / service / app) — see jpms/README.md
 ```
 
 <a id="build--run"></a>
 ## <span style="color:hsl(277,80%,58%)">2. 🔨 Build & Run</span>
 
 ```bash
-# Run all tests
-mvn test
+# Run all tests (all modules)
+mvn verify
 
 # Run tests for a specific Java version
-mvn test -Dtest="com.org.java21.*"
+mvn test -pl core -Dtest="com.org.java21.*"
 
 # Compile only
 mvn compile
 ```
 
-**Requirements:** JDK 26, Maven 3.8+
+**Requirements:** JDK 26 (preview features are compiled for exactly 26 — a newer JDK won't run them), Maven 3.9+.
+JDK 27 went GA in September 2026; its features are not covered here yet.
 
 ---
 
