@@ -1,6 +1,6 @@
 # <span style="color:hsl(224,80%,58%)">Learning Java — Java 8 to Java 26</span>
 
-<img src="image/openjdk-logo.png" alt="OpenJDK" width="90"/>
+<img src="image/openjdk-logo.png" alt="OpenJDK" width="240"/>
 
 ## <span style="color:hsl(2,80%,58%)">Table of contents</span>
 
