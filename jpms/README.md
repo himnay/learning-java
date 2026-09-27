@@ -10,7 +10,7 @@ jpms-app      module com.org.jpms.app      requires com.org.jpms.api          us
 ```
 
 `jpms-app` never depends on `jpms-service` at compile time. It finds
-implementations through `ServiceLoader.load(Greeter.class)`, and Java's
+implementations through [`ServiceLoader.load(Greeter.class)`][ServiceLoader], and Java's
 module resolver pulls `jpms-service` into the module graph at run time
 because it provides a service the app `uses`.
 
@@ -55,3 +55,7 @@ java --module-path api/target/*.jar:service/target/*.jar:app/target/*.jar \
 
 Shows `contains com.org.jpms.service.internal` (not `exports`) — proof
 the package is compiled in but sealed off from other modules.
+
+<!-- Library classes mentioned above, linked to their source at the versions this project builds with. -->
+
+[ServiceLoader]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/ServiceLoader.java
