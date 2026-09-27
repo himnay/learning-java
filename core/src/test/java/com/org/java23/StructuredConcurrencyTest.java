@@ -11,17 +11,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Structured Concurrency tests using the Java 26 API:
+ * Structured Concurrency tests using the Java 27 preview API:
  *   StructuredTaskScope.open(Joiner)
  *
- * In Java 26, ShutdownOnFailure / ShutdownOnSuccess inner classes were replaced
- * by factory methods on StructuredTaskScope.Joiner:
+ * Since Java 25 the old ShutdownOnFailure / ShutdownOnSuccess inner classes are replaced
+ * by factory methods on StructuredTaskScope.Joiner. In Java 27 a failed join() throws
+ * java.util.concurrent.ExecutionException (was StructuredTaskScope.FailedException), and
+ * awaitAll() is gone: allUntil(_ -> false) waits for every subtask and never throws.
  *   - Joiner.allSuccessfulOrThrow()  — all tasks must succeed, collect results
  *   - Joiner.awaitAllSuccessfulOrThrow() — all must succeed, discard results (Void)
  *   - Joiner.anySuccessfulOrThrow()  — first success wins
- *   - Joiner.awaitAll()              — wait for all, ignore failures
+ *   - Joiner.allUntil(_ -> false)    — wait for all, ignore failures
  */
-@DisplayName("Structured Concurrency (Java 21–26 API)")
+@DisplayName("Structured Concurrency (Java 27 preview API)")
 class StructuredConcurrencyTest {
 
     // -----------------------------------------------------------------------
@@ -53,16 +55,16 @@ class StructuredConcurrencyTest {
     }
 
     @Test
-    @DisplayName("allSuccessfulOrThrow: when one subtask throws, join() throws FailedException")
+    @DisplayName("allSuccessfulOrThrow: when one subtask throws, join() throws ExecutionException")
     void allSuccessfulOrThrowOneTaskFails() {
-        assertThrows(StructuredTaskScope.FailedException.class, () -> {
+        assertThrows(ExecutionException.class, () -> {
             try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>allSuccessfulOrThrow())) {
                 scope.<String>fork(() -> { throw new RuntimeException("deliberate failure"); });
                 scope.<String>fork(() -> {
                     Thread.sleep(100);
                     return "ok";
                 });
-                scope.join(); // throws FailedException
+                scope.join(); // throws ExecutionException
             }
         });
     }
@@ -70,9 +72,9 @@ class StructuredConcurrencyTest {
     @Test
     @DisplayName("allSuccessfulOrThrow: failing subtask state is FAILED")
     void subtaskStateFailedOnException() throws Exception {
-        try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>awaitAll())) {
+        try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>allUntil(_ -> false))) {
             var failing = scope.<String>fork(() -> { throw new RuntimeException("error"); });
-            scope.join(); // awaitAll never throws, just waits
+            scope.join(); // allUntil(_ -> false) never cancels or throws, just waits
             assertEquals(StructuredTaskScope.Subtask.State.FAILED, failing.state());
             assertNotNull(failing.exception());
             assertEquals("error", failing.exception().getMessage());
@@ -99,9 +101,9 @@ class StructuredConcurrencyTest {
     }
 
     @Test
-    @DisplayName("anySuccessfulOrThrow: when all subtasks fail, join() throws FailedException")
+    @DisplayName("anySuccessfulOrThrow: when all subtasks fail, join() throws ExecutionException")
     void anySuccessfulOrThrowAllFail() {
-        assertThrows(StructuredTaskScope.FailedException.class, () -> {
+        assertThrows(ExecutionException.class, () -> {
             try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>anySuccessfulOrThrow())) {
                 scope.<String>fork(() -> { throw new RuntimeException("fail1"); });
                 scope.<String>fork(() -> { throw new RuntimeException("fail2"); });
@@ -128,17 +130,17 @@ class StructuredConcurrencyTest {
     }
 
     // -----------------------------------------------------------------------
-    // awaitAll — tolerant joiner: waits for all regardless of outcome
+    // allUntil(_ -> false) — tolerant joiner: waits for all regardless of outcome
     // -----------------------------------------------------------------------
 
     @Test
-    @DisplayName("awaitAll: completes even when some tasks fail")
+    @DisplayName("allUntil(_ -> false): completes even when some tasks fail")
     void awaitAllToleratesFailures() throws Exception {
         var success = new java.util.concurrent.atomic.AtomicBoolean(false);
-        try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>awaitAll())) {
+        try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>allUntil(_ -> false))) {
             scope.<String>fork(() -> { throw new RuntimeException("boom"); });
             scope.<String>fork(() -> { success.set(true); return "ok"; });
-            scope.join(); // returns Void, does not throw
+            scope.join(); // returns the list of subtasks, does not throw
         }
         assertTrue(success.get(), "The successful task should have run to completion");
     }
@@ -199,20 +201,20 @@ class StructuredConcurrencyTest {
     }
 
     // -----------------------------------------------------------------------
-    // FailedException carries the original cause
+    // ExecutionException carries the original cause
     // -----------------------------------------------------------------------
 
     @Test
-    @DisplayName("FailedException wraps the original exception as its cause")
-    void failedExceptionCause() {
-        StructuredTaskScope.FailedException ex = assertThrows(
-                StructuredTaskScope.FailedException.class, () -> {
+    @DisplayName("ExecutionException wraps the original exception as its cause")
+    void executionExceptionCause() {
+        ExecutionException ex = assertThrows(
+                ExecutionException.class, () -> {
                     try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>allSuccessfulOrThrow())) {
                         scope.<String>fork(() -> { throw new IllegalStateException("root cause"); });
                         scope.join();
                     }
                 });
-        assertNotNull(ex.getCause(), "FailedException must have a cause");
+        assertNotNull(ex.getCause(), "ExecutionException must have a cause");
         assertInstanceOf(IllegalStateException.class, ex.getCause());
         assertEquals("root cause", ex.getCause().getMessage());
     }

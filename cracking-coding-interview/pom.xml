@@ -27,7 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>26</java.version>
+        <java.version>27</java.version>
     </properties>
     <!-- Plain algorithm solutions (each Qn class has its own main): Spring Boot is only the parent
          for dependency/plugin management. No starter, no repackage — there is no single app. -->

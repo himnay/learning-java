@@ -19,7 +19,7 @@ A comprehensive, test-driven learning repository covering every major Java langu
 
 ```
 learning-java/
-├── pom.xml                         ← Aggregator: Java 26, --enable-preview, JUnit 6 (as of 2026)
+├── pom.xml                         ← Aggregator: Java 27, --enable-preview, JUnit 6 (as of 2026)
 ├── core/                           ← Java 8 → 26 feature tests
 │   ├── src/main/java/com/org/java/ ← Shared model classes (Student, StudentDataBase, etc.)
 │   └── src/test/java/com/org/
@@ -47,8 +47,9 @@ mvn test -pl core -Dtest="com.org.java21.*"
 mvn compile
 ```
 
-**Requirements:** JDK 26 (preview features are compiled for exactly 26 — a newer JDK won't run them), Maven 3.9+.
-JDK 27 went GA in September 2026; its features are not covered here yet.
+**Requirements:** JDK 27 (preview features are compiled for exactly 27, so an older or newer JDK won't run them), Maven 3.9+.
+The build moved from JDK 26 to 27 in September 2026, with the preview APIs updated to their JDK 27 form (for example
+structured concurrency's `allUntil` and `ExecutionException`). JDK 27's new features are not covered by dedicated tests yet.
 
 ---
 
@@ -293,10 +294,10 @@ JDK 27 went GA in September 2026; its features are not covered here yet.
 
 ### Java 23 (September 2024) — Scoped Values & Structured Concurrency
 
-| Test Class                         | Features Covered                                                                                                           |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| `java23/ScopedValuesTest`          | [`ScopedValue.newInstance()`][ScopedValue], `ScopedValue.where(...).run(...)`, nested scopes, inheritance by child threads |
-| `java23/StructuredConcurrencyTest` | [`StructuredTaskScope.ShutdownOnFailure`][StructuredTaskScope], `fork`, `join`, `throwIfFailed`, `ShutdownOnSuccess`       |
+| Test Class                         | Features Covered                                                                                                                                                                                                  |
+|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `java23/ScopedValuesTest`          | [`ScopedValue.newInstance()`][ScopedValue], `ScopedValue.where(...).run(...)`, nested scopes, inheritance by child threads                                                                                        |
+| `java23/StructuredConcurrencyTest` | [`StructuredTaskScope.open(Joiner)`][StructuredTaskScope] with `allSuccessfulOrThrow`, `anySuccessfulOrThrow`, `awaitAllSuccessfulOrThrow`, `allUntil`; `fork`, `join`, `ExecutionException` (JDK 27 preview API) |
 
 **Key concepts:**
 
@@ -328,16 +329,16 @@ JDK 27 went GA in September 2026; its features are not covered here yet.
 
 ### Java 25 (September 2025, LTS) — Stable Values & Finalized APIs
 
-| Test Class                  | Features Covered                                                                                                                                       |
-|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `java25/Java25FeaturesTest` | Primitive types in patterns (`instanceof int i`, `switch` on primitive wrappers with type pattern), finalized structured concurrency and scoped values |
+| Test Class                  | Features Covered                                                                                                                                                       |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `java25/Java25FeaturesTest` | Primitive types in patterns (`instanceof int i`, `switch` on primitive wrappers with type pattern), structured concurrency (still preview) and finalized scoped values |
 
 **Key concepts:**
 
 <ul>
 
 - Primitive type patterns allow matching and binding on unboxed primitives — no NullPointerException risk since primitives cannot be null
-- Java 25 is an LTS release: virtual threads, records, sealed classes, pattern matching, text blocks, structured concurrency, scoped values are all production-stable
+- Java 25 is an LTS release: virtual threads, records, sealed classes, pattern matching, text blocks and scoped values are production-stable. Structured concurrency and primitive patterns are still preview features (they need `--enable-preview`, even on JDK 27)
 
 </ul>
 
@@ -355,6 +356,7 @@ JDK 27 went GA in September 2026; its features are not covered here yet.
 
 - Module imports (`import module M`) bulk-import all exported packages of a module — useful for learning/scripting scenarios
 - Flexible constructor bodies allow statements before `super()`/`this()` calls as long as they don't reference the instance being initialized
+- Both features were already standard in Java 25, and Java 26 left them unchanged. What Java 26 itself added is in the version table below
 
 </ul>
 
@@ -363,27 +365,27 @@ JDK 27 went GA in September 2026; its features are not covered here yet.
 <a id="java-version-quick-reference"></a>
 ## <span style="color:hsl(192,80%,58%)">4. 📚 Java Version Quick Reference</span>
 
-| Version     | Release  | Type    | Key Features                                                                                                                               |
-|-------------|----------|---------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **Java 8**  | Mar 2014 | LTS     | Lambdas, streams, Optional, default methods, date/time API, CompletableFuture                                                              |
-| **Java 9**  | Sep 2017 |         | Modules (JPMS), collection factory methods, Stream enhancements, private interface methods                                                 |
-| **Java 10** | Mar 2018 |         | `var` (local variable type inference), `copyOf`, `toUnmodifiableList/Set/Map`                                                              |
-| **Java 11** | Sep 2018 | **LTS** | String methods (`strip`, `isBlank`, `lines`, `repeat`), [`Files.readString/writeString`][Files], [`Predicate.not`][Predicate], HTTP Client |
-| **Java 12** | Mar 2019 |         | [`Collectors.teeing`][Collectors], [`String.indent/transform`][String], `Files.mismatch`, switch expressions (preview)                     |
-| **Java 13** | Sep 2019 |         | Text blocks (preview), switch expressions (preview 2)                                                                                      |
-| **Java 14** | Mar 2020 |         | Switch expressions (standard), `instanceof` pattern matching (preview), Records (preview), `String.formatted`                              |
-| **Java 15** | Sep 2020 |         | Text blocks (standard), Sealed classes (preview), `String.stripIndent/translateEscapes`                                                    |
-| **Java 16** | Mar 2021 |         | Records (standard), `instanceof` pattern matching (standard), [`Stream.toList()`][Stream], `Stream.mapMulti()`                             |
-| **Java 17** | Sep 2021 | **LTS** | Sealed classes (standard), Pattern matching for switch (preview), Enhanced Random generators                                               |
-| **Java 18** | Mar 2022 |         | UTF-8 by default, Simple web server (`jwebserver`), Code snippets in Javadoc                                                               |
-| **Java 19** | Sep 2022 |         | Virtual threads (preview), Structured concurrency (incubator), Record patterns (preview)                                                   |
-| **Java 20** | Mar 2023 |         | Scoped values (incubator), Virtual threads (preview 2), Record patterns (preview 2)                                                        |
-| **Java 21** | Sep 2023 | **LTS** | Virtual threads (standard), Sequenced collections, Record patterns (standard), Pattern matching switch (standard)                          |
-| **Java 22** | Mar 2024 |         | Unnamed variables `_` (standard), Stream gatherers (preview), Foreign Function & Memory API (standard)                                     |
-| **Java 23** | Sep 2024 |         | Structured concurrency (preview), Scoped values (preview), Primitive types in patterns (preview), Markdown Javadoc                         |
-| **Java 24** | Mar 2025 |         | Stream gatherers (standard), Class-File API (standard), Scoped values & Structured concurrency (preview 4)                                 |
-| **Java 25** | Sep 2025 | **LTS** | Primitive types in patterns (standard), Structured concurrency (standard), Scoped values (standard), Stable values                         |
-| **Java 26** | Mar 2026 |         | Module import declarations, Flexible constructor bodies, further refinements                                                               |
+| Version     | Release  | Type    | Key Features                                                                                                                                                    |
+|-------------|----------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Java 8**  | Mar 2014 | LTS     | Lambdas, streams, Optional, default methods, date/time API, CompletableFuture                                                                                   |
+| **Java 9**  | Sep 2017 |         | Modules (JPMS), collection factory methods, Stream enhancements, private interface methods                                                                      |
+| **Java 10** | Mar 2018 |         | `var` (local variable type inference), `copyOf`, `toUnmodifiableList/Set/Map`                                                                                   |
+| **Java 11** | Sep 2018 | **LTS** | String methods (`strip`, `isBlank`, `lines`, `repeat`), [`Files.readString/writeString`][Files], [`Predicate.not`][Predicate], HTTP Client                      |
+| **Java 12** | Mar 2019 |         | [`Collectors.teeing`][Collectors], [`String.indent/transform`][String], `Files.mismatch`, switch expressions (preview)                                          |
+| **Java 13** | Sep 2019 |         | Text blocks (preview), switch expressions (preview 2)                                                                                                           |
+| **Java 14** | Mar 2020 |         | Switch expressions (standard), `instanceof` pattern matching (preview), Records (preview), `String.formatted`                                                   |
+| **Java 15** | Sep 2020 |         | Text blocks (standard), Sealed classes (preview), `String.stripIndent/translateEscapes`                                                                         |
+| **Java 16** | Mar 2021 |         | Records (standard), `instanceof` pattern matching (standard), [`Stream.toList()`][Stream], `Stream.mapMulti()`                                                  |
+| **Java 17** | Sep 2021 | **LTS** | Sealed classes (standard), Pattern matching for switch (preview), Enhanced Random generators                                                                    |
+| **Java 18** | Mar 2022 |         | UTF-8 by default, Simple web server (`jwebserver`), Code snippets in Javadoc                                                                                    |
+| **Java 19** | Sep 2022 |         | Virtual threads (preview), Structured concurrency (incubator), Record patterns (preview)                                                                        |
+| **Java 20** | Mar 2023 |         | Scoped values (incubator), Virtual threads (preview 2), Record patterns (preview 2)                                                                             |
+| **Java 21** | Sep 2023 | **LTS** | Virtual threads (standard), Sequenced collections, Record patterns (standard), Pattern matching switch (standard)                                               |
+| **Java 22** | Mar 2024 |         | Unnamed variables `_` (standard), Stream gatherers (preview), Foreign Function & Memory API (standard)                                                          |
+| **Java 23** | Sep 2024 |         | Structured concurrency (preview), Scoped values (preview), Primitive types in patterns (preview), Markdown Javadoc                                              |
+| **Java 24** | Mar 2025 |         | Stream gatherers (standard), Class-File API (standard), Scoped values & Structured concurrency (preview 4)                                                      |
+| **Java 25** | Sep 2025 | **LTS** | Scoped values, Module import declarations, Flexible constructor bodies (standard); Structured concurrency, Primitive types in patterns, Stable values (preview) |
+| **Java 26** | Mar 2026 |         | HTTP/3 in the HTTP client (standard); Lazy constants (preview, formerly Stable values); Structured concurrency and Primitive types in patterns still preview    |
 
 ---
 
@@ -402,69 +404,69 @@ JDK 27 went GA in September 2026; its features are not covered here yet.
 
 <!-- Library classes mentioned above, linked to their source at the versions this project builds with. -->
 
-[AtomicInteger]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/atomic/AtomicInteger.java
-[BiConsumer]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/BiConsumer.java
-[BiFunction]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/BiFunction.java
-[BinaryOperator]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/BinaryOperator.java
-[BiPredicate]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/BiPredicate.java
-[Collection]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/Collection.java
-[Collectors]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/stream/Collectors.java
-[ConcurrentHashMap]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java
-[Consumer]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/Consumer.java
-[CountDownLatch]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/CountDownLatch.java
-[Date]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/Date.java
-[Date (java.sql)]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.sql/share/classes/java/sql/Date.java
-[Deque]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/Deque.java
+[AtomicInteger]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/atomic/AtomicInteger.java
+[BiConsumer]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/BiConsumer.java
+[BiFunction]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/BiFunction.java
+[BinaryOperator]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/BinaryOperator.java
+[BiPredicate]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/BiPredicate.java
+[Collection]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Collection.java
+[Collectors]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/Collectors.java
+[ConcurrentHashMap]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java
+[Consumer]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/Consumer.java
+[CountDownLatch]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/CountDownLatch.java
+[Date]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Date.java
+[Date (java.sql)]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.sql/share/classes/java/sql/Date.java
+[Deque]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Deque.java
 [DisplayName]: https://github.com/junit-team/junit-framework/blob/r6.1.3/junit-jupiter-api/src/main/java/org/junit/jupiter/api/DisplayName.java
-[DoubleStream]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/stream/DoubleStream.java
-[Executors]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/Executors.java
-[Files]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/nio/file/Files.java
-[Function]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/Function.java
-[Future]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/Future.java
-[Gatherer]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/stream/Gatherer.java
-[Gatherers]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/stream/Gatherers.java
-[IntStream]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/stream/IntStream.java
-[LinkedHashMap]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/LinkedHashMap.java
-[LinkedHashSet]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/LinkedHashSet.java
-[List]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/List.java
-[LocalDate]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/time/LocalDate.java
-[LocalDateTime]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/time/LocalDateTime.java
-[LocalTime]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/time/LocalTime.java
-[LongAccumulator]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/atomic/LongAccumulator.java
-[LongAdder]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/atomic/LongAdder.java
-[LongStream]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/stream/LongStream.java
-[Map]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/Map.java
-[Math]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/Math.java
-[Optional]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/Optional.java
-[Path]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/nio/file/Path.java
-[Pattern]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/regex/Pattern.java
-[Predicate]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/Predicate.java
-[Random]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/Random.java
-[RandomGenerator]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/random/RandomGenerator.java
-[RandomGeneratorFactory]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/random/RandomGeneratorFactory.java
-[ReadWriteLock]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/locks/ReadWriteLock.java
-[ReentrantLock]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/locks/ReentrantLock.java
-[Repeatable]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/annotation/Repeatable.java
-[Retention]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/annotation/Retention.java
-[Runnable]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/Runnable.java
-[ScheduledExecutorService]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/ScheduledExecutorService.java
-[ScopedValue]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/ScopedValue.java
-[SecureRandom]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/security/SecureRandom.java
-[Semaphore]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/Semaphore.java
-[SequencedCollection]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/SequencedCollection.java
-[SequencedMap]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/SequencedMap.java
-[Set]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/Set.java
-[StampedLock]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/locks/StampedLock.java
-[Stream]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/stream/Stream.java
-[String]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/String.java
-[StructuredTaskScope]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/StructuredTaskScope.java
-[Supplier]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/Supplier.java
-[System]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/System.java
+[DoubleStream]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/DoubleStream.java
+[Executors]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/Executors.java
+[Files]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/nio/file/Files.java
+[Function]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/Function.java
+[Future]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/Future.java
+[Gatherer]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/Gatherer.java
+[Gatherers]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/Gatherers.java
+[IntStream]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/IntStream.java
+[LinkedHashMap]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/LinkedHashMap.java
+[LinkedHashSet]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/LinkedHashSet.java
+[List]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/List.java
+[LocalDate]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/time/LocalDate.java
+[LocalDateTime]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/time/LocalDateTime.java
+[LocalTime]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/time/LocalTime.java
+[LongAccumulator]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/atomic/LongAccumulator.java
+[LongAdder]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/atomic/LongAdder.java
+[LongStream]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/LongStream.java
+[Map]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Map.java
+[Math]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/Math.java
+[Optional]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Optional.java
+[Path]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/nio/file/Path.java
+[Pattern]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/regex/Pattern.java
+[Predicate]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/Predicate.java
+[Random]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Random.java
+[RandomGenerator]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/random/RandomGenerator.java
+[RandomGeneratorFactory]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/random/RandomGeneratorFactory.java
+[ReadWriteLock]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/locks/ReadWriteLock.java
+[ReentrantLock]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/locks/ReentrantLock.java
+[Repeatable]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/annotation/Repeatable.java
+[Retention]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/annotation/Retention.java
+[Runnable]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/Runnable.java
+[ScheduledExecutorService]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/ScheduledExecutorService.java
+[ScopedValue]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/ScopedValue.java
+[SecureRandom]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/security/SecureRandom.java
+[Semaphore]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/Semaphore.java
+[SequencedCollection]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/SequencedCollection.java
+[SequencedMap]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/SequencedMap.java
+[Set]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Set.java
+[StampedLock]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/locks/StampedLock.java
+[Stream]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/Stream.java
+[String]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/String.java
+[StructuredTaskScope]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/StructuredTaskScope.java
+[Supplier]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/Supplier.java
+[System]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/System.java
 [TempDir]: https://github.com/junit-team/junit-framework/blob/r6.1.3/junit-jupiter-api/src/main/java/org/junit/jupiter/api/io/TempDir.java
-[TemporalAdjusters]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/time/temporal/TemporalAdjusters.java
+[TemporalAdjusters]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/time/temporal/TemporalAdjusters.java
 [Test]: https://github.com/junit-team/junit-framework/blob/r6.1.3/junit-jupiter-api/src/main/java/org/junit/jupiter/api/Test.java
-[Thread]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/Thread.java
-[ThreadLocal]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/lang/ThreadLocal.java
-[ThreadLocalRandom]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/ThreadLocalRandom.java
-[TimeoutException]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/concurrent/TimeoutException.java
-[UnaryOperator]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/function/UnaryOperator.java
+[Thread]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/Thread.java
+[ThreadLocal]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/ThreadLocal.java
+[ThreadLocalRandom]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/ThreadLocalRandom.java
+[TimeoutException]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/TimeoutException.java
+[UnaryOperator]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/UnaryOperator.java

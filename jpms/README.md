@@ -58,4 +58,4 @@ the package is compiled in but sealed off from other modules.
 
 <!-- Library classes mentioned above, linked to their source at the versions this project builds with. -->
 
-[ServiceLoader]: https://github.com/openjdk/jdk/blob/jdk-26-ga/src/java.base/share/classes/java/util/ServiceLoader.java
+[ServiceLoader]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/ServiceLoader.java

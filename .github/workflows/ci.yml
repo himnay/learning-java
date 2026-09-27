@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          java-version: '26'   # preview features are compiled for exactly this release
+          java-version: '27'   # preview features are compiled for exactly this release
           distribution: 'temurin'
           cache: maven
       - run: mvn -B verify
