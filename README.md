@@ -10,7 +10,7 @@
 4. 📚 [Java Version Quick Reference](#java-version-quick-reference)
 5. 🏗️ [Design Decisions](#design-decisions)
 
-A comprehensive, test-driven learning repository covering every major Java language and API feature from **Java 8 (2014)** through **Java 26 (2026)**. Each concept is expressed as a JUnit 5 test with meaningful assertions — no bare [`System.out.println`][System].
+A comprehensive, test-driven learning repository covering every major Java language and API feature from **Java 8 (2014)** through **Java 26 (2026)**. Each concept is expressed as a JUnit 6 (Jupiter) test with meaningful assertions — no bare [`System.out.println`][System].
 
 ---
 
@@ -155,7 +155,7 @@ structured concurrency's `allUntil` and `ExecutionException`). JDK 27's new feat
 
 <ul>
 
-- `strip` handles Unicode whitespace (e.g., ` `) while `trim` only handles ASCII ≤ ` `
+- `strip` removes Unicode whitespace as defined by [`Character.isWhitespace`][Character] (e.g., the em space `\u2003`), while `trim` only removes characters ≤ U+0020. Neither removes the no-break space `\u00A0`, which Java does not count as whitespace
 - `lines()` returns a [`Stream<String>`][Stream] — lazy and efficient for large files
 - `Predicate.not(String::isBlank)` is a cleaner alternative to `s -> !s.isBlank()`
 - `Files.readString`/`writeString` eliminate boilerplate for simple file operations
@@ -239,10 +239,10 @@ structured concurrency's `allUntil` and `ExecutionException`). JDK 27's new feat
 
 ### Java 17 (September 2021, LTS) — Sealed Classes & Enhanced Random
 
-| Test Class                   | Features Covered                                                                                                                                                       |
-|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `java17/SealedClassesTest`   | `sealed interface`, `permits`, `final`/`non-sealed` subtypes, pattern matching switch with sealed types (exhaustive)                                                   |
-| `java17/RandomGeneratorTest` | [`RandomGenerator`][RandomGenerator] interface, [`RandomGeneratorFactory`][RandomGeneratorFactory], `nextInt(bound)`, `nextDouble`, `ints()/longs()/doubles()` streams |
+| Test Class                   | Features Covered                                                                                                                                                                                     |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `java17/SealedClassesTest`   | `sealed interface`, `permits`, `final`/`non-sealed` subtypes, pattern matching switch with sealed types (exhaustive)                                                                                 |
+| `java17/RandomGeneratorTest` | [`RandomGenerator`][RandomGenerator] interface, [`RandomGeneratorFactory`][RandomGeneratorFactory], `nextInt(bound)`, `nextDouble`, `ints()/longs()/doubles()` streams, jumping with `copyAndJump()` |
 
 **Key concepts:**
 
@@ -296,14 +296,14 @@ structured concurrency's `allUntil` and `ExecutionException`). JDK 27's new feat
 
 | Test Class                         | Features Covered                                                                                                                                                                                                  |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `java23/ScopedValuesTest`          | [`ScopedValue.newInstance()`][ScopedValue], `ScopedValue.where(...).run(...)`, nested scopes, inheritance by child threads                                                                                        |
+| `java23/ScopedValuesTest`          | [`ScopedValue.newInstance()`][ScopedValue], `ScopedValue.where(...).run(...)`, nested scopes, inheritance by structured-concurrency subtasks                                                                      |
 | `java23/StructuredConcurrencyTest` | [`StructuredTaskScope.open(Joiner)`][StructuredTaskScope] with `allSuccessfulOrThrow`, `anySuccessfulOrThrow`, `awaitAllSuccessfulOrThrow`, `allUntil`; `fork`, `join`, `ExecutionException` (JDK 27 preview API) |
 
 **Key concepts:**
 
 <ul>
 
-- `ScopedValue` is the modern, safe replacement for [`ThreadLocal`][ThreadLocal]: values are bound for a specific scope and are automatically unbound; child threads inherit values; no memory leak risk
+- `ScopedValue` is the modern, safe replacement for [`ThreadLocal`][ThreadLocal]: values are bound for a specific scope and are automatically unbound; subtasks forked in a `StructuredTaskScope` inherit them (plain child threads and executor tasks do not); no memory leak risk
 - `StructuredTaskScope` ensures all forked subtasks complete (or are cancelled) before the scope closes — structured concurrency makes concurrent code read like sequential code
 
 </ul>
@@ -394,10 +394,10 @@ structured concurrency's `allUntil` and `ExecutionException`). JDK 27's new feat
 
 <ul>
 
-- **Tests as documentation**: every concept lives in a [`@Test`][Test] method with a [`@DisplayName`][DisplayName] explaining the rule being demonstrated
+- **Tests as documentation**: every concept lives in a [`@Test`][Test] method whose name, and in most classes a [`@DisplayName`][DisplayName], states the rule being demonstrated
 - **Assertions over println**: every test asserts a concrete outcome — the test suite is the specification
 - **Nested types**: Records, sealed classes, and helper interfaces are defined as `static` nested types inside test classes to keep related code co-located
-- **No mocks**: tests use real JDK APIs; for I/O tests, JUnit 5's [`@TempDir`][TempDir] provides isolated temporary directories
+- **No mocks**: tests use real JDK APIs; for I/O tests, JUnit's [`@TempDir`][TempDir] provides isolated temporary directories
 - **Preview features**: the project compiles with `--enable-preview` to cover features in their preview phase alongside finalized ones
 
 </ul>
@@ -409,6 +409,7 @@ structured concurrency's `allUntil` and `ExecutionException`). JDK 27's new feat
 [BiFunction]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/BiFunction.java
 [BinaryOperator]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/BinaryOperator.java
 [BiPredicate]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/function/BiPredicate.java
+[Character]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/lang/Character.java
 [Collection]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/Collection.java
 [Collectors]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/stream/Collectors.java
 [ConcurrentHashMap]: https://github.com/openjdk/jdk/blob/jdk-27-ga/src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java
