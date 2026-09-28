@@ -5,7 +5,8 @@ package com.org.interview;
 // How many paths are there? Find one path if it exists.
 public class Q35_RobotPaths {
 
-    // Count all paths - O(m*n) with memoization
+    // Count all paths by plain recursion - exponential time, no memoization. The closed form is
+    // C(m+n-2, m-1): every path is an arrangement of m-1 moves down and n-1 moves right.
     /** Counts paths. */
     public static long countPaths(int m, int n) {
         if (m == 1 || n == 1) return 1;
@@ -14,9 +15,9 @@ public class Q35_RobotPaths {
 
     // Count paths on grid with obstacles (0=blocked, 1=open)
     private static int M, N;
-    private static boolean[][] grid;
+    static boolean[][] grid;          // package-private for the tests
     private static int[][] path;
-    private static int pathLen;
+    static int pathLen;
 
     /** Finds path. */
     public static boolean findPath(int m, int n, int[][] route, int len) {
@@ -26,7 +27,8 @@ public class Q35_RobotPaths {
             pathLen = len + 1;
             return true;
         }
-        if (findPath(m - 1, n, route, len) || findPath(m, n - 1, route, len)) {
+        // route[len] holds this cell; the rest of the way to (1,1) goes in route[len + 1], ...
+        if (findPath(m - 1, n, route, len + 1) || findPath(m, n - 1, route, len + 1)) {
             route[len][0] = m; route[len][1] = n;
             return true;
         }

@@ -16,15 +16,22 @@ public class Q14_ThreeStacks {
         }
 
         void push(int stackNum, int val) {
+            // without this check a full stack silently writes into the next stack's partition
+            if (top[stackNum] + 1 == size) throw new IllegalStateException("stack " + stackNum + " is full");
             buf[stackNum * size + top[stackNum] + 1] = val;
             top[stackNum]++;
         }
 
-        void pop(int stackNum) { top[stackNum]--; }
+        void pop(int stackNum) { requireNonEmpty(stackNum); top[stackNum]--; }
 
-        int peek(int stackNum) { return buf[stackNum * size + top[stackNum]]; }
+        int peek(int stackNum) { requireNonEmpty(stackNum); return buf[stackNum * size + top[stackNum]]; }
 
         boolean isEmpty(int stackNum) { return top[stackNum] == -1; }
+
+        // an empty stack would otherwise read the last slot of the partition before it
+        private void requireNonEmpty(int stackNum) {
+            if (isEmpty(stackNum)) throw new IllegalStateException("stack " + stackNum + " is empty");
+        }
     }
 
     // Approach 2: Flexible space - nodes with back-pointer index

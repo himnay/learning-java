@@ -23,7 +23,7 @@ public class Q27_PathsWithSum {
         return node;
     }
 
-    // For each node, check all paths going upward (toward root) starting from that node
+    // For each node, check every downward path (toward the leaves) that starts at that node
     /** Finds sum paths. */
     public static void findSumPaths(Node node, int target) {
         if (node == null) return;

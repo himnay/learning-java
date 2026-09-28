@@ -47,7 +47,7 @@ public class Q24_InorderSuccessor {
         Node succ = inorderSuccessor(root);
         System.out.println("In-order successor of root: " + (succ != null ? succ.key : "none"));
         // Also test leaf node
-        Node leaf = root.left.left.left; // leftmost
+        Node leaf = leftmost(root); // the smallest key
         System.out.println("Leftmost node: " + leaf.key);
         Node leafSucc = inorderSuccessor(leaf);
         System.out.println("Successor of leftmost: " + (leafSucc != null ? leafSucc.key : "none"));

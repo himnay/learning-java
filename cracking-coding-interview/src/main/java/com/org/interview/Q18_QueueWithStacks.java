@@ -11,6 +11,7 @@ public class Q18_QueueWithStacks {
         void push(int v)  { buf[++top] = v; }
         int pop()         { return buf[top--]; }
         int peek()        { return buf[top]; }
+        int bottom()      { return buf[0]; }
         boolean isEmpty() { return top == -1; }
         int size()        { return top + 1; }
     }
@@ -33,8 +34,10 @@ public class Q18_QueueWithStacks {
             return sOut.peek();
         }
 
+        // The newest element is on top of sIn or, once everything has moved over, at the bottom of sOut
         int back() {
-            return sIn.isEmpty() ? -1 : sIn.peek();
+            if (!sIn.isEmpty()) return sIn.peek();
+            return sOut.isEmpty() ? -1 : sOut.bottom();
         }
 
         int size()        { return sIn.size() + sOut.size(); }

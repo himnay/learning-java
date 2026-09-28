@@ -7,19 +7,16 @@ public class Q29_BinaryToString {
     /** Prints binary. */
     public static String printBinary(String val) {
         int dotPos = val.indexOf('.');
+        if (dotPos == -1) dotPos = val.length(); // an integer such as "19" has no fractional part
         int intPart = 0;
-        double decPart = 0.0;
 
         // Parse integer part manually
         for (int i = 0; i < dotPos; i++) {
             intPart = intPart * 10 + (val.charAt(i) - '0');
         }
-        // Parse decimal part manually
-        double factor = 0.1;
-        for (int i = dotPos + 1; i < val.length(); i++) {
-            decPart += (val.charAt(i) - '0') * factor;
-            factor *= 0.1;
-        }
+        // Parse the fractional part in one correctly rounded step. Summing digit * 0.1^k by hand
+        // piles up rounding error, which turned exact binary fractions such as .75 into "ERROR".
+        double decPart = dotPos + 1 < val.length() ? Double.parseDouble("0." + val.substring(dotPos + 1)) : 0.0;
 
         // Build integer binary
         StringBuilder intStr = new StringBuilder();

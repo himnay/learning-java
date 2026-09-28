@@ -39,7 +39,9 @@ public class Q20_CheckBalanced {
         return (maxDepth - minDepth) <= 1;
     }
 
-    // Better O(n) approach: returns -1 on unbalanced, else height
+    // O(n) height-balanced check (the usual definition: at every node the two subtree heights
+    // differ by at most 1): returns -1 on unbalanced, else height. It is a different definition
+    // from the leaf-depth one above, so the two can disagree, and they do for the tree in main().
     /** Checks height. */
     public static int checkHeight(Node node) {
         if (node == null) return 0;

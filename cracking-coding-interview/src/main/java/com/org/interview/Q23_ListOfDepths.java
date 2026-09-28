@@ -46,11 +46,18 @@ public class Q23_ListOfDepths {
         return node;
     }
 
+    private static int countNodes(Node n) {
+        return n == null ? 0 : 1 + countNodes(n.left) + countNodes(n.right);
+    }
+
     /** Finds level lists. */
     public static ListHead[] findLevelLists(Node root, int maxDepth) {
         ListHead[] result = new ListHead[maxDepth];
         for (int i = 0; i < maxDepth; i++) result[i] = new ListHead();
-        NodeQueue queue = new NodeQueue(maxDepth * 2);
+        if (root == null) return result;
+        // Each node is queued exactly once, so the node count is a safe capacity. A capacity based
+        // on depth (maxDepth * 2) let the ring buffer overwrite unread nodes of a wide level.
+        NodeQueue queue = new NodeQueue(countNodes(root));
         queue.offer(root);
         int level = 0;
         while (!queue.isEmpty()) {

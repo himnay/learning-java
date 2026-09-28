@@ -1,5 +1,8 @@
 package com.org.interview;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // Q2.1 Write code to remove duplicates from an unsorted linked list.
 // FOLLOW UP: How would you solve this without a temporary buffer?
 public class Q9_RemoveDuplicates {
@@ -20,18 +23,18 @@ public class Q9_RemoveDuplicates {
         return head;
     }
 
-    // With boolean array (assuming values 0..MAX_VAL) - O(n) time, O(1) space
+    // With a hash set of the values seen so far - O(n) time, O(n) space.
+    // (A boolean[] indexed by value only works for small non-negative values.)
     /** Removes duplicates. */
     public static void removeDuplicates(Node head) {
         if (head == null) return;
-        boolean[] seen = new boolean[1000]; // covers typical int values
-        seen[head.data] = true;
+        Set<Integer> seen = new HashSet<>();
+        seen.add(head.data);
         Node prev = head, curr = head.next;
         while (curr != null) {
-            if (seen[curr.data]) {
+            if (!seen.add(curr.data)) {
                 prev.next = curr.next;
             } else {
-                seen[curr.data] = true;
                 prev = curr;
             }
             curr = curr.next;

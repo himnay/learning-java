@@ -14,13 +14,14 @@ public class Q19_SortStack {
         boolean isEmpty() { return top == -1; }
     }
 
-    // Insertion-sort using auxiliary stack - O(n^2) time, O(n) space
+    // Insertion-sort using auxiliary stack - O(n^2) time, O(n) space.
+    // tmp is kept in descending order from bottom to top, so its smallest element ends up on top.
     /** Sorts stack. */
     public static IntStack sortStack(IntStack s, int cap) {
         IntStack tmp = new IntStack(cap);
         while (!s.isEmpty()) {
             int data = s.pop();
-            while (!tmp.isEmpty() && tmp.peek() > data) {
+            while (!tmp.isEmpty() && tmp.peek() < data) {
                 s.push(tmp.pop());
             }
             tmp.push(data);

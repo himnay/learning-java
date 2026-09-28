@@ -2,6 +2,7 @@ package com.org.interview;
 
 // Q1.1 Implement an algorithm to determine if a string has all unique characters.
 // What if you cannot use additional data structures?
+// Both solutions assume 8-bit characters (code points 0-255), as the book does.
 public class Q1_UniqueCharacters {
 
     // Using boolean array - O(n) time, O(1) space
@@ -15,7 +16,7 @@ public class Q1_UniqueCharacters {
         return true;
     }
 
-    // Using bit vector - O(n) time, O(1) space, no extra array
+    // Using a 256-bit vector packed into 8 ints - O(n) time, O(1) space, one bit per character
     public static boolean isUnique2(String s) {
         int[] a = new int[8];
         for (int i = 0; i < s.length(); i++) {

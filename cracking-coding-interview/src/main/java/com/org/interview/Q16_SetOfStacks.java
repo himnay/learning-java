@@ -43,8 +43,12 @@ public class Q16_SetOfStacks {
             return stacks[s][tops[s]];
         }
 
+        // popAt() can empty sub-stacks below currentStack, so every one of them is checked
         boolean isEmpty() {
-            return currentStack == 0 && tops[0] == -1;
+            for (int i = 0; i <= currentStack; i++) {
+                if (tops[i] != -1) return false;
+            }
+            return true;
         }
     }
 
