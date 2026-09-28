@@ -68,7 +68,7 @@ class HeapPriorityQueueTest {
         }
 
         @Test
-        @DisplayName("Build heap from n elements  →  O(n) via Collections.heapify pattern")
+        @DisplayName("Build heap from n elements  →  O(n) via new PriorityQueue<>(collection)")
         void buildHeap() {
             List<Integer> items = Arrays.asList(5, 2, 8, 1, 9, 3, 7);
             PriorityQueue<Integer> heap = new PriorityQueue<>(items); // O(n) heap construction

@@ -24,7 +24,7 @@ class LambdaRestrictionTest {
     }
 
     @Test
-    void lambdaDoesNotModify_capturedVariable() {
+    void lambdaCannotReassignCapturedVariable_butCanMutateTheArrayItPointsTo() {
         int[] counter = {0}; // array trick: reference is final, content can change
         Runnable r = () -> counter[0]++;
         r.run();

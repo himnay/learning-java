@@ -20,7 +20,7 @@ class Java9CollectionsTest {
     }
 
     @Test
-    @DisplayName("List.of preserves order and allows null-free check")
+    @DisplayName("List.of preserves order and rejects null elements")
     void listOf_preservesOrder() {
         List<Integer> list = List.of(1, 2, 3, 4, 5);
         assertEquals(List.of(1, 2, 3, 4, 5), list);

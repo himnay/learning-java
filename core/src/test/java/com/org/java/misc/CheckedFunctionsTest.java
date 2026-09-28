@@ -2,6 +2,7 @@ package com.org.java.misc;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -18,8 +19,10 @@ class CheckedFunctionsTest {
 
     @Test
     void function_rethrowsCheckedExceptionAsRuntimeException() {
-        Function<String, Integer> parseInt = CheckedFunctions.function(Integer::parseInt);
-        assertThrows(RuntimeException.class, () -> parseInt.apply("not-a-number"));
+        IOException checked = new IOException("disk full");
+        Function<String, String> read = CheckedFunctions.function(path -> { throw checked; });
+        RuntimeException ex = assertThrows(RuntimeException.class, () -> read.apply("a.txt"));
+        assertSame(checked, ex.getCause()); // wrapped, not lost
     }
 
     @Test
@@ -30,6 +33,10 @@ class CheckedFunctionsTest {
         });
         assertTrue(isNumeric.test("123"));
         assertThrows(RuntimeException.class, () -> isNumeric.test("abc"));
+
+        IOException checked = new IOException("unreadable");
+        Predicate<String> exists = CheckedFunctions.predicate(path -> { throw checked; });
+        assertSame(checked, assertThrows(RuntimeException.class, () -> exists.test("a.txt")).getCause());
     }
 
     @Test
@@ -38,6 +45,10 @@ class CheckedFunctionsTest {
         Consumer<String> appender = CheckedFunctions.consumer(sb::append);
         appender.accept("hello");
         assertEquals("hello", sb.toString());
+
+        IOException checked = new IOException("stream closed");
+        Consumer<String> writer = CheckedFunctions.consumer(line -> { throw checked; });
+        assertSame(checked, assertThrows(RuntimeException.class, () -> writer.accept("x")).getCause());
     }
 
     @Test

@@ -4,6 +4,7 @@ package com.org.java17;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.random.RandomGenerator;
 import java.util.random.RandomGeneratorFactory;
 import java.util.stream.IntStream;
@@ -211,24 +212,22 @@ class RandomGeneratorTest {
     }
 
     // ---------------------------------------------------------------------------
-    // JumpableGenerator — if the algorithm supports it
+    // JumpableGenerator
     // ---------------------------------------------------------------------------
 
     @Test
-    @DisplayName("Jumping a JumpableGenerator produces a statistically independent stream")
+    @DisplayName("copyAndJump() returns a copy of the current state and moves the generator far ahead")
     void jumpableGeneratorJump() {
-        // L64X128MixRandom is a Jumpable generator
-        RandomGenerator rng = RandomGeneratorFactory.of("L64X128MixRandom").create(42L);
-        if (rng instanceof RandomGenerator.JumpableGenerator jumpable) {
-            RandomGenerator jumped = jumpable.copyAndJump();
-            assertNotNull(jumped, "copyAndJump must return a non-null generator");
-            // The two generators should produce different sequences
-            int a = rng.nextInt();
-            int b = jumped.nextInt();
-            // With overwhelming probability they differ; test won't be flaky in practice
-            // (there's a 1-in-2^32 chance of failure which we accept)
-            assertDoesNotThrow(() -> jumped.nextInt());
-        }
-        // If not jumpable, the test is vacuously satisfied
+        // Xoshiro256PlusPlus and Xoroshiro128PlusPlus are the jumpable algorithms. The LXM family
+        // (L64X128MixRandom and friends) is splittable instead: RandomGeneratorFactory.isJumpable().
+        RandomGenerator rng = RandomGeneratorFactory.of("Xoshiro256PlusPlus").create(42L);
+        var jumpable = assertInstanceOf(RandomGenerator.JumpableGenerator.class, rng);
+        assertEquals(Math.pow(2, 128), jumpable.jumpDistance());
+        RandomGenerator sameSeed = RandomGeneratorFactory.of("Xoshiro256PlusPlus").create(42L);
+
+        RandomGenerator copy = jumpable.copyAndJump(); // the copy keeps the old state, rng jumps ahead
+        long[] fromCopy = copy.longs(4).toArray();
+        assertArrayEquals(sameSeed.longs(4).toArray(), fromCopy);
+        assertFalse(Arrays.equals(fromCopy, rng.longs(4).toArray())); // seeded, so deterministic
     }
 }

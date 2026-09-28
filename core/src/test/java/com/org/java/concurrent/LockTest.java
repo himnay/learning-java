@@ -29,44 +29,61 @@ class LockTest {
     }
 
     @Test
-    void tryLock_returnsFalseWhenLockHeld() throws InterruptedException {
+    void tryLock_returnsFalseWhenLockHeld() throws Exception {
         ReentrantLock lock = new ReentrantLock();
+        CountDownLatch held = new CountDownLatch(1);
+        CountDownLatch release = new CountDownLatch(1);
         ExecutorService executor = Executors.newFixedThreadPool(2);
-        boolean[] tryResult = {true};
 
         Future<?> holder = executor.submit(() -> {
             lock.lock();
-            try { ConcurrentUtils.sleep(2); } finally { lock.unlock(); }
+            try {
+                held.countDown();
+                return release.await(5, TimeUnit.SECONDS); // keep the lock until the other thread has tried
+            } finally { lock.unlock(); }
         });
-        Thread.sleep(100); // let holder acquire
-        Future<?> tryer = executor.submit(() -> {
-            boolean acquired = lock.tryLock();
-            if (!acquired) tryResult[0] = false;
-            if (acquired) lock.unlock();
-        });
+        assertTrue(held.await(5, TimeUnit.SECONDS)); // the holder owns the lock now (no sleep-and-hope)
 
+        Future<Boolean> tryer = executor.submit(() -> {
+            boolean acquired = lock.tryLock();
+            if (acquired) lock.unlock();
+            return acquired;
+        });
+        boolean acquired = tryer.get(5, TimeUnit.SECONDS);
+        release.countDown();
+        holder.get(5, TimeUnit.SECONDS);
         ConcurrentUtils.stop(executor);
-        assertFalse(tryResult[0]); // lock was held → tryLock returned false
+
+        assertFalse(acquired); // lock was held → tryLock returned false
     }
 
     @Test
-    void readWriteLock_allowsConcurrentReads_blocksWrite() {
+    void readWriteLock_allowsConcurrentReads_blocksWrite() throws Exception {
         ReadWriteLock lock = new ReentrantReadWriteLock();
         Map<String, String> map = new HashMap<>();
+        lock.writeLock().lock();
+        try { map.put("foo", "bar"); } finally { lock.writeLock().unlock(); }
+
+        CountDownLatch bothReading = new CountDownLatch(2);
+        CountDownLatch release = new CountDownLatch(1);
         ExecutorService executor = Executors.newFixedThreadPool(2);
-
-        executor.submit(() -> {
-            lock.writeLock().lock();
-            try { map.put("foo", "bar"); } finally { lock.writeLock().unlock(); }
-        });
-
-        Runnable reader = () -> {
+        Callable<String> reader = () -> {
             lock.readLock().lock();
-            try { map.get("foo"); } finally { lock.readLock().unlock(); }
+            try {
+                bothReading.countDown();
+                release.await(5, TimeUnit.SECONDS); // hold the read lock until the writer has tried
+                return map.get("foo");
+            } finally { lock.readLock().unlock(); }
         };
-        executor.submit(reader);
+        Future<String> first = executor.submit(reader);
+        Future<String> second = executor.submit(reader);
+
+        assertTrue(bothReading.await(5, TimeUnit.SECONDS)); // both threads hold the read lock at once
+        assertFalse(lock.writeLock().tryLock());             // so a writer cannot get in
+        release.countDown();
+        assertEquals("bar", first.get(5, TimeUnit.SECONDS));
+        assertEquals("bar", second.get(5, TimeUnit.SECONDS));
         ConcurrentUtils.stop(executor);
-        assertEquals("bar", map.get("foo"));
     }
 
     @Test
@@ -87,6 +104,17 @@ class LockTest {
 
         ConcurrentUtils.stop(executor);
         assertEquals("bar", map.get("foo"));
+    }
+
+    @Test
+    void stampedLock_optimisticRead_isInvalidatedByAWrite() {
+        StampedLock lock = new StampedLock();
+        long stamp = lock.tryOptimisticRead(); // no lock taken, just a version stamp
+        assertTrue(lock.validate(stamp));      // nothing was written since
+
+        long writeStamp = lock.writeLock();
+        lock.unlockWrite(writeStamp);
+        assertFalse(lock.validate(stamp));     // a write happened: re-read under a real read lock
     }
 
     @Test

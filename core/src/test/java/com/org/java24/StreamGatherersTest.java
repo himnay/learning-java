@@ -120,7 +120,8 @@ class StreamGatherersTest {
     }
 
     // ---------------------------------------------------------------------------
-    // Gatherers.fold() — terminal fold returning a single Optional result
+    // Gatherers.fold() — many-to-one: emits one result when the stream ends (the initial value for
+    // an empty stream); findFirst() below turns that single element into an Optional
     // ---------------------------------------------------------------------------
 
     @Test

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,20 +12,23 @@ class SynchronizedTest {
 
     private static final int NUM_INCREMENTS = 10_000;
 
+    /** A plain int counter guarded by synchronized methods, which lock on the Counter instance. */
+    private static final class Counter {
+        private int count;
+
+        synchronized void increment() { count++; }
+
+        synchronized int get() { return count; }
+    }
+
     @Test
     void synchronizedMethod_guaranteesCorrectCount() {
-        AtomicInteger count = new AtomicInteger(0);
+        Counter counter = new Counter();
         ExecutorService executor = Executors.newFixedThreadPool(2);
-        Object lock = new Object();
 
-        IntStream.range(0, NUM_INCREMENTS).forEach(i ->
-                executor.submit(() -> {
-                    synchronized (lock) {
-                        count.incrementAndGet();
-                    }
-                }));
+        IntStream.range(0, NUM_INCREMENTS).forEach(i -> executor.submit(counter::increment));
         ConcurrentUtils.stop(executor);
-        assertEquals(NUM_INCREMENTS, count.get());
+        assertEquals(NUM_INCREMENTS, counter.get());
     }
 
     @Test

@@ -150,7 +150,7 @@ class BacktrackingTest {
         }
 
         @Test
-        @DisplayName("Sudoku validator (constraint check)  →  O(9^m) where m=empty cells")
+        @DisplayName("Sudoku validator (constraint check)  →  O(81) = O(1) per board  (a backtracking solver is O(9^m), m = empty cells)")
         void sudokuValid() {
             char[][] board = {
                 {'5','3','.','.','7','.','.','.','.'},

@@ -120,7 +120,7 @@ class StringComplexityTest {
         }
 
         @Test
-        @DisplayName("Split string  →  s.split(' ')  →  O(n)")
+        @DisplayName("Split string  →  s.split(\" \")  →  O(n)")
         void split() {
             String[] parts = "one two three".split(" ");
             assertArrayEquals(new String[]{"one", "two", "three"}, parts);

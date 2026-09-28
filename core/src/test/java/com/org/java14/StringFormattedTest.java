@@ -93,9 +93,8 @@ class StringFormattedTest {
     }
 
     // ---------------------------------------------------------------------------
-    // Helpful NullPointerException (Java 14) — not easily unit-testable by
-    // message content (JVM-specific), but we verify NPE is thrown and test that
-    // the message is non-null (when the JVM provides it).
+    // Helpful NullPointerException messages (JEP 358): added in Java 14 behind
+    // -XX:+ShowCodeDetailsInExceptionMessages, switched on by default in Java 15.
     // ---------------------------------------------------------------------------
 
     @Test
@@ -105,9 +104,7 @@ class StringFormattedTest {
         NullPointerException npe = assertThrows(NullPointerException.class, () -> {
             int ignored = s.length(); // triggers helpful NPE
         });
-        // Java 14+ guarantees a non-null message (when -XX:+ShowCodeDetailsInExceptionMessages
-        // or default in newer JVMs); at minimum NPE must be thrown.
-        // We only assert that the exception is non-null.
+        // here we only need the exception; the next test checks its message
         assertNotNull(npe);
     }
 
@@ -120,10 +117,10 @@ class StringFormattedTest {
             // "Cannot load from object array because 'array' is null"
             Object ignored = array[0];
         });
-        // The JVM may not guarantee a message in all configurations, so we accept
-        // either a non-null descriptive message or a null (older JVM behaviour).
-        // The important thing is the correct exception type is raised.
-        assertNotNull(npe, "NullPointerException should have been thrown");
+        // The message names the failed action. The variable name ("array") only appears when the
+        // class was compiled with -g, so assert on the action part.
+        assertNotNull(npe.getMessage());
+        assertTrue(npe.getMessage().startsWith("Cannot load from object array"), npe.getMessage());
     }
 
     // ---------------------------------------------------------------------------

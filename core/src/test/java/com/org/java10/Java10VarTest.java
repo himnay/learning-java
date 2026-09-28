@@ -23,7 +23,7 @@ class Java10VarTest {
     }
 
     @Test
-    @DisplayName("var infers List type from factory method")
+    @DisplayName("var infers ArrayList<String> from the constructor")
     void var_infersList() {
         var list = new ArrayList<String>();
         list.add("alpha");

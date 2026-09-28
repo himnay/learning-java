@@ -4,10 +4,7 @@ package com.org.java26;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-import java.util.stream.Stream;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import module java.base;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class Java26FeaturesTest {
 
     // ===========================================================================
-    // 1. Flexible Constructor Bodies (JEP 492 — preview in Java 26)
+    // 1. Flexible Constructor Bodies (JEP 513 — standard since Java 25, preview in 22–24)
     //
     // Prior to flexible constructor bodies, ANY code before super()/this() in a
     // constructor was a compile error. JEP 492 allows statements that do NOT
@@ -101,8 +98,8 @@ class Java26FeaturesTest {
     }
 
     // ===========================================================================
-    // 2. Primitive types in patterns (JEP 488 — 2nd preview in Java 26)
-    //    (Available because --enable-preview is active)
+    // 2. Primitive types in patterns (JEP 455 — preview since Java 23, still preview in
+    //    Java 26 and 27, so it needs --enable-preview)
     // ===========================================================================
 
     @Test
@@ -205,14 +202,14 @@ class Java26FeaturesTest {
     }
 
     // ===========================================================================
-    // 4. Module import declarations (JEP 494 — available as standard in Java 26)
-    //    These are compile-time declarations and cannot be tested at runtime.
-    //    We verify that the standard APIs they would import still work correctly.
-    //    (The declaration would be: import module java.base;)
+    // 4. Module import declarations (JEP 511 — standard since Java 25)
+    //    A compile-time feature: this file has no java.util.* / java.util.concurrent.*
+    //    imports, only 'import module java.base;', so List, Optional, Stream,
+    //    AtomicInteger and every other JDK type below resolve through that one line.
     // ===========================================================================
 
     @Test
-    @DisplayName("java.base APIs work as expected (targets module-import consolidation)")
+    @DisplayName("import module java.base brings in List, Optional and Stream without per-package imports")
     void javaBaseApis() {
         // Collections
         var list = List.of("a", "b", "c");
@@ -278,7 +275,7 @@ class Java26FeaturesTest {
     }
 
     // ===========================================================================
-    // 8. StructuredTaskScope (standard in Java 25, available in Java 26)
+    // 8. StructuredTaskScope (still a preview API in Java 25, 26 and 27)
     // ===========================================================================
 
     @Test

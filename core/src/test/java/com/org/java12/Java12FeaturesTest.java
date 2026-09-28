@@ -2,6 +2,7 @@ package com.org.java12;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 import java.util.List;
 import java.util.Map;
@@ -110,8 +111,7 @@ class Java12FeaturesTest {
 
     @Test
     @DisplayName("Files.mismatch returns -1 for identical files, first diff position otherwise")
-    void filesMismatch() throws Exception {
-        var tmp = java.nio.file.Files.createTempDirectory("java12");
+    void filesMismatch(@TempDir java.nio.file.Path tmp) throws Exception { // cleaned up by JUnit
         var f1 = tmp.resolve("a.txt"); var f2 = tmp.resolve("b.txt");
         java.nio.file.Files.writeString(f1, "hello");
         java.nio.file.Files.writeString(f2, "hello");

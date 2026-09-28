@@ -156,6 +156,6 @@ class PatternMatchingInstanceofTest {
         Object obj = "scoped";
         boolean result = obj instanceof String s && !s.isEmpty();
         assertTrue(result);
-        // 's' is not accessible here — compile-time scoping is enforced by the JVM
+        // 's' is not accessible here — the compiler enforces this scoping
     }
 }

@@ -34,6 +34,12 @@ class Java11StringTest {
     void stripLeadingAndTrailing() {
         assertEquals("hello  ", "  hello  ".stripLeading());
         assertEquals("  hello", "  hello  ".stripTrailing());
+
+        String emSpaced = "\u2003hello\u2003";  // EM SPACE: whitespace to Java, but above U+0020
+        assertEquals("hello", emSpaced.strip());
+        assertEquals(emSpaced, emSpaced.trim());   // trim only removes chars <= U+0020
+        String noBreak = "\u00A0hello\u00A0";   // NO-BREAK SPACE is not whitespace (Character.isWhitespace)
+        assertEquals(noBreak, noBreak.strip());
     }
 
     @Test

@@ -128,7 +128,7 @@ class BitManipulationTest {
         }
 
         @Test
-        @DisplayName("Integer bit count  →  Integer.bitCount  →  O(1) hardware)")
+        @DisplayName("Integer bit count  →  Integer.bitCount  →  O(1)  (a hardware POPCNT intrinsic)")
         void javaBitCount() {
             assertEquals(3, Integer.bitCount(7));
             assertEquals(4, Integer.bitCount(15));

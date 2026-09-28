@@ -210,6 +210,7 @@ class Java25FeaturesTest {
         assertEquals("hello   ", s.stripLeading());
         assertEquals("   hello", s.stripTrailing());
         assertEquals("hello",    s.strip());
+        assertEquals("hello", "\u2003hello\u2003".strip()); // EM SPACE counts as whitespace
     }
 
     @Test
@@ -228,10 +229,11 @@ class Java25FeaturesTest {
     }
 
     @Test
-    @DisplayName("String.lines() splits on all Unicode line terminators")
+    @DisplayName("String.lines() splits on \\n, \\r and \\r\\n only")
     void stringLines() {
         long count = "one\ntwo\rthree\r\nfour".lines().count();
         assertEquals(4, count);
+        assertEquals(1, "one\u2028two".lines().count()); // LINE SEPARATOR is not a terminator here
     }
 
     // ===========================================================================

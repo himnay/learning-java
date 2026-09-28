@@ -21,11 +21,13 @@ class ExecutorsTest {
     @Test
     void futureGet_returnsResultAfterCompletion() throws Exception {
         ExecutorService executor = Executors.newFixedThreadPool(1);
+        CountDownLatch release = new CountDownLatch(1);
         Future<Integer> future = executor.submit(() -> {
-            TimeUnit.MILLISECONDS.sleep(100);
+            release.await(5, TimeUnit.SECONDS); // cannot finish before the test lets it
             return 123;
         });
         assertFalse(future.isDone());
+        release.countDown();
         assertEquals(123, future.get(5, TimeUnit.SECONDS));
         assertTrue(future.isDone());
         executor.shutdownNow();
