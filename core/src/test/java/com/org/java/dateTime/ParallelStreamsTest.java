@@ -1,13 +1,13 @@
 package com.org.java.dateTime;
 
-import com.org.java.Student;
+import com.org.java.data.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
-import static com.org.java.StudentDataBase.getAllStudents;
+import static com.org.java.data.StudentDataBase.getAllStudents;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ParallelStreamsTest {

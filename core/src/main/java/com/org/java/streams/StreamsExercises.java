@@ -1,14 +1,18 @@
 package com.org.java.streams;
 
-
 import com.org.java.data.Student;
 import com.org.java.data.StudentDataBase;
+import com.org.java.data.Bike;
 
 import java.util.List;
 import java.util.Set;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamsExercises {
+
+    private StreamsExercises() {
+    }
 
     // Exercise 1: List of student names with GPA appended
     // Input: List<Student> students
@@ -17,8 +21,9 @@ public class StreamsExercises {
     // Note: The GPA should be included as is, without rounding
     /** Returns the names with gpa. */
     public static List<String> namesWithGpa(List<Student> students) {
-        // TODO: Implement using streams
-        return null;
+        return students.stream()
+                .map(student -> student.getName() + " - " + student.getGpa())
+                .collect(Collectors.toList());
     }
 
     // Exercise 2: Set of all unique student activities
@@ -28,8 +33,9 @@ public class StreamsExercises {
     // Note: Duplicates should be automatically removed
     /** Returns the unique activities. */
     public static Set<String> uniqueActivities(List<Student> students) {
-        // TODO: Implement using streams
-        return null;
+        return students.stream()
+                .flatMap(student -> student.getActivities().stream())
+                .collect(Collectors.toSet());
     }
 
     // Exercise 3: Map of student name to their activity count
@@ -39,8 +45,12 @@ public class StreamsExercises {
     // Note: Students with no activities should have count 0
     /** Returns the name to activity count. */
     public static Map<String, Integer> nameToActivityCount(List<Student> students) {
-        // TODO: Implement using streams
-        return null;
+        return students.stream()
+                .collect(Collectors.toMap(
+                        Student::getName,
+                        student -> student.getActivities().size(),
+                        (existing, replacement) -> replacement
+                ));
     }
 
     // Exercise 4: List of names of students with more than 2 notebooks
@@ -50,8 +60,10 @@ public class StreamsExercises {
     // Note: Order should be preserved as in input list
     /** Returns the names with more than two notebooks. */
     public static List<String> namesWithMoreThanTwoNotebooks(List<Student> students) {
-        // TODO: Implement using streams
-        return null;
+        return students.stream()
+                .filter(student -> student.getNoteBooks() > 2)
+                .map(Student::getName)
+                .collect(Collectors.toList());
     }
 
     // Exercise 5: Map of student name to bike model
@@ -61,8 +73,15 @@ public class StreamsExercises {
     // Note: Use "No Bike" as default value when bike information is missing
     /** Returns the name to bike model. */
     public static Map<String, String> nameToBikeModel(List<Student> students) {
-        // TODO: Implement using streams
-        return null;
+        return students.stream()
+                .collect(Collectors.toMap(
+                        Student::getName,
+                        student -> {
+                            Bike bike = student.getBike().orElse(null);
+                            return (bike != null && bike.getModel() != null) ? bike.getModel() : "No Bike";
+                        },
+                        (existing, replacement) -> replacement
+                ));
     }
 
     // Exercise 6: List of student names with GPA above 3.5
@@ -72,8 +91,10 @@ public class StreamsExercises {
     // Note: Only include names, not GPAs, in the output list
     /** Returns the names with high gpa. */
     public static List<String> namesWithHighGpa(List<Student> students) {
-        // TODO: Implement using streams
-        return null;
+        return students.stream()
+                .filter(student -> student.getGpa() > 3.5)
+                .map(Student::getName)
+                .collect(Collectors.toList());
     }
 
     /** Application entry point. */

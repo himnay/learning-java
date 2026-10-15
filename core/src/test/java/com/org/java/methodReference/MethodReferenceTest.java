@@ -1,6 +1,6 @@
 package com.org.java.methodReference;
 
-import com.org.java.Student;
+import com.org.java.data.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

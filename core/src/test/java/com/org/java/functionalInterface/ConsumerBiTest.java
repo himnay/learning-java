@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-import static com.org.java.StudentDataBase.getAllStudents;
+import static com.org.java.data.StudentDataBase.getAllStudents;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConsumerBiTest {

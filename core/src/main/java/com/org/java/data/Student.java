@@ -10,7 +10,8 @@ public class Student {
     private double gpa;
     private String gender;
     private int noteBooks;
-    private Optional<Bike> bike;
+    private Optional<Bike> bike = Optional.empty();
+    private List<String> activities = new ArrayList<>();
 
     public Optional<Bike> getBike() {
         return bike;
@@ -20,8 +21,7 @@ public class Student {
         this.bike = bike;
     }
 
-    public Student(){
-
+    public Student() {
     }
 
     public Student(String name, int gradeLevel, double gpa, String gender, int noteBooks, List<String> activities) {
@@ -34,7 +34,6 @@ public class Student {
     }
 
     public int getNoteBooks() {
-
         return noteBooks;
     }
 
@@ -50,8 +49,8 @@ public class Student {
         this.activities = activities;
     }
 
-    public Student(String s) {
-        this.name = s;
+    public Student(String name) {
+        this.name = name;
     }
 
     public String getGender() {
@@ -86,9 +85,7 @@ public class Student {
         this.gpa = gpa;
     }
 
-    List<String> activities = new ArrayList<>();
-
-    public  List<String> getActivities() {
+    public List<String> getActivities() {
         return this.activities;
     }
 
@@ -112,6 +109,4 @@ public class Student {
                 ", activities=" + activities +
                 '}';
     }
-
-
 }

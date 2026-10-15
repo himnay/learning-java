@@ -9,16 +9,16 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamsFilterExample {
 
-    /** Filters students. */
-    public static List<Student> filterStudents(){
+    private StreamsFilterExample() {
+    }
 
-        List<Student> filteredStudentList = StudentDataBase.getAllStudents()
+    /** Filters students. */
+    private static List<Student> filterStudents(){
+        return StudentDataBase.getAllStudents()
                 .stream()
                 .filter(student -> student.getGpa()>=3.9)
                 .filter(student -> student.getGender().equals("female"))
                 .collect(toList());
-
-        return filteredStudentList;
     }
 
     /** Application entry point. */

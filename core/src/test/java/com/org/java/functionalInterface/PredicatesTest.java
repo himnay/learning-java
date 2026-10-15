@@ -1,13 +1,13 @@
 package com.org.java.functionalInterface;
 
-import com.org.java.Student;
+import com.org.java.data.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static com.org.java.StudentDataBase.getAllStudents;
+import static com.org.java.data.StudentDataBase.getAllStudents;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PredicatesTest {

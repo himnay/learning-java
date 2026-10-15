@@ -1,6 +1,6 @@
 package com.org.java.functionalInterface;
 
-import com.org.java.Student;
+import com.org.java.data.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 
-import static com.org.java.StudentDataBase.getAllStudents;
+import static com.org.java.data.StudentDataBase.getAllStudents;
 import static com.org.java.functionalInterface.PredicatesBiTest.biPredicate;
 import static org.junit.jupiter.api.Assertions.*;
 

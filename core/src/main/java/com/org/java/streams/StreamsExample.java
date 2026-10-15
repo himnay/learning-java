@@ -10,22 +10,15 @@ import java.util.stream.Collectors;
 
 public class StreamsExample {
 
+    private StreamsExample() {
+    }
+
     /** Application entry point. */
     public static void main(String[] args) {
 
-        Predicate<Student> gradePredicate = student -> student.getGradeLevel()>=3;
-        Predicate<Student> gpaPredicate = student -> student.getGradeLevel()>=3.9;
+        Predicate<Student> gpaPredicate = student -> student.getGpa()>=3.9;
 
-/*
-        List<String> names = Arrays.asList("adam","dan","jenny");
-        names.stream();
-        names.parallelStream();
-        StudentDataBase.getAllStudents().stream();
-        StudentDataBase.getAllStudents().parallelStream();
-*/
-
-
-        Map<String,List<String>> studentMap = StudentDataBase.getAllStudents().stream(). //.parallelStream dont forger.
+        Map<String,List<String>> studentMap = StudentDataBase.getAllStudents().stream(). //.parallelStream, don't forget.
                 filter(gpaPredicate) // Stream<Student>
                 .collect(Collectors.toMap(Student::getName ,Student::getActivities ));
 
@@ -33,23 +26,20 @@ public class StreamsExample {
 
         List<String> studentActivities = StudentDataBase.getAllStudents().
                 stream() // Stream<Student>
-                .map(Student::getActivities) //<Stream<List<Activites>>
+                .map(Student::getActivities) //<Stream<List<Activities>>
                 .flatMap(List::stream) //<Stream<String>
                 .distinct() // removes duplicates
                 .collect(Collectors.toList()); //collects it to a list.
 
         List<String> namesList = StudentDataBase.getAllStudents().
                 stream() // Stream<Student>
-                .peek((student -> {
-                    System.out.println(student);
-                }))
-                .map(Student::getName) //<Stream<List<Activites>>
+                .peek(System.out::println)
+                .map(Student::getName) //<Stream<List<Activities>>
                 .peek(System.out::println)
                 .distinct() // removes duplicates
                 .collect(Collectors.toList()); //collects it to a list.
 
         System.out.println("namesList  : " + namesList);
-
 
     }
 }

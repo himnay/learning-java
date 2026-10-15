@@ -4,32 +4,25 @@ import com.org.java.data.StudentDataBase;
 
 public class StreamsMatchExample {
 
+    private StreamsMatchExample() {
+    }
 
     /** Returns the all match. */
-    public static boolean allMatch(){
-
-        boolean result = StudentDataBase.getAllStudents().stream()
+    private static boolean allMatch(){
+        return StudentDataBase.getAllStudents().stream()
                 .allMatch(student -> student.getGpa()>=3.9);
-
-        return result;
     }
 
     /** Returns the any match. */
-    public static boolean anyMatch(){
-
-        boolean result = StudentDataBase.getAllStudents().stream()
+    private static boolean anyMatch(){
+        return StudentDataBase.getAllStudents().stream()
                 .anyMatch(student -> student.getGpa()>=3.9);
-
-        return result;
     }
 
     /** Returns the none match. */
-    public static boolean noneMatch(){
-
-        boolean result = StudentDataBase.getAllStudents().stream()
+    private static boolean noneMatch(){
+        return StudentDataBase.getAllStudents().stream()
                 .noneMatch(student -> student.getGpa()>=3.9);
-
-        return result;
     }
 
     /** Application entry point. */

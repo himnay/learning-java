@@ -9,6 +9,9 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamsOfGenerateIterateExample {
 
+    private StreamsOfGenerateIterateExample() {
+    }
+
     /** Application entry point. */
     public static void main(String[] args) {
 
@@ -17,11 +20,9 @@ public class StreamsOfGenerateIterateExample {
 
         List<Integer> integerList  = Stream.iterate(1, x->x*2)
                 .limit(10)
-                .map(Integer::new)
                 .collect(toList());
 
         System.out.println("iterate : " + integerList);
-
 
         Supplier<Integer> supplier = new Random()::nextInt;
 

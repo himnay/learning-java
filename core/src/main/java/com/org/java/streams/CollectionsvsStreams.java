@@ -5,6 +5,9 @@ import java.util.stream.Stream;
 
 public class CollectionsvsStreams {
 
+    private CollectionsvsStreams() {
+    }
+
     /** Application entry point. */
     public static void main(String[] args) {
 

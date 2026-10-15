@@ -1,13 +1,13 @@
 package com.org.java.functionalInterface;
 
-import com.org.java.Student;
+import com.org.java.data.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import static com.org.java.StudentDataBase.getAllStudents;
+import static com.org.java.data.StudentDataBase.getAllStudents;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FunctionsTest {

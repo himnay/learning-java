@@ -11,8 +11,11 @@ import static java.util.stream.Collectors.joining;
 
 public class StreamReduceExample {
 
+    private StreamReduceExample() {
+    }
+
     /** Returns the perform multiplication. */
-    public static int performMultiplication(List<Integer> integerList){
+    private static int performMultiplication(List<Integer> integerList){
 
         return integerList.stream()
                 .reduce(1, (a,b) -> a*b);
@@ -20,30 +23,25 @@ public class StreamReduceExample {
     }
 
     /** Returns the perform multiplication with no initial value. */
-    public static Optional<Integer> performMultiplicationWithNoInitialValue(List<Integer> integerList){
+    private static Optional<Integer> performMultiplicationWithNoInitialValue(List<Integer> integerList){
 
         return integerList.stream()
-                .reduce( (a,b) -> a*b); // performs multiplication for each element in the stream and returns a new result fo.
+                .reduce( (a,b) -> a*b); // performs multiplication for each element in the stream and returns a new result.
     }
 
     /** Returns the combine student names. */
-    public static String combineStudentNames(){
+    private static String combineStudentNames(){
 
         return StudentDataBase.getAllStudents().stream()
                 .map(Student::getName)
                 .distinct()
-                .reduce("",(a,b) -> a.concat(b));  // performs multiplication for each element in the stream.
+                .reduce("",(a,b) -> a.concat(b));  // concatenates each element in the stream.
     }
 
-    public static Optional<Student> getHighestGradeStudent(){
-
-        Optional<Student> studentOptional =  StudentDataBase.getAllStudents().stream()
+    private static Optional<Student> getHighestGradeStudent(){
+        return StudentDataBase.getAllStudents().stream()
                 .reduce((s1,s2)->(s1.getGpa()>s2.getGpa()) ? s1 : s2);
-        return studentOptional;
     }
-
-
-
 
     /** Application entry point. */
     public static void main(String[] args) {
@@ -63,10 +61,6 @@ public class StreamReduceExample {
         System.out.println(combineStudentNames());
         System.out.println(getHighestGradeStudent().get());
 
-        StudentDataBase.getAllStudents().stream()
-                .map((student) -> {
-                    student.setGpa(4.0);
-                    return student;
-                });
+        StudentDataBase.getAllStudents().forEach(student -> student.setGpa(4.0));
     }
 }

@@ -10,26 +10,29 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamsComparatorExample {
 
-    /** Sorts students by name. */
-    public static List<Student> sortStudentsByName(){
+    private StreamsComparatorExample() {
+    }
 
-       return  StudentDataBase.getAllStudents().stream()
+    /** Sorts students by name. */
+    private static List<Student> sortStudentsByName(){
+
+       return StudentDataBase.getAllStudents().stream()
                 .sorted(Comparator.comparing(Student::getName))
                 .collect(toList());
     }
 
     /** Sorts students by gpa. */
-    public static List<Student> sortStudentsByGpa(){
+    private static List<Student> sortStudentsByGpa(){
 
-        return  StudentDataBase.getAllStudents().stream()
+        return StudentDataBase.getAllStudents().stream()
                 .sorted(Comparator.comparing(Student::getGpa))
                 .collect(toList());
     }
 
     /** Sorts students by gpa reversed. */
-    public static List<Student> sortStudentsByGpaReversed(){
+    private static List<Student> sortStudentsByGpaReversed(){
 
-        return  StudentDataBase.getAllStudents().stream()
+        return StudentDataBase.getAllStudents().stream()
                 .sorted(Comparator.comparing(Student::getGpa).reversed())
                 .collect(toList());
     }
@@ -39,7 +42,7 @@ public class StreamsComparatorExample {
         System.out.println("Students sorted by NAME");
         sortStudentsByName().forEach(System.out::println);
         System.out.println("Students sorted by GPA");
-         sortStudentsByGpa().forEach(System.out::println);
+        sortStudentsByGpa().forEach(System.out::println);
 
         System.out.println("Students sorted by GPA Higher to Lower");
         sortStudentsByGpaReversed().forEach(System.out::println);

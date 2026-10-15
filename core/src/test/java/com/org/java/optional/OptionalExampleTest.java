@@ -1,12 +1,13 @@
 package com.org.java.optional;
 
-import com.org.java.Student;
+import com.org.java.data.Bike;
+import com.org.java.data.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 import java.util.function.Supplier;
 
-import static com.org.java.StudentDataBase.getAllStudents;
+import static com.org.java.data.StudentDataBase.getAllStudents;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OptionalExampleTest {
@@ -87,12 +88,13 @@ class OptionalExampleTest {
 
     @Test
     void flatMap_chainsOptionalReturningMethods() {
-        // Adam's bike is present → bike.getName() should be "Suzuki"
-        Optional<Student> opt = Optional.ofNullable(firstStudent.get());
+        Student adam = firstStudent.get();
+        adam.setBike(Optional.of(new Bike("Suzuki", "Suzuki")));
+        Optional<Student> opt = Optional.ofNullable(adam);
         Optional<String> bikeName = opt
                 .filter(s -> s.getGpa() >= 3.5)
                 .flatMap(Student::getBike)
-                .map(Student.Bike::getName);
+                .map(Bike::getName);
         assertTrue(bikeName.isPresent());
         assertEquals("Suzuki", bikeName.get());
     }

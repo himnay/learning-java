@@ -4,21 +4,22 @@ import java.util.*;
 
 public class StreamsMaxMinExample {
 
+    private StreamsMaxMinExample() {
+    }
 
     /** Returns the max value. */
-    public static Optional<Integer> maxValue(List<Integer> integerList){
+    private static Optional<Integer> maxValue(List<Integer> integerList){
         return integerList.stream()
                 //.reduce(0,(a,b)->(a>b) ? a : b);
         .reduce(Integer::max);
     }
 
     /** Returns the min value. */
-    public static Optional<Integer> minValue(List<Integer> integerList){
+    private static Optional<Integer> minValue(List<Integer> integerList){
         return integerList.stream()
                 .reduce((a,b)->(a<b) ? a : b);
                 //.reduce(0,Integer::min);
     }
-
 
     /** Application entry point. */
     public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class StreamsMaxMinExample {
         System.out.println("Max Value is : " + max);
 
         Optional<Integer> minValue =minValue(integers);
-        int min = maxValue.isPresent() ? minValue.get():0;
+        int min = minValue.isPresent() ? minValue.get():0;
         System.out.println("Min Value is : " + min);
     }
 }

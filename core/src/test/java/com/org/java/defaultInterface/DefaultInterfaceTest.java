@@ -1,6 +1,6 @@
 package com.org.java.defaultInterface;
 
-import com.org.java.Student;
+import com.org.java.data.Student;
 import com.org.java.defaultInterface.diamond.Interface1;
 import com.org.java.defaultInterface.diamond.Interface2;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.org.java.StudentDataBase.getAllStudents;
+import static com.org.java.data.StudentDataBase.getAllStudents;
 import static java.util.Comparator.comparing;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -6,21 +6,23 @@ import java.util.Optional;
 
 public class StreamsLimitSkipExample {
 
+    private StreamsLimitSkipExample() {
+    }
+
     /** Returns the limit. */
-    public static Optional<Integer> limit(List<Integer> integers){
-        return  integers.stream()
+    private static Optional<Integer> limit(List<Integer> integers){
+        return integers.stream()
                 .limit(2)
                 .reduce((a,b)-> a+b);
 
     }
 
     /** Returns the skip. */
-    public static Optional<Integer> skip(List<Integer> integers){
-        return  integers.stream()
+    private static Optional<Integer> skip(List<Integer> integers){
+        return integers.stream()
                 .skip(3)
                 .reduce((a,b)-> a+b);
     }
-    
 
     /** Application entry point. */
     public static void main(String[] args) {
